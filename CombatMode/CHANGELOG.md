@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The **Interface** wheel preset on Forever is now Character Info, Professions, All Bags, Talents, Legacy, Quest Log, Group Finder and Account Collections.
 - **Radial Menu** actions you can't use yet, such as Talents below the unlock level or Legacy before you have renown, now show greyed out and do nothing.
+- While the **Interactable Indicator** is on, Action Combat Mode now hides Blizzard's own friend, interact and game object icons (`SoftTargetIconFriend`, `SoftTargetIconInteract`, `SoftTargetIconGameObject`), since the indicator already shows them. Turn the indicator off and your own values come back. All three, and the enemy icon, are listed in the **Reticle CVar** editor.
 
 ### Fixed
 
