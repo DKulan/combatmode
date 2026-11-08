@@ -15,7 +15,7 @@
 --    • IsVendorMountOut / IsInPetBattle / IsFeignDeathActive / IsCustomConditionTrue
 --      / IsCustomLockConditionTrue (DB.global.customLockCondition).
 --    • OPie path may free centering + hide crosshair via FreeLook helpers.
---    • CloseUnlockWindows — out-of-combat close of those same windows (Close Windows
+--    • CloseUnlockWindows — closes those same windows, in combat only the unprotected ones (Close Windows
 --      option, called by the Mouse Look key).
 --  Does not: Own Lock/Unlock or ShouldFreeLookBeOff aggregation.
 --  Related: Constants/FrameWatch.lua, Core/FreeLook/FreeLookController.lua,
@@ -113,18 +113,50 @@ function CM.IsUnlockFrameVisible()
 end
 
 -- Closes what CM.IsUnlockFrameVisible sees (UI panels, bags, menus, watched frames) so the
--- Mouse Look key can re-lock. Out of combat only: UI panels and protected frames can't be
--- hidden in lockdown. OPie / wildcard groups are left to their owner.
+-- Mouse Look key can re-lock. In lockdown protected frames are skipped (hiding them is
+-- blocked); the rest are hidden one by one. OPie / wildcard groups are left to their owner.
 function CM.CloseUnlockWindows()
-  if _G.InCombatLockdown() then
-    return false
-  end
+  local inCombat = _G.InCombatLockdown()
   local closed = false
-  if _G.CloseAllWindows then
-    pcall(_G.CloseAllWindows)
+  -- In lockdown a protected frame can't be hidden by addon code (and trying prints an
+  -- ADDON_ACTION_BLOCKED), so each frame is checked first; the bulk helpers are out of
+  -- combat only.
+  local function CanHide(frame)
+    if not frame or (frame.IsForbidden and frame:IsForbidden()) then
+      return false
+    end
+    if not (frame.IsVisible and frame:IsVisible()) then
+      return false
+    end
+    return not (inCombat and frame.IsProtected and frame:IsProtected())
   end
-  if _G.CloseAllBags then
-    pcall(_G.CloseAllBags)
+  if inCombat then
+    for _, position in ipairs({ "left", "center", "right" }) do
+      local panel = GetUIPanel(position)
+      if CanHide(panel) then
+        if not pcall(_G.HideUIPanel, panel) then
+          pcall(panel.Hide, panel)
+        end
+        closed = true
+      end
+    end
+    local bagFrames = { _G.ContainerFrameCombinedBags }
+    for i = 1, 13 do
+      bagFrames[#bagFrames + 1] = _G["ContainerFrame" .. i]
+    end
+    for _, bag in pairs(bagFrames) do
+      if CanHide(bag) then
+        pcall(bag.Hide, bag)
+        closed = true
+      end
+    end
+  else
+    if _G.CloseAllWindows then
+      pcall(_G.CloseAllWindows)
+    end
+    if _G.CloseAllBags then
+      pcall(_G.CloseAllBags)
+    end
   end
   local Menu = _G.Menu
   if Menu and Menu.GetManager then
@@ -138,13 +170,7 @@ function CM.CloseUnlockWindows()
   local function HideList(frameArr)
     for _, frameName in ipairs(frameArr) do
       local frame = _G[frameName]
-      local usable = frame and not (frame.IsForbidden and frame:IsForbidden())
-      if
-        usable
-        and frame.IsVisible
-        and frame:IsVisible()
-        and not (frame.IsProtected and frame:IsProtected())
-      then
+      if CanHide(frame) then
         pcall(frame.Hide, frame)
         closed = true
       end
