@@ -15,6 +15,8 @@
 --    • IsVendorMountOut / IsInPetBattle / IsFeignDeathActive / IsCustomConditionTrue
 --      / IsCustomLockConditionTrue (DB.global.customLockCondition).
 --    • OPie path may free centering + hide crosshair via FreeLook helpers.
+--    • CloseUnlockWindows — out-of-combat close of those same windows (Close Windows
+--      option, called by the Mouse Look key).
 --  Does not: Own Lock/Unlock or ShouldFreeLookBeOff aggregation.
 --  Related: Constants/FrameWatch.lua, Core/FreeLook/FreeLookController.lua,
 --  Core/Runtime/UserLuaCondition.lua, UI/Options/Tabs/TabAutoCursorUnlock.lua,
@@ -108,6 +110,49 @@ function CM.IsUnlockFrameVisible()
   return CursorUnlockFrameVisible(CM.Constants.FramesToCheck)
     or CursorUnlockFrameVisible(CM.DB.global.watchlist)
     or CursorUnlockFrameGroupVisible(CM.Constants.WildcardFramesToCheck)
+end
+
+-- Closes what CM.IsUnlockFrameVisible sees (UI panels, bags, menus, watched frames) so the
+-- Mouse Look key can re-lock. Out of combat only: UI panels and protected frames can't be
+-- hidden in lockdown. OPie / wildcard groups are left to their owner.
+function CM.CloseUnlockWindows()
+  if _G.InCombatLockdown() then
+    return false
+  end
+  local closed = false
+  if _G.CloseAllWindows then
+    pcall(_G.CloseAllWindows)
+  end
+  if _G.CloseAllBags then
+    pcall(_G.CloseAllBags)
+  end
+  local Menu = _G.Menu
+  if Menu and Menu.GetManager then
+    pcall(function()
+      local manager = Menu.GetManager()
+      if manager:IsAnyMenuOpen() then
+        manager:CloseMenus()
+      end
+    end)
+  end
+  local function HideList(frameArr)
+    for _, frameName in ipairs(frameArr) do
+      local frame = _G[frameName]
+      local usable = frame and not (frame.IsForbidden and frame:IsForbidden())
+      if
+        usable
+        and frame.IsVisible
+        and frame:IsVisible()
+        and not (frame.IsProtected and frame:IsProtected())
+      then
+        pcall(frame.Hide, frame)
+        closed = true
+      end
+    end
+  end
+  HideList(CM.Constants.FramesToCheck)
+  HideList(CM.DB.global.watchlist)
+  return closed
 end
 
 -- Cache compiled custom-condition Lua; OnUpdate calls this often and empty/default
