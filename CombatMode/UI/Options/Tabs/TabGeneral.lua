@@ -495,7 +495,7 @@ UI.Options.AddTab({
     })
     ctx:Toggle({
       label = L["Close Windows With Mouse Look"],
-      desc = L["Automatically close all open windows when toggling Mouse Look on"],
+      desc = L["Automatically close all open windows when toggling Mouse Look on."],
       newFeatureFlag = true,
       get = function()
         return CM.DB.global.closeWindowsOnMouseLook

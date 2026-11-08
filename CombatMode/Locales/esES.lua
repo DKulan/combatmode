@@ -154,7 +154,7 @@ L["Hold this key to show tooltips while Mouse Look is on."] =
   "Mantén esta tecla para mostrar las descripciones emergentes mientras la vista con ratón esté activa."
 L["Auto Sheath"] = "Envainar automáticamente"
 L["Close Windows With Mouse Look"] = "Cerrar ventanas con Mouse Look"
-L["Automatically close all open windows when toggling Mouse Look on"] =
+L["Automatically close all open windows when toggling Mouse Look on."] =
   "Cierra automáticamente todas las ventanas abiertas al activar Mouse Look"
 L["Sheath weapons automatically with Mouse Look."] =
   "Envaina las armas automáticamente junto con la vista con ratón."
