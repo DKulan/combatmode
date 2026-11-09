@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [5.4.7] - 2026-11-09
 
+### Changed
+
+- **Close Windows With Mouse Look** moved to the Mouse Look section of the General tab.
+
 ### Fixed
 
 - The **Reticle CVar** editor now uses the game's help text for CVars without a written description.
