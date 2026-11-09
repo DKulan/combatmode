@@ -87,15 +87,7 @@ local driverFrame
 
 -- Public number for compares/arithmetic; secret measures (e.g. tainted StatusBar
 -- GetWidth/GetAlpha) fall back so we never branch on secret values under taint.
-local function PublicNumber(value, fallback)
-  if type(value) ~= "number" then
-    return fallback
-  end
-  if issecretvalue and issecretvalue(value) then
-    return fallback
-  end
-  return value
-end
+local PublicNumber = CM.Safe.PublicNumber
 
 local function Clamp01(value)
   return math.max(0, math.min(1, value))
