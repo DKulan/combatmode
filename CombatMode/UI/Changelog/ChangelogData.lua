@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - The **Reticle CVar** editor now uses the game's help text for CVars without a written description.
+- The **Target Lock** marker now stays centered on the nameplate's health bar with Plater and similar nameplate addons, instead of drifting sideways as the enemy loses health.
 
 ## [5.4.6] - 2026-11-08
 
