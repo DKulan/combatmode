@@ -218,7 +218,26 @@ local function NewLayout(content, width, clip)
     return control
   end
 
+  --- Adds the "i" button when the setup wizard has a step for this section header (`section`)
+  --- or option label (`label`) on the layout's tab; it opens that step's explanation popup.
+  local function AttachWizardInfo(self, control, section, label)
+    local wizard = CM.Wizard
+    local tab = self.search and self.search.tab
+    if not (wizard and wizard.FindStep and tab) then
+      return
+    end
+    local step = wizard.FindStep(tab, section, label)
+    if step then
+      UI.AttachInfoButton(control, function()
+        wizard.ShowInfo(step)
+      end)
+    end
+  end
+
   function ctx:Place(control, o)
+    if o and type(o.label) == "string" and control.frame then
+      AttachWizardInfo(self, control, nil, UI.StripColors(o.label))
+    end
     if control.SetWidthTo then
       control.SetWidthTo(self.width)
     end
@@ -232,7 +251,9 @@ local function NewLayout(content, width, clip)
     self.section = UI.StripColors(name)
     -- The previous section ends before this header, so close it before placing.
     self.sectionRec = nil
-    local control = self:Place(UI.MakeHeader(self.content, text))
+    local headerControl = UI.MakeHeader(self.content, text)
+    AttachWizardInfo(self, headerControl, self.section, nil)
+    local control = self:Place(headerControl)
     if self.search and self.section and self.section ~= "" then
       self.sectionRec = {
         label = self.section,

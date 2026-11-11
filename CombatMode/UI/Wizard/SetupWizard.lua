@@ -20,6 +20,8 @@
 --      (crosshair, Assist HUD or Ally HUD) undimmed with its own outline, and the balloon keeps clear.
 --    • Steps with `slides = { key, count[, hold[, fade]] }` show those screenshots (Assets/wizard/<key>_<n>.blp,
 --      built by scripts/art/make-wizard-previews.py) flipping in order inside the balloon.
+--    • Wizard.FindStep / Wizard.ShowInfo: Options adds an "i" button to every header / option that has
+--      a step; it opens that step alone as an info popup (UI.ShowSpotlight `info`), never during the tour.
 --    • global.seenWizard is set when the tour finishes or is skipped (Skip / ESC).
 --    • Combat: Start waits for combat to end; entering combat mid-tour ends the tour.
 --  Does not: Cover every option (only the basics and the major features), or own any setting
@@ -405,6 +407,39 @@ function ShowStep(i)
     end
   end
   C_Timer.After(SETTLE_DELAY, WaitForScroll)
+end
+
+--- The step that explains the section headed `section` (a ctx:Header title) or the option labelled
+--- `label` on tab `tab`, or nil. Options puts an "i" button on those headers / rows.
+function Wizard.FindStep(tab, section, label)
+  for _, step in ipairs(STEPS) do
+    if step.tab == tab then
+      if section and step.section == section then
+        return step
+      end
+      if label and not step.section and step.label == label then
+        return step
+      end
+    end
+  end
+end
+
+--- Shows a step's explanation alone (slides, text, warning) in a centred popup with a Close
+--- button: no dim, step count or Back / Next. Ignored while the tour runs.
+function Wizard.ShowInfo(step)
+  if active or not step then
+    return
+  end
+  UI.ShowSpotlight({}, {
+    info = true,
+    title = step.title,
+    body = step.body,
+    warning = step.warning,
+    slides = SlidePaths(step.slides),
+    slideHold = step.slides and step.slides[3],
+    slideFade = step.slides and step.slides[4],
+    onSkip = UI.HideSpotlight,
+  })
 end
 
 --- Starts (or restarts) the tour from the first step. Waits for combat to end.

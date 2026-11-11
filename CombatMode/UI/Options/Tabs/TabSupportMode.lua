@@ -32,15 +32,15 @@ local BIND_NAME = "Combat Mode - Support Mode"
 
 -- char.supportModeNameplateMode (applied by CM.SyncSupportModeNameplates in CVarManager).
 local NAMEPLATE_VALUES = {
-  keep = L["Don't change"],
-  friendly = L["Friendly only"],
-  all = L["Friendly and enemy"],
-  none = L["Hide all"],
+  keep = L["Don't Change"],
+  friendly = L["Friendly Only"],
+  all = L["Friendly and Enemy"],
+  none = L["Hide All"],
 }
 local NAMEPLATE_ORDER = { "keep", "friendly", "all", "none" }
 
 -- Stored as "p<page>" in the dropdown; the DB keeps the number (0 = no page swap).
-local PAGE_VALUES = { p0 = L["Don't swap"] }
+local PAGE_VALUES = { p0 = L["Don't Swap"] }
 local PAGE_ORDER = { "p0" }
 for page = 2, tonumber(_G.NUM_ACTIONBAR_PAGES) or 6 do
   local id = "p" .. page

@@ -42,7 +42,7 @@ def lerp(a, b, t):
     return tuple(a[i] + (b[i] - a[i]) * t for i in range(3))
 
 
-def main():
+def main(glyph_char="C", out=OUT):
     n = SIZE * SS
     cx = n / 2
     cy = n / 2 - 1.0 * SS  # a little up: the shadow takes the bottom
@@ -76,13 +76,13 @@ def main():
     rgba = np.concatenate([out_rgb / safe, out_a[..., None] * 255], -1)
 
     base = Image.fromarray(np.clip(rgba, 0, 255).astype(np.uint8), "RGBA")
-    # the "C", centred on the face
+    # the glyph ("C"), centred on the face
     glyph = Image.new("L", (n, n), 0)
     f = font(int(DISC * SS * 0.78))
     d = ImageDraw.Draw(glyph)
-    bbox = d.textbbox((0, 0), "C", font=f)
+    bbox = d.textbbox((0, 0), glyph_char, font=f)
     gw, gh = bbox[2] - bbox[0], bbox[3] - bbox[1]
-    d.text((cx - gw / 2 - bbox[0], cy - gh / 2 - bbox[1]), "C", font=f, fill=255)
+    d.text((cx - gw / 2 - bbox[0], cy - gh / 2 - bbox[1]), glyph_char, font=f, fill=255)
     ink = Image.new("RGBA", (n, n), GLYPH + (0,))
     ink.putalpha(glyph)
     base.alpha_composite(ink)
@@ -94,10 +94,10 @@ def main():
     a = stack[..., 3:]
     rgb = np.where(a > 0, stack[..., :3] / np.maximum(a / 255, 1e-6), 0)
     final = np.concatenate([rgb, a], -1)
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    Image.fromarray(np.clip(final + 0.5, 0, 255).astype(np.uint8), "RGBA").save(OUT)
-    subprocess.run([sys.executable, os.path.join(HERE, "compress-tga.py"), OUT], check=True)
-    print("wrote", OUT)
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    Image.fromarray(np.clip(final + 0.5, 0, 255).astype(np.uint8), "RGBA").save(out)
+    subprocess.run([sys.executable, os.path.join(HERE, "compress-tga.py"), out], check=True)
+    print("wrote", out)
 
 
 if __name__ == "__main__":

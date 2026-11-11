@@ -446,7 +446,7 @@ L["Tap to toggle Support Mode on or off."] = "눌러서 지원 모드를 켜거�
 L["Support Bar Page"] = "지원 단축바 페이지"
 L["The main action bar page shown while Support Mode is on. Place support abilities here. Exiting Support Mode returns to Page 1."] =
   "지원 모드가 켜져 있는 동안 표시되는 주 행동 단축바 페이지입니다. 지원 능력을 여기에 두세요. 지원 모드를 끝내면 1페이지로 돌아갑니다."
-L["Don't swap"] = "전환 안 함"
+L["Don't Swap"] = "전환 안 함"
 L["Page %d"] = "%d페이지"
 L["Requires Reticle Targeting"] = "조준선 대상 지정 필요"
 L["Support"] = "지원"
@@ -456,10 +456,10 @@ L["While Support Mode is active, the Vignette adopts the Support crosshair color
 L["Nameplate Behavior"] = "이름표 동작"
 L["Choose which nameplates appear while in Support Mode. Normal settings are restored when exiting Support Mode."] =
   "지원 모드 중에 표시할 이름표를 선택합니다. 종료하면 기본 설정이 복원됩니다."
-L["Don't change"] = "변경 안 함"
-L["Friendly only"] = "우호적 대상만"
-L["Friendly and enemy"] = "우호적 대상과 적"
-L["Hide all"] = "모두 숨기기"
+L["Don't Change"] = "변경 안 함"
+L["Friendly Only"] = "우호적 대상만"
+L["Friendly and Enemy"] = "우호적 대상과 적"
+L["Hide All"] = "모두 숨기기"
 
 -- TabAutoCursorUnlock.lua: Auto Unlock tab
 L["Auto Unlock"] = "자동 해제"
@@ -528,6 +528,8 @@ L["Back"] = "뒤로"
 L["Next"] = "다음"
 L["Finish"] = "완료"
 L["Skip tour"] = "둘러보기 건너뛰기"
+L["Click to learn more about this feature"] =
+  "클릭하여 이 기능에 대해 자세히 알아보세요"
 L["Assist HUD"] = "보조 HUD"
 L["Target Lock"] = "대상 고정"
 L["Party Wheel"] = "파티 휠"
@@ -577,7 +579,6 @@ L["Link"] = "링크"
 L["Copy the %s link (Ctrl+C), then paste it in your browser."] =
   "%s 링크를 복사(Ctrl+C)한 뒤 브라우저에 붙여넣으세요."
 L["Character-specific option."] = "캐릭터별 옵션입니다."
-L["NEW"] = "신규"
 L["ON"] = "켬"
 L["OFF"] = "끔"
 L["Are you sure?"] = "정말 진행하시겠습니까?"

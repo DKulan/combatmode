@@ -28,11 +28,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - The **Setup Wizard** has a **Support Mode** step, with screenshots and a check for your Support Mode key.
 - **Reset All Colors** button in the **Reaction Colors** editor, to clear every custom crosshair color at once.
 - **Also Cycle Through** on the **Ally Cycle** tab: add **Your Pet** and/or **Party Pets** (everyone else's pets) to the cycle, after the group members. The Ally HUD shows a targeted pet with a gold paw-print crest in place of the role icon, and the count includes them. **Your Pet** is on by default.
+- A small gold **"i" button** beside each section header and option that the **Setup Wizard** covers. Click it to read that feature's explanation, with its screenshots, in a popup, without running the tour.
 
 ### Changed
 
 - The tab list in the options sidebar now scrolls when the window is too short to show every tab, and selecting a tab (from search, What's New or the wizard) scrolls it into view.
-- The help buttons in the options (beside dropdowns and keybinds, and in the code boxes) now use the game's gold "i" info icon instead of a "?", and the character-specific "C" badge is a matching gold button.
+- The help buttons in the options (beside dropdowns and keybinds, and in the code boxes) now use a gold round "?" button, matching the character-specific "C" badge.
+- The **Reticle CVar** editor explains every CVar in full: hover a row for what its values mean, what Action Combat Mode sets and why, and which features depend on it (including how **SoftTargetMatchLocked** and **SoftTargetWithLocked** differ).
 - **Ignore Friendlies** is gone: Reticle Targeting now always skips friendly units. Use **Ally Cycle**, **Support Mode** and the **Party Wheel** to target allies. Friendly soft targeting is no longer switched on by that option; set **SoftTargetFriend** in the Reticle CVar editor (it stays on for characters that had Ignore Friendlies off). The **Toggle Focus Any** click-cast action is replaced by **Toggle Focus Enemy**, and the Prelines editor shows one preline per Auto Target Lock state.
 
 ### Fixed

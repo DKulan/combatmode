@@ -104,6 +104,11 @@ CM.Constants.UnknownAddonIcon = uiPath .. "question-mark.tga"
 -- The character-specific "C" badge: a gold round button like Blizzard's "i" info button, 64x64 with
 -- the disc filling the canvas (scripts/art/make-char-badge.py builds it).
 CM.Constants.CharBadge = uiPath .. "char-badge.tga"
+-- The same gold button with a "?", beside options that have a short explanation tooltip
+-- (scripts/art/make-help-badge.py builds it).
+CM.Constants.HelpBadge = uiPath .. "help-badge.tga"
+-- The gold pill behind the "NEW" tag (no text; scripts/art/make-new-badge.py builds it).
+CM.Constants.NewBadge = uiPath .. "new-badge.tga"
 -- The Ally HUD's pet crest (a paw print on the same gold button, in the role icon's place for pets;
 -- scripts/art/make-pet-crest.py builds it).
 CM.Constants.PetCrest = uiPath .. "pet-crest.tga"

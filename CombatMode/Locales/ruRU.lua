@@ -469,7 +469,7 @@ L["Tap to toggle Support Mode on or off."] =
 L["Support Bar Page"] = "Страница панели поддержки"
 L["The main action bar page shown while Support Mode is on. Place support abilities here. Exiting Support Mode returns to Page 1."] =
   "Страница основной панели команд, показываемая в режиме поддержки. Разместите здесь умения поддержки. При выходе из режима поддержки возвращается страница 1."
-L["Don't swap"] = "Не менять"
+L["Don't Swap"] = "Не менять"
 L["Page %d"] = "Страница %d"
 L["Requires Reticle Targeting"] = "Требуется наведение по прицелу"
 L["Support"] = "Поддержка"
@@ -479,10 +479,10 @@ L["While Support Mode is active, the Vignette adopts the Support crosshair color
 L["Nameplate Behavior"] = "Поведение индикаторов здоровья"
 L["Choose which nameplates appear while in Support Mode. Normal settings are restored when exiting Support Mode."] =
   "Выберите, какие индикаторы показываются в режиме поддержки. При выходе возвращаются обычные настройки."
-L["Don't change"] = "Не менять"
-L["Friendly only"] = "Только дружественные"
-L["Friendly and enemy"] = "Дружественные и вражеские"
-L["Hide all"] = "Скрыть все"
+L["Don't Change"] = "Не менять"
+L["Friendly Only"] = "Только дружественные"
+L["Friendly and Enemy"] = "Дружественные и вражеские"
+L["Hide All"] = "Скрыть все"
 
 -- TabAutoCursorUnlock.lua: Auto Unlock tab
 L["Auto Unlock"] = "Авторазблокировка"
@@ -553,6 +553,8 @@ L["Back"] = "Назад"
 L["Next"] = "Далее"
 L["Finish"] = "Готово"
 L["Skip tour"] = "Пропустить обзор"
+L["Click to learn more about this feature"] =
+  "Нажмите, чтобы узнать больше об этой функции"
 L["Assist HUD"] = "HUD помощника"
 L["Target Lock"] = "Захват цели"
 L["Party Wheel"] = "Колесо группы"
@@ -608,7 +610,6 @@ L["Copy the %s link (Ctrl+C), then paste it in your browser."] =
   "Скопируйте ссылку на %s (Ctrl+C) и вставьте ее в браузер."
 L["Character-specific option."] =
   "Настройка для отдельного персонажа."
-L["NEW"] = "НОВОЕ"
 L["ON"] = "ВКЛ"
 L["OFF"] = "ВЫКЛ"
 L["Are you sure?"] = "Вы уверены?"

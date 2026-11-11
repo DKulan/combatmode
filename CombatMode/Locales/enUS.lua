@@ -373,7 +373,7 @@ L["Tap to toggle Support Mode on or off."] = true
 L["Support Bar Page"] = true
 L["The main action bar page shown while Support Mode is on. Place support abilities here. Exiting Support Mode returns to Page 1."] =
   true
-L["Don't swap"] = true
+L["Don't Swap"] = true
 L["Page %d"] = true
 L["Requires Reticle Targeting"] = true
 L["Support"] = true
@@ -383,10 +383,10 @@ L["While Support Mode is active, the Vignette adopts the Support crosshair color
 L["Nameplate Behavior"] = true
 L["Choose which nameplates appear while in Support Mode. Normal settings are restored when exiting Support Mode."] =
   true
-L["Don't change"] = true
-L["Friendly only"] = true
-L["Friendly and enemy"] = true
-L["Hide all"] = true
+L["Don't Change"] = true
+L["Friendly Only"] = true
+L["Friendly and Enemy"] = true
+L["Hide All"] = true
 
 -- TabAutoCursorUnlock.lua: Auto Unlock tab
 L["Auto Unlock"] = true
@@ -443,6 +443,7 @@ L["Back"] = true
 L["Next"] = true
 L["Finish"] = true
 L["Skip tour"] = true
+L["Click to learn more about this feature"] = true
 L["Assist HUD"] = true
 L["Target Lock"] = true
 L["Party Wheel"] = true
@@ -490,7 +491,6 @@ L["See what's new in this version"] = true
 L["Link"] = true
 L["Copy the %s link (Ctrl+C), then paste it in your browser."] = true
 L["Character-specific option."] = true
-L["NEW"] = true
 L["ON"] = true
 L["OFF"] = true
 L["Are you sure?"] = true

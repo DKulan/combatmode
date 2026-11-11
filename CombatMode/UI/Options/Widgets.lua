@@ -793,8 +793,8 @@ local CHAR_SCOPE_MARK_W = 16
 local CHAR_SCOPE_MARK_GAP = 4
 local CHAR_SCOPE_TOOLTIP = L["Character-specific option."]
 
--- "NEW" tag for tabs and options: small accent-coloured text, superscript style, at the top
--- right of the label it belongs to. Drawn by the addon so it follows the theme accent.
+-- "NEW" tag for tabs and options: a small gold pill, superscript style, at the top
+-- right of the label it belongs to (after the character mark and the "i" button).
 UI.NewFeatureBadge = {
   size = 8, -- font size
   gap = 3, -- space after the label text
@@ -802,16 +802,21 @@ UI.NewFeatureBadge = {
   lift = 3, -- how far the tag's top sits above the label's top
 }
 
+local INFO_PULSE_MIN, INFO_PULSE_SPREAD = 5, 0 -- seconds between pulses (min + random spread)
+local INFO_PULSE_TIME, INFO_PULSE_SCALE = 0.9, 2
+
 --- NEW tag frame. Caller places it (PlaceNewFeatureBadge, or beside a tab label).
 function UI.CreateNewFeatureBadge(parent)
   local badge = CreateFrame("Frame", nil, parent)
   badge:SetFrameLevel(parent:GetFrameLevel() + 5)
-  badge:SetSize(22, 10)
-  local text = UI.CreateFontString(badge, "OVERLAY", UI.NewFeatureBadge.size, "GameFontNormal")
-  text:SetPoint("TOPLEFT", badge, "TOPLEFT", 0, 0)
-  text:SetText(L["NEW"])
-  text:SetTextColor(C.accent[1], C.accent[2], C.accent[3])
-  badge.text = text
+  -- The gold pill with "NEW" in it (scripts/art/make-new-badge.py; the word is part of the art).
+  badge:SetSize(28, 14)
+  local pill = badge:CreateTexture(nil, "ARTWORK")
+  pill:SetTexture(CM.Constants.NewBadge)
+  pill:SetAllPoints(badge)
+
+  -- The What's New button's shine sweeps across it every few seconds (kept off the pill's corners).
+  UI.CreateShineLoop(badge, 10, 0.6, 4, 2)
   return badge
 end
 
@@ -823,6 +828,12 @@ function UI.PlaceNewFeatureBadge(badge, label, labelW, afterRegion, gapOverride)
     return
   end
   badge:ClearAllPoints()
+  -- The "i" button (UI.AttachInfoButton) sits before the tag.
+  local infoButton = badge.infoButton
+  if infoButton and infoButton:IsShown() then
+    badge:SetPoint("TOPLEFT", infoButton, "TOPRIGHT", gapOverride or UI.NewFeatureBadge.gap, 0)
+    return
+  end
   local gap = gapOverride
   if gap == nil then
     gap = UI.NewFeatureBadge.gap
@@ -837,6 +848,108 @@ function UI.PlaceNewFeatureBadge(badge, label, labelW, afterRegion, gapOverride)
     titleW = labelW
   end
   badge:SetPoint("TOPLEFT", label, "TOPLEFT", titleW + gap, lift)
+end
+
+local INFO_BUTTON_SIZE = 18
+local INFO_BUTTON_GAP = 6
+
+--- Small gold "i" button after a control's title (section header or option row) that calls
+--- `onClick` (the setup wizard's explanation popup). It sits past the char-scope mark and NEW tag
+--- and re-places itself whenever the control is laid out again.
+function UI.AttachInfoButton(control, onClick)
+  local frame = control.frame
+  local label = control.label or frame.label
+  local button = CreateFrame("Button", nil, frame)
+  button:SetSize(INFO_BUTTON_SIZE, INFO_BUTTON_SIZE)
+  button:SetFrameLevel(frame:GetFrameLevel() + 6)
+  local badge = CreateImageBadge(button, HELP_INFO_TEXTURE, HELP_INFO_CROP)
+  UI.AttachTooltip(button, L["Click to learn more about this feature"])
+  button:HookScript("OnEnter", function()
+    badge:SetHover(true)
+  end)
+  button:HookScript("OnLeave", function()
+    badge:SetHover(false)
+  end)
+  button:SetScript("OnClick", function()
+    UI.HideTooltip()
+    onClick()
+  end)
+
+  -- Now and then a soft copy of the icon swells and fades out from behind it, to draw the eye.
+  local pulse = button:CreateTexture(nil, "BACKGROUND")
+  pulse:SetTexture(HELP_INFO_TEXTURE)
+  pulse:SetTexCoord(HELP_INFO_CROP[1], HELP_INFO_CROP[2], HELP_INFO_CROP[3], HELP_INFO_CROP[4])
+  pulse:SetBlendMode("ADD")
+  pulse:SetPoint("CENTER", button, "CENTER", 0, 0)
+  pulse:SetSize(INFO_BUTTON_SIZE, INFO_BUTTON_SIZE)
+  pulse:SetAlpha(0)
+  local pulseToken = 0
+  local function ScheduleNext(token)
+    C_Timer.After(INFO_PULSE_MIN + math.random() * INFO_PULSE_SPREAD, function()
+      if token ~= pulseToken or not button:IsVisible() then
+        return
+      end
+      local t = 0
+      button:SetScript("OnUpdate", function(_, elapsed)
+        t = t + (elapsed or 0)
+        local p = min(t / INFO_PULSE_TIME, 1)
+        local size = INFO_BUTTON_SIZE * (1 + (INFO_PULSE_SCALE - 1) * p)
+        pulse:SetSize(size, size)
+        pulse:SetAlpha(0.8 * (1 - p))
+        if p >= 1 then
+          button:SetScript("OnUpdate", nil)
+          pulse:SetAlpha(0)
+          ScheduleNext(token)
+        end
+      end)
+    end)
+  end
+  button:SetScript("OnShow", function()
+    pulseToken = pulseToken + 1
+    ScheduleNext(pulseToken)
+  end)
+  button:SetScript("OnHide", function()
+    pulseToken = pulseToken + 1
+    button:SetScript("OnUpdate", nil)
+    pulse:SetAlpha(0)
+  end)
+  if button:IsVisible() then
+    ScheduleNext(pulseToken)
+  end
+
+  local function Place()
+    button:ClearAllPoints()
+    if not label then
+      button:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -4, -4)
+      return
+    end
+    local x = label:GetStringWidth() or 0
+    local labelW = label:GetWidth()
+    if labelW and labelW > 0 and x > labelW then
+      x = labelW
+    end
+    local scopeTag = control.scopeTag
+    if scopeTag and scopeTag:IsShown() then
+      x = x + CHAR_SCOPE_MARK_W + CHAR_SCOPE_MARK_GAP
+    end
+    local _, fontH = label:GetFont()
+    button:SetPoint("LEFT", label, "TOPLEFT", x + INFO_BUTTON_GAP, -((fontH or 12) / 2))
+    -- The NEW tag follows the button.
+    local tag = control.newFeatureBadge or control.badge
+    if tag then
+      tag.infoButton = button
+      UI.PlaceNewFeatureBadge(tag, label, nil, nil, control.badge and UI.NewFeatureBadge.headerGap)
+    end
+  end
+  local previous = control.SetWidthTo
+  function control.SetWidthTo(width)
+    local result = previous and previous(width)
+    Place()
+    return result
+  end
+  Place()
+  control.infoButton = button
+  return button
 end
 
 --- Place the © immediately after the title glyphs (not at the right edge of the
@@ -1832,7 +1945,7 @@ local function AddHelpBadge(control, row, button, tooltip)
   local helpBtn = CreateFrame("Button", nil, row)
   helpBtn:SetSize(HELP_BADGE_SIZE, HELP_BADGE_SIZE)
   helpBtn:SetPoint("RIGHT", button, "LEFT", -HELP_BADGE_GAP, 0)
-  local help = CreateImageBadge(helpBtn, HELP_INFO_TEXTURE, HELP_INFO_CROP)
+  local help = CreateImageBadge(helpBtn, CM.Constants.HelpBadge)
   helpBtn:SetScript("OnEnter", function()
     help:SetHover(true)
   end)
@@ -2877,7 +2990,7 @@ function UI.MakeTextInput(parent, opts)
     if helpBtn.SetPropagateMouseClicks then
       helpBtn:SetPropagateMouseClicks(false)
     end
-    local help = CreateImageBadge(helpBtn, HELP_INFO_TEXTURE, HELP_INFO_CROP)
+    local help = CreateImageBadge(helpBtn, CM.Constants.HelpBadge)
     helpBtn:SetScript("OnEnter", function()
       help:SetHover(true)
     end)
