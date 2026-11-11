@@ -44,7 +44,7 @@ CM.Constants.Macros = {
   -- A condition group with only @unit (no boolean) is ALWAYS true — need ,exists
   -- (or harm/nodead/etc.) so unlock / fallthrough works. [] = focus player last.
   CM_ToggleFocusAny = "/cleartarget [@focus,exists]\n/focus [@focus,exists] none; [@target,exists]; [@mouseover,exists][]\n/tar [@focus,exists]",
-  CM_ToggleFocusEnemy = "/cleartarget [@focus,exists]\n/focus [@focus,exists] none; [@target,harm,nodead]; [@mouseover,harm,nodead][]\n/tar [@focus,exists]",
+  CM_ToggleFocusEnemy = "/cleartarget [@focus,exists]\n/focus [@focus,exists] none; [@target,harm,nodead]; [@mouseover,harm,nodead]\n/tar [@focus,exists]",
   -- Target Lock "Switch" behavior: the unit under the crosshair becomes the lock (replacing any
   -- current one); an empty crosshair unlocks. The Enemy variant ignores a friendly / dead unit under
   -- the crosshair (the lock stays: cleartarget + the focus re-target below restore the same target).

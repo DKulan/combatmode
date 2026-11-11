@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Pet ground abilities such as **Move To** now free your cursor so you can place the marker, then lock Mouse Look again once you click or press Escape. Before, the marker appeared but the cursor stayed locked.
+- **Target Lock** no longer locks a friendly NPC with **Ignore Friendlies** on. After interacting with an NPC (it becomes your target), pressing Target Lock locked it anyway.
 
 ## [5.4.7] - 2026-11-09
 
