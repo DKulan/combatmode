@@ -221,7 +221,7 @@ return false
     -- Nameplates while the mode is on: "keep" (untouched) | "friendly" | "all" | "none"
     supportModeNameplateMode = "friendly",
     -- The unit under the crosshair beats a hard target / Ally Cycle pick (false: the target first)
-    supportModeCrosshairFirst = true,
+    supportModeCrosshairFirst = false,
     supportModeTintVignette = true, -- the Vignette takes the Support crosshair color while on
     supportModeActive = false, -- session flag: a reload while on returns to page 1
   },

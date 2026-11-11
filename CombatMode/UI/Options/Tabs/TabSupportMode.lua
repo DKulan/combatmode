@@ -99,7 +99,7 @@ UI.Options.AddTab({
       desc = L["Prioritizes the ally under your crosshair over other friendly targets (e.g. Ally Cycle). Disable to prioritize your selected target instead."],
       charSpecific = true,
       get = function()
-        return CM.DbBool(CM.DB.char.supportModeCrosshairFirst, true)
+        return CM.DbBool(CM.DB.char.supportModeCrosshairFirst, false)
       end,
       set = function(value)
         CM.DB.char.supportModeCrosshairFirst = value and true or false

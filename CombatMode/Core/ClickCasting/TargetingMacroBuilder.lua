@@ -856,7 +856,7 @@ local SUPPORT_ALLY_UNITS = "[@mouseover,help][@softfriend,help]"
 -- cycled ally still works when nobody else is aimed at.
 local SUPPORT_LIVING_TARGET = "[@target,help,nodead]"
 local SUPPORT_CAST_UNITS = SUPPORT_LIVING_TARGET .. SUPPORT_ALLY_UNITS
--- Crosshair First (char.supportModeCrosshairFirst, default on): the unit under the crosshair
+-- Crosshair First (char.supportModeCrosshairFirst, default off): the unit under the crosshair
 -- beats a hard target or an Ally Cycle pick, but not Target Lock (a living friendly focus), as
 -- with enemies; then the living hard target, then the soft friend. Off: the order above (the
 -- hard target first).
@@ -866,7 +866,7 @@ local SUPPORT_CAST_UNITS_CROSSHAIR_FIRST = "[@focus,help,nodead][@mouseover,help
 
 local function SupportCastUnits()
   local char = CM.DB and CM.DB.char
-  if char and CM.DbBool(char.supportModeCrosshairFirst, true) then
+  if char and CM.DbBool(char.supportModeCrosshairFirst, false) then
     return SUPPORT_CAST_UNITS_CROSSHAIR_FIRST
   end
   return SUPPORT_CAST_UNITS
