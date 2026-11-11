@@ -98,6 +98,7 @@ CameraZoomIn
 CameraZoomOut
 CANCEL
 CanLootUnit
+CastPetAction
 ChangeActionBarPage
 CLASS_ICON_TCOORDS
 ClearCursor
@@ -149,6 +150,7 @@ GetNormalizedRealmName
 GetNumGroupMembers
 GetNumMacros
 GetNumSubgroupMembers
+GetPetActionInfo
 GetRaidTargetIndex
 GetRealmName
 GetSheathState

@@ -24,6 +24,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The tab list in the options sidebar now scrolls when the window is too short to show every tab, and selecting a tab (from search, What's New or the wizard) scrolls it into view.
 - The help buttons in the options (beside dropdowns and keybinds, and in the code boxes) now use the game's gold "i" info icon instead of a "?", and the character-specific "C" badge is a matching gold button.
 
+### Fixed
+
+- Pet ground abilities such as **Move To** now free your cursor so you can place the marker, then lock Mouse Look again once you click or press Escape. Before, the marker appeared but the cursor stayed locked.
+
 ## [5.4.7] - 2026-11-09
 
 ### Changed
