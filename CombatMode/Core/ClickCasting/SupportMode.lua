@@ -9,7 +9,7 @@
 --  Architecture / how it works:
 --    • Enabled = Reticle Targeting on and the key bound (no master toggle).
 --    • CombatModeSupportMode (SecureHandlerBaseTemplate) holds the state (attribute sm = 1 / 0)
---      and a frame ref to every click-cast proxy with more than one macro text (the Target
+--      (the key's macro also clears a Target Lock of the other kind) and a frame ref to every click-cast proxy with more than one macro text (the Target
 --      Lock and cycle keys too: their Support Mode texts only take friendly units).
 --      BindingOverrides and the Party Wheel route buttons store them out of combat
 --      (CM.SetModeMacroText: sm-off / sm-on attributes); the key's wrapped OnClick copies the
@@ -55,6 +55,10 @@ local tonumber = _G.tonumber
 local BIND_NAME = "Combat Mode - Support Mode"
 -- Leaving Support Mode always returns to the first bar page.
 local EXIT_PAGE = 1
+-- Target Lock is mode-specific (Support Mode locks allies, the regular mode enemies), so a mode
+-- swap clears a lock of the other kind. Neutral focus targets stay.
+local DROP_HOSTILE_LOCK = "/clearfocus [@focus,harm]"
+local DROP_FRIENDLY_LOCK = "/clearfocus [@focus,help]"
 
 local Handler
 local KeyButton
@@ -256,8 +260,16 @@ local function ApplyImpl()
   end
   local page = CM.GetSupportModePage()
   KeyButton:SetAttribute("useOnKeyDown", true)
-  Handler:SetAttribute("smenter", page and ("/changeactionbar " .. page) or nil)
-  Handler:SetAttribute("smexit", page and ("/changeactionbar " .. EXIT_PAGE) or nil)
+  -- The key's macro (run on the press, in or out of combat) also drops a Target Lock that the new
+  -- mode can't use: a hostile one entering, a friendly one leaving. The page swap is optional.
+  Handler:SetAttribute(
+    "smenter",
+    DROP_HOSTILE_LOCK .. (page and ("\n/changeactionbar " .. page) or "")
+  )
+  Handler:SetAttribute(
+    "smexit",
+    DROP_FRIENDLY_LOCK .. (page and ("\n/changeactionbar " .. EXIT_PAGE) or "")
+  )
   if not CM.IsSupportModeEnabled() then
     ForceOff()
     return

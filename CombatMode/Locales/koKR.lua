@@ -192,9 +192,6 @@ L["Enables aim-based unit targeting and precise placement of ground-targeted spe
 L["Enable Reticle Targeting"] = "조준선 대상 지정 사용"
 L["Aim the crosshair at units to pick targets instead of tab-targeting."] =
   "탭 대상 지정 대신 조준점을 유닛에 맞춰 대상을 선택합니다."
-L["Ignore Friendlies"] = "아군 무시"
-L["Ignore friendly NPCs and Players, and only target hostile units."] =
-  "우호적인 NPC와 플레이어를 무시하고 적대적인 유닛만 대상으로 지정합니다."
 L["Click Casting Only"] = "클릭 시전만"
 L["Apply reticle targeting logic only to Click Casting binds."] =
   "조준선 대상 지정 로직을 클릭 시전 단축키에만 적용합니다."
@@ -225,11 +222,9 @@ L["Locks your target, or the unit under the crosshair. Tap again to unlock."] =
   "현재 대상 또는 조준점 아래의 유닛을 고정합니다. 다시 누르면 해제됩니다."
 L["Locks the unit under the crosshair, replacing any current lock. Tap with nothing under the crosshair to unlock. Aiming at the unit you already locked keeps the lock."] =
   "조준점 아래의 유닛을 고정하며 기존 고정을 대체합니다. 조준점 아래에 아무것도 없을 때 누르면 해제됩니다. 이미 고정한 유닛을 조준하면 고정이 유지됩니다."
-L["With Ignore Friendlies on, a friendly or dead unit under the crosshair is ignored: the lock stays where it is."] =
-  "'아군 무시'가 켜져 있으면 조준점 아래의 아군이나 죽은 유닛은 무시되며 고정은 그대로 유지됩니다."
 L["Auto Target Lock"] = "자동 대상 고정"
-L["Target Lock engages automatically when attacking units, and in Support Mode when healing an ally."] =
-  "유닛을 공격할 때, 그리고 지원 모드에서 아군을 치유할 때 대상 고정이 자동으로 적용됩니다."
+L["Target Lock engages automatically when attacking units. In Support Mode it only locks the ally you heal."] =
+  "유닛을 공격할 때 대상 고정이 자동으로 적용됩니다. 지원 모드에서는 치유하는 아군만 고정합니다."
 L["Target Lock Marker"] = "대상 고정 표시"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "고정된 대상의 이름표에 조준점 표시를 보여줍니다."
@@ -321,7 +316,6 @@ L["Target Crosshair"] = "조준점 대상 지정"
 L["Clear Focus"] = "주시 대상 해제"
 L["Start Attack"] = "공격 시작"
 L["Pet Attack"] = "소환수 공격"
-L["Toggle Focus Any"] = "주시 대상 전환 (모두)"
 L["Toggle Focus Enemy"] = "주시 대상 전환 (적)"
 L["Run MACRO"] = "MACRO 실행"
 L["— none —"] = "— 없음 —"
@@ -557,8 +551,8 @@ L["A reactive, fully customizable crosshair that adapts to your target and comba
   "대상과 전투 상태에 따라 반응하는, 완전히 사용자 지정 가능한 조준점입니다.\n\n{모양}, {크기}, {위치}를 선택하세요."
 L["Aim at an enemy and the HUD next to your crosshair suggests your {next spell} and shows its key.\n\nAim at something you can interact with and it shows its {name} and your {Interact key} instead.\n\nTurn either on or off, and set its {side}, {size} and {distance} from the crosshair."] =
   "적을 조준하면 조준점 옆의 HUD가 {다음 주문}을 추천하고 단축키를 보여줍니다.\n\n상호작용할 수 있는 대상을 조준하면 대신 그 {이름}과 {상호작용 단축키}를 보여줍니다.\n\n각각 켜거나 끌 수 있으며 조준점에 대한 {방향}, {크기}, {거리}를 설정하세요."
-L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting.\n\n{Ignore Friendlies} makes it skip allies."] =
-  "적을 조준하는 것만으로 대상을 지정하고, 지면 지정 주문과 광역 능력을 Tab 대상 지정 없이 조준점이 가리키는 곳에 바로 사용하세요.\n\n{아군 무시}를 켜면 아군을 건너뜁니다."
+L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting."] =
+  "적을 조준하는 것만으로 대상을 지정하고, 지면 지정 주문과 광역 능력을 Tab 대상 지정 없이 조준점이 가리키는 곳에 바로 사용하세요."
 L["Ground-targeted spells that should be cast at the crosshair location.\n\nType a {spell name or ID} to add it."] =
   "조준점 위치에 시전할 지면 지정 주문입니다.\n\n{주문 이름 또는 ID}를 입력해 추가하세요."
 L["{!Action buttons that are macros cannot inherit Reticle Targeting on their own.}\n\nPress {+} to open the {Macro Composer}, write your macro there and it gets the targeting logic added for you.\n\nThen drag it from this list onto your action bars; {right-click} an icon to edit it."] =
@@ -633,13 +627,9 @@ L["Open Options"] = "옵션 열기"
 -- Editors: macro composer, prelines, crosshair colors and textures, CVar editor
 L["%d / %d characters"] = "%d / %d자"
 L["%s (over the macro limit)"] = "%s (매크로 제한 초과)"
-L["Ignore Friendlies: %s"] = "아군 무시: %s"
 L["Auto Target Lock: %s"] = "자동 대상 고정: %s"
-L["Preline: Ignore Friendlies + No Auto Lock"] = "사전 줄: 아군 무시 + 자동 고정 없음"
-L["Preline: Ignore Friendlies + Auto Lock"] = "사전 줄: 아군 무시 + 자동 고정"
-L["Preline: Target Any Unit + No Auto Lock"] =
-  "사전 줄: 모든 유닛 대상 + 자동 고정 없음"
-L["Preline: Target Any Unit + Auto Lock"] = "사전 줄: 모든 유닛 대상 + 자동 고정"
+L["Preline: No Auto Lock"] = "사전 줄: 자동 고정 없음"
+L["Preline: Auto Lock"] = "사전 줄: 자동 고정"
 L["Macro Composer"] = "매크로 작성기"
 L["The targeting logic preline matching your current Reticle Targeting settings is added automatically before your lines, as the highlighted portion of the macro. To modify it, use the Prelines Editor under %s."] =
   "현재 조준선 대상 지정 설정에 맞는 대상 지정 사전 줄이 매크로의 강조 표시된 부분으로 내 줄 앞에 자동으로 추가됩니다. 수정하려면 %s의 사전 줄 편집기를 사용하세요."
@@ -656,10 +646,8 @@ L["Preline must be %d characters or fewer (room for /click under the 255 macro l
   "사전 줄은 %d자 이하여야 합니다 (매크로 제한 255자 안에서 /click을 위한 공간 확보)."
 L["Inactive — Auto Target Lock is OFF"] = "비활성 — 자동 대상 고정이 꺼져 있음"
 L["Inactive — Auto Target Lock is ON"] = "비활성 — 자동 대상 고정이 켜져 있음"
-L["Inactive — Ignore Friendlies is OFF"] = "비활성 — 아군 무시가 꺼져 있음"
-L["Inactive — Ignore Friendlies is ON"] = "비활성 — 아군 무시가 켜져 있음"
-L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s X %s settings is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
-  "조준선 대상 지정이 켜져 있을 때 각 능력 앞에 삽입되는 대상 지정 사전 줄을 사용자 지정합니다.\n\n• 현재 %s X %s 설정에 맞는 사전 줄만 활성화됩니다.\n• 사전 줄당 최대 %s자 — SecureActionButton 매크로는 %s자로 제한되며, 나머지는 마지막 %s 줄을 위해 남겨 둡니다.\n• %s을(를) 사용해 UI를 다시 불러오고 변경 사항을 적용하세요."
+L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s setting is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
+  "조준선 대상 지정이 켜져 있을 때 각 능력 앞에 삽입되는 대상 지정 사전 줄을 사용자 지정합니다.\n\n• 현재 %s 설정에 맞는 사전 줄만 활성화됩니다.\n• 사전 줄당 최대 %s자 — SecureActionButton 매크로는 %s자로 제한되며, 나머지는 마지막 %s 줄을 위해 남겨 둡니다.\n• %s을(를) 사용해 UI를 다시 불러오고 변경 사항을 적용하세요."
 L["Apply Changes"] = "변경 사항 적용"
 L["Hostile"] = "적대"
 L["NPC"] = "NPC"

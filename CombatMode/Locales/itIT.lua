@@ -192,9 +192,6 @@ L["Enables aim-based unit targeting and precise placement of ground-targeted spe
 L["Enable Reticle Targeting"] = "Attiva puntamento a mirino"
 L["Aim the crosshair at units to pick targets instead of tab-targeting."] =
   "Punta il mirino sulle unità per scegliere i bersagli invece di usare il tab."
-L["Ignore Friendlies"] = "Ignora amichevoli"
-L["Ignore friendly NPCs and Players, and only target hostile units."] =
-  "Ignora PNG e giocatori amichevoli e seleziona solo unità ostili."
 L["Click Casting Only"] = "Solo lancio con clic"
 L["Apply reticle targeting logic only to Click Casting binds."] =
   "Applica la logica del puntamento a mirino solo ai tasti di lancio con clic."
@@ -225,11 +222,9 @@ L["Locks your target, or the unit under the crosshair. Tap again to unlock."] =
   "Blocca il tuo bersaglio o l'unità sotto il mirino. Premi di nuovo per sbloccare."
 L["Locks the unit under the crosshair, replacing any current lock. Tap with nothing under the crosshair to unlock. Aiming at the unit you already locked keeps the lock."] =
   "Blocca l'unità sotto il mirino sostituendo qualsiasi blocco attuale. Premi senza nulla sotto il mirino per sbloccare. Mirare l'unità già bloccata mantiene il blocco."
-L["With Ignore Friendlies on, a friendly or dead unit under the crosshair is ignored: the lock stays where it is."] =
-  "Con «Ignora amichevoli» attivo, un'unità amichevole o morta sotto il mirino viene ignorata: il blocco resta dov'è."
 L["Auto Target Lock"] = "Blocco bersaglio automatico"
-L["Target Lock engages automatically when attacking units, and in Support Mode when healing an ally."] =
-  "Il blocco bersaglio si attiva automaticamente quando attacchi le unità e, in Modalità supporto, quando curi un alleato."
+L["Target Lock engages automatically when attacking units. In Support Mode it only locks the ally you heal."] =
+  "Il blocco bersaglio si attiva automaticamente quando attacchi le unità. In Modalità supporto blocca solo l'alleato che curi."
 L["Target Lock Marker"] = "Indicatore di blocco bersaglio"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "Mostra un indicatore a mirino sulla targhetta del bersaglio bloccato."
@@ -319,7 +314,6 @@ L["Target Crosshair"] = "Bersaglia il mirino"
 L["Clear Focus"] = "Cancella focus"
 L["Start Attack"] = "Inizia attacco"
 L["Pet Attack"] = "Attacco del famiglio"
-L["Toggle Focus Any"] = "Attiva/disattiva focus (qualsiasi)"
 L["Toggle Focus Enemy"] = "Attiva/disattiva focus (nemico)"
 L["Run MACRO"] = "Esegui MACRO"
 L["— none —"] = "— nessuna —"
@@ -556,8 +550,8 @@ L["A reactive, fully customizable crosshair that adapts to your target and comba
   "Un mirino reattivo e completamente personalizzabile che si adatta al bersaglio e allo stato di combattimento.\n\nScegli {aspetto}, {dimensione} e {posizione}."
 L["Aim at an enemy and the HUD next to your crosshair suggests your {next spell} and shows its key.\n\nAim at something you can interact with and it shows its {name} and your {Interact key} instead.\n\nTurn either on or off, and set its {side}, {size} and {distance} from the crosshair."] =
   "Mira un nemico e l'HUD accanto al mirino suggerisce il tuo {prossimo incantesimo} e ne mostra il tasto.\n\nMira qualcosa con cui puoi interagire e mostra invece il suo {nome} e il tuo {tasto di interazione}.\n\nAttiva o disattiva ciascuno e imposta {lato}, {dimensione} e {distanza} dal mirino."
-L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting.\n\n{Ignore Friendlies} makes it skip allies."] =
-  "Bersaglia i nemici semplicemente mirandoli e lancia incantesimi a terra e abilità ad area proprio dove punta il mirino, senza il puntamento con Tab.\n\n{Ignora amichevoli} fa saltare gli alleati."
+L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting."] =
+  "Bersaglia i nemici semplicemente mirandoli e lancia incantesimi a terra e abilità ad area proprio dove punta il mirino, senza il puntamento con Tab."
 L["Ground-targeted spells that should be cast at the crosshair location.\n\nType a {spell name or ID} to add it."] =
   "Incantesimi a terra che devono essere lanciati nel punto del mirino.\n\nDigita il {nome o l'ID di un incantesimo} per aggiungerlo."
 L["{!Action buttons that are macros cannot inherit Reticle Targeting on their own.}\n\nPress {+} to open the {Macro Composer}, write your macro there and it gets the targeting logic added for you.\n\nThen drag it from this list onto your action bars; {right-click} an icon to edit it."] =
@@ -632,15 +626,9 @@ L["Open Options"] = "Apri opzioni"
 -- Editors: macro composer, prelines, crosshair colors and textures, CVar editor
 L["%d / %d characters"] = "%d / %d caratteri"
 L["%s (over the macro limit)"] = "%s (oltre il limite della macro)"
-L["Ignore Friendlies: %s"] = "Ignora amichevoli: %s"
 L["Auto Target Lock: %s"] = "Blocco bersaglio automatico: %s"
-L["Preline: Ignore Friendlies + No Auto Lock"] =
-  "Preriga: Ignora amichevoli + senza blocco automatico"
-L["Preline: Ignore Friendlies + Auto Lock"] = "Preriga: Ignora amichevoli + blocco automatico"
-L["Preline: Target Any Unit + No Auto Lock"] =
-  "Preriga: Bersaglia qualsiasi unità + senza blocco automatico"
-L["Preline: Target Any Unit + Auto Lock"] =
-  "Preriga: Bersaglia qualsiasi unità + blocco automatico"
+L["Preline: No Auto Lock"] = "Preriga: senza blocco automatico"
+L["Preline: Auto Lock"] = "Preriga: blocco automatico"
 L["Macro Composer"] = "Compositore di macro"
 L["The targeting logic preline matching your current Reticle Targeting settings is added automatically before your lines, as the highlighted portion of the macro. To modify it, use the Prelines Editor under %s."] =
   "La preriga di puntamento corrispondente alle tue impostazioni attuali di puntamento a mirino viene aggiunta automaticamente prima delle tue righe, come parte evidenziata della macro. Per modificarla, usa l'editor di prerighe in %s."
@@ -658,10 +646,8 @@ L["Preline must be %d characters or fewer (room for /click under the 255 macro l
 L["Inactive — Auto Target Lock is OFF"] =
   "Inattivo — Il blocco bersaglio automatico è DISATTIVATO"
 L["Inactive — Auto Target Lock is ON"] = "Inattivo — Il blocco bersaglio automatico è ATTIVO"
-L["Inactive — Ignore Friendlies is OFF"] = "Inattivo — Ignora amichevoli è DISATTIVATO"
-L["Inactive — Ignore Friendlies is ON"] = "Inattivo — Ignora amichevoli è ATTIVO"
-L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s X %s settings is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
-  "Personalizza le prerighe di puntamento inserite prima di ogni abilità quando il puntamento a mirino è attivo.\n\n• È attiva solo la preriga corrispondente alle tue impostazioni attuali %s X %s.\n• Massimo %s caratteri per preriga — le macro SecureActionButton sono limitate a %s; il resto è riservato alla riga finale %s.\n• Usa %s per ricaricare e applicare le modifiche."
+L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s setting is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
+  "Personalizza le prerighe di puntamento inserite prima di ogni abilità quando il puntamento a mirino è attivo.\n\n• È attiva solo la preriga corrispondente alle tue impostazioni attuali %s.\n• Massimo %s caratteri per preriga — le macro SecureActionButton sono limitate a %s; il resto è riservato alla riga finale %s.\n• Usa %s per ricaricare e applicare le modifiche."
 L["Apply Changes"] = "Applica modifiche"
 L["Hostile"] = "Ostile"
 L["NPC"] = "PNG"

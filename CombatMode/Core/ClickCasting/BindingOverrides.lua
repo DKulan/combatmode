@@ -14,7 +14,7 @@
 --    • ApplyGroundCastKeyOverrides — keyboard keys click the same proxy so prelines run
 --      for ACTIONBUTTON + MULTIACTIONBAR1–7 (CM.Constants.ClickCastBars).
 --    • ApplyToggleFocusTargetBinding — Action Combat Mode Target Lock keybind; its macro is chosen from
---      char.targetLockBehavior (Toggle / Switch Target) x reticleTargetingEnemyOnly (always clears
+--      char.targetLockBehavior (Toggle / Switch Target) (always clears
 --      override owner first so stolen keys cannot leave a stale click override). No-ops
 --      install when char.reticleTargeting is off (CM.IsTargetLockEnabled).
 --    • Mid-combat RefreshClickCastMacros / ApplyGroundCastKeyOverrides /
@@ -140,7 +140,7 @@ local ToggleFocusTargetButton = CreateFrame(
   "SecureActionButtonTemplate"
 )
 ToggleFocusTargetButton:SetAttribute("type", "macro")
--- macrotext set by UpdateToggleFocusTargetMacroText() based on reticleTargetingEnemyOnly
+-- macrotext set by UpdateToggleFocusTargetMacroText() based on targetLockBehavior
 ToggleFocusTargetButton:RegisterForClicks("AnyUp", "AnyDown")
 -- Support Mode swaps in the friendly-only lock macro (and the friendly cycle macros below).
 CM.SupportModeRegisterProxy(ToggleFocusTargetButton)
@@ -278,12 +278,11 @@ local function UpdateToggleFocusTargetMacroText()
   end
   local char_config = CM.DB.char
   local macros_const = CM.Constants.Macros
-  local enemyOnly = char_config.reticleTargetingEnemyOnly
   local macroText
   if char_config.targetLockBehavior == "switch" then
-    macroText = enemyOnly and macros_const.CM_SwitchFocusEnemy or macros_const.CM_SwitchFocusAny
+    macroText = macros_const.CM_SwitchFocusEnemy
   else
-    macroText = enemyOnly and macros_const.CM_ToggleFocusEnemy or macros_const.CM_ToggleFocusAny
+    macroText = macros_const.CM_ToggleFocusEnemy
   end
   CM.SetModeMacroText(ToggleFocusTargetButton, macroText, SupportFocusMacroText())
 end
@@ -534,7 +533,6 @@ local ACTION_MACRO_TEXTS = {
 }
 -- Toggle Focus click-cast actions follow Target Lock Behavior (Toggle / Switch Target).
 local FOCUS_ACTION_MACRO_KEYS = {
-  TOGGLEFOCUSANY = { toggle = "CM_ToggleFocusAny", switch = "CM_SwitchFocusAny" },
   TOGGLEFOCUSENEMY = { toggle = "CM_ToggleFocusEnemy", switch = "CM_SwitchFocusEnemy" },
 }
 -- Second return: the Support Mode text (Toggle Focus actions lock friendly units there), or nil.

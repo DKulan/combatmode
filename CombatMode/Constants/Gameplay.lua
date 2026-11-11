@@ -44,13 +44,11 @@ CM.Constants.Macros = {
   CM_ClearTarget = "/stopmacro [noexists]\n/cleartarget",
   CM_ClearFocus = "/stopmacro [noexists]\n/clearfocus",
   -- A condition group with only @unit (no boolean) is ALWAYS true — need ,exists
-  -- (or harm/nodead/etc.) so unlock / fallthrough works. [] = focus player last.
-  CM_ToggleFocusAny = "/cleartarget [@focus,exists]\n/focus [@focus,exists] none; [@target,exists]; [@mouseover,exists][]\n/tar [@focus,exists]",
+  -- (or harm/nodead/etc.) so unlock / fallthrough works. No trailing [] (it would focus any target).
   CM_ToggleFocusEnemy = "/cleartarget [@focus,exists]\n/focus [@focus,exists] none; [@target,harm,nodead]; [@mouseover,harm,nodead]\n/tar [@focus,exists]",
   -- Target Lock "Switch" behavior: the unit under the crosshair becomes the lock (replacing any
-  -- current one); an empty crosshair unlocks. The Enemy variant ignores a friendly / dead unit under
-  -- the crosshair (the lock stays: cleartarget + the focus re-target below restore the same target).
-  CM_SwitchFocusAny = "/cleartarget [@focus,exists]\n/focus [@mouseover,exists]; [@mouseover,noexists] none\n/tar [@focus,exists]",
+  -- current one); an empty crosshair unlocks. A friendly / dead unit under
+  -- the crosshair is ignored (the lock stays: cleartarget + the focus re-target below restore the same target).
   CM_SwitchFocusEnemy = "/cleartarget [@focus,exists]\n/focus [@mouseover,harm,nodead]; [@mouseover,noexists] none\n/tar [@focus,exists]",
   -- Mouse-wheel Target Lock cycle (nearest / previous enemy, then focus).
   CM_CycleFocusEnemyNext = "/targetenemy [@focus,exists]\n/focus [@target,exists]",
@@ -384,7 +382,6 @@ CM.Constants.OverrideActions = {
   CLEARFOCUS = "|cff69ccf0Clear Focus|r",
   STARTATTACK = "|cff69ccf0Start Attack|r",
   PETATTACK = "|cff69ccf0Pet Attack|r",
-  TOGGLEFOCUSANY = "|cff69ccf0Toggle Focus Any|r",
   TOGGLEFOCUSENEMY = "|cff69ccf0Toggle Focus Enemy|r",
   MACRO = "|cff69ccf0Run MACRO|r",
 }

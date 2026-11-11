@@ -183,7 +183,7 @@ function CM.RestorePriorCVars()
     CM.ConfigReticleTargeting("blizzard")
     CM.SetCVars(CM.Constants.BlizzardMouseLookCameraCVarValues)
     CM.ConfigStickyCrosshair("blizzard")
-    CM.HandleSoftTargetFriend(false)
+    CM.SetCVar("SoftTargetFriend", 0)
     SetCVar("CursorFreelookCentering", 0)
     local yawDefault = GetCVarDefault and GetCVarDefault("cameraYawMoveSpeed")
     local pitchDefault = GetCVarDefault and GetCVarDefault("cameraPitchMoveSpeed")
@@ -523,16 +523,6 @@ function CM.ConfigReticleTargeting(CVarType)
   }
 
   CM.ApplyCVarConfig(info)
-end
-
-function CM.HandleSoftTargetFriend(enabled)
-  if enabled then
-    CM.SetCVar("SoftTargetFriend", 3)
-    CM.DebugPrint("Enabling Friendly Targeting out of combat")
-  else
-    CM.SetCVar("SoftTargetFriend", 0)
-    CM.DebugPrint("Disabling Friendly Targeting in combat")
-  end
 end
 
 --- SoftTarget subset for Interaction HUD when Reticle Targeting is disabled (full preset is ConfigReticleTargeting).

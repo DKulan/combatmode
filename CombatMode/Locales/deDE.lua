@@ -192,9 +192,6 @@ L["Enables aim-based unit targeting and precise placement of ground-targeted spe
 L["Enable Reticle Targeting"] = "Fadenkreuz-Zielerfassung aktivieren"
 L["Aim the crosshair at units to pick targets instead of tab-targeting."] =
   "Ziele mit dem Fadenkreuz auf Einheiten, um Ziele statt per Tab-Auswahl zu wählen."
-L["Ignore Friendlies"] = "Freundliche ignorieren"
-L["Ignore friendly NPCs and Players, and only target hostile units."] =
-  "Ignoriert freundliche NPCs und Spieler und wählt nur feindliche Einheiten."
 L["Click Casting Only"] = "Nur Klick-Zauber"
 L["Apply reticle targeting logic only to Click Casting binds."] =
   "Wendet die Fadenkreuz-Zielerfassung nur auf Klick-Zauber-Belegungen an."
@@ -225,11 +222,9 @@ L["Locks your target, or the unit under the crosshair. Tap again to unlock."] =
   "Sperrt dein Ziel oder die Einheit unter dem Fadenkreuz. Erneutes Antippen hebt die Sperre auf."
 L["Locks the unit under the crosshair, replacing any current lock. Tap with nothing under the crosshair to unlock. Aiming at the unit you already locked keeps the lock."] =
   "Sperrt die Einheit unter dem Fadenkreuz und ersetzt eine bestehende Sperre. Antippen ohne Einheit unter dem Fadenkreuz hebt die Sperre auf. Zielst du auf die bereits gesperrte Einheit, bleibt die Sperre bestehen."
-L["With Ignore Friendlies on, a friendly or dead unit under the crosshair is ignored: the lock stays where it is."] =
-  "Bei aktivem „Freundliche ignorieren“ wird eine freundliche oder tote Einheit unter dem Fadenkreuz ignoriert: Die Sperre bleibt bestehen."
 L["Auto Target Lock"] = "Automatische Zielsperre"
-L["Target Lock engages automatically when attacking units, and in Support Mode when healing an ally."] =
-  "Die Zielsperre greift automatisch, wenn du Einheiten angreifst, und im Unterstützungsmodus, wenn du einen Verbündeten heilst."
+L["Target Lock engages automatically when attacking units. In Support Mode it only locks the ally you heal."] =
+  "Die Zielsperre greift automatisch, wenn du Einheiten angreifst. Im Unterstützungsmodus sperrt sie nur den Verbündeten, den du heilst."
 L["Target Lock Marker"] = "Zielsperren-Markierung"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "Zeigt eine Fadenkreuz-Markierung auf der Namensplakette des gesperrten Ziels."
@@ -320,7 +315,6 @@ L["Target Crosshair"] = "Fadenkreuz anvisieren"
 L["Clear Focus"] = "Fokus löschen"
 L["Start Attack"] = "Angriff starten"
 L["Pet Attack"] = "Begleiterangriff"
-L["Toggle Focus Any"] = "Fokus umschalten (beliebig)"
 L["Toggle Focus Enemy"] = "Fokus umschalten (Feind)"
 L["Run MACRO"] = "MACRO ausführen"
 L["— none —"] = "— keine —"
@@ -558,8 +552,8 @@ L["A reactive, fully customizable crosshair that adapts to your target and comba
   "Ein reaktives, vollständig anpassbares Fadenkreuz, das sich an dein Ziel und den Kampfstatus anpasst.\n\nWähle {Aussehen}, {Größe} und {Position}."
 L["Aim at an enemy and the HUD next to your crosshair suggests your {next spell} and shows its key.\n\nAim at something you can interact with and it shows its {name} and your {Interact key} instead.\n\nTurn either on or off, and set its {side}, {size} and {distance} from the crosshair."] =
   "Ziele auf einen Feind, und das HUD neben deinem Fadenkreuz schlägt deinen {nächsten Zauber} vor und zeigt dessen Taste.\n\nZiele auf etwas, mit dem du interagieren kannst, und es zeigt stattdessen dessen {Namen} und deine {Interaktionstaste}.\n\nSchalte beides ein oder aus und lege {Seite}, {Größe} und {Abstand} zum Fadenkreuz fest."
-L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting.\n\n{Ignore Friendlies} makes it skip allies."] =
-  "Erfasse Feinde allein durch Zielen und platziere Bodenzauber und Flächenfähigkeiten genau dort, wohin dein Fadenkreuz zeigt, ganz ohne Tab-Zielwahl.\n\n{Freundliche ignorieren} lässt Verbündete aus."
+L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting."] =
+  "Erfasse Feinde allein durch Zielen und platziere Bodenzauber und Flächenfähigkeiten genau dort, wohin dein Fadenkreuz zeigt, ganz ohne Tab-Zielwahl."
 L["Ground-targeted spells that should be cast at the crosshair location.\n\nType a {spell name or ID} to add it."] =
   "Bodenzauber, die an der Position des Fadenkreuzes gewirkt werden sollen.\n\nGib einen {Zaubernamen oder eine ID} ein, um ihn hinzuzufügen."
 L["{!Action buttons that are macros cannot inherit Reticle Targeting on their own.}\n\nPress {+} to open the {Macro Composer}, write your macro there and it gets the targeting logic added for you.\n\nThen drag it from this list onto your action bars; {right-click} an icon to edit it."] =
@@ -634,16 +628,9 @@ L["Open Options"] = "Optionen öffnen"
 -- Editors: macro composer, prelines, crosshair colors and textures, CVar editor
 L["%d / %d characters"] = "%d / %d Zeichen"
 L["%s (over the macro limit)"] = "%s (über dem Makro-Limit)"
-L["Ignore Friendlies: %s"] = "Freundliche ignorieren: %s"
 L["Auto Target Lock: %s"] = "Automatische Zielsperre: %s"
-L["Preline: Ignore Friendlies + No Auto Lock"] =
-  "Vorzeile: Freundliche ignorieren + keine automatische Sperre"
-L["Preline: Ignore Friendlies + Auto Lock"] =
-  "Vorzeile: Freundliche ignorieren + automatische Sperre"
-L["Preline: Target Any Unit + No Auto Lock"] =
-  "Vorzeile: Beliebige Einheit anvisieren + keine automatische Sperre"
-L["Preline: Target Any Unit + Auto Lock"] =
-  "Vorzeile: Beliebige Einheit anvisieren + automatische Sperre"
+L["Preline: No Auto Lock"] = "Vorzeile: keine automatische Sperre"
+L["Preline: Auto Lock"] = "Vorzeile: automatische Sperre"
 L["Macro Composer"] = "Makro-Composer"
 L["The targeting logic preline matching your current Reticle Targeting settings is added automatically before your lines, as the highlighted portion of the macro. To modify it, use the Prelines Editor under %s."] =
   "Die zu deinen aktuellen Einstellungen der Fadenkreuz-Zielerfassung passende Zielvorzeile wird automatisch vor deinen Zeilen eingefügt, als hervorgehobener Teil des Makros. Um sie zu ändern, nutze den Vorzeilen-Editor unter %s."
@@ -660,10 +647,8 @@ L["Preline must be %d characters or fewer (room for /click under the 255 macro l
   "Die Vorzeile darf höchstens %d Zeichen lang sein (Platz für /click unter dem Makro-Limit von 255)."
 L["Inactive — Auto Target Lock is OFF"] = "Inaktiv — Automatische Zielsperre ist AUS"
 L["Inactive — Auto Target Lock is ON"] = "Inaktiv — Automatische Zielsperre ist AN"
-L["Inactive — Ignore Friendlies is OFF"] = "Inaktiv — Freundliche ignorieren ist AUS"
-L["Inactive — Ignore Friendlies is ON"] = "Inaktiv — Freundliche ignorieren ist AN"
-L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s X %s settings is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
-  "Passe die Zielvorzeilen an, die vor jede Fähigkeit eingefügt werden, wenn die Fadenkreuz-Zielerfassung aktiv ist.\n\n• Nur die Vorzeile, die zu deinen aktuellen Einstellungen %s X %s passt, ist aktiv.\n• Maximal %s Zeichen pro Vorzeile — SecureActionButton-Makros sind auf %s begrenzt; der Rest ist für die abschließende Zeile %s reserviert.\n• Nutze %s, um neu zu laden und Änderungen zu übernehmen."
+L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s setting is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
+  "Passe die Zielvorzeilen an, die vor jede Fähigkeit eingefügt werden, wenn die Fadenkreuz-Zielerfassung aktiv ist.\n\n• Nur die Vorzeile, die zu deinen aktuellen Einstellungen %s passt, ist aktiv.\n• Maximal %s Zeichen pro Vorzeile — SecureActionButton-Makros sind auf %s begrenzt; der Rest ist für die abschließende Zeile %s reserviert.\n• Nutze %s, um neu zu laden und Änderungen zu übernehmen."
 L["Apply Changes"] = "Änderungen anwenden"
 L["Hostile"] = "Feindlich"
 L["NPC"] = "NPC"

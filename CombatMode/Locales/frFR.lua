@@ -191,9 +191,6 @@ L["Enables aim-based unit targeting and precise placement of ground-targeted spe
 L["Enable Reticle Targeting"] = "Activer le ciblage par réticule"
 L["Aim the crosshair at units to pick targets instead of tab-targeting."] =
   "Visez des unités avec le réticule pour choisir vos cibles au lieu du ciblage par tabulation."
-L["Ignore Friendlies"] = "Ignorer les amis"
-L["Ignore friendly NPCs and Players, and only target hostile units."] =
-  "Ignore les PNJ et joueurs amicaux et ne cible que les unités hostiles."
 L["Click Casting Only"] = "Lancement par clic uniquement"
 L["Apply reticle targeting logic only to Click Casting binds."] =
   "N'applique la logique de ciblage par réticule qu'aux raccourcis de lancement par clic."
@@ -224,11 +221,9 @@ L["Locks your target, or the unit under the crosshair. Tap again to unlock."] =
   "Verrouille votre cible ou l'unité sous le réticule. Appuyez à nouveau pour déverrouiller."
 L["Locks the unit under the crosshair, replacing any current lock. Tap with nothing under the crosshair to unlock. Aiming at the unit you already locked keeps the lock."] =
   "Verrouille l'unité sous le réticule en remplaçant tout verrouillage actuel. Appuyez sans rien sous le réticule pour déverrouiller. Viser l'unité déjà verrouillée conserve le verrouillage."
-L["With Ignore Friendlies on, a friendly or dead unit under the crosshair is ignored: the lock stays where it is."] =
-  "Avec « Ignorer les amis » activé, une unité amicale ou morte sous le réticule est ignorée : le verrouillage reste en place."
 L["Auto Target Lock"] = "Verrouillage de cible automatique"
-L["Target Lock engages automatically when attacking units, and in Support Mode when healing an ally."] =
-  "Le verrouillage de cible s'active automatiquement lorsque vous attaquez des unités et, en Mode soutien, lorsque vous soignez un allié."
+L["Target Lock engages automatically when attacking units. In Support Mode it only locks the ally you heal."] =
+  "Le verrouillage de cible s'active automatiquement lorsque vous attaquez des unités. En Mode soutien, il ne verrouille que l'allié que vous soignez."
 L["Target Lock Marker"] = "Marqueur de verrouillage"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "Affiche un marqueur de réticule sur la barre de nom de la cible verrouillée."
@@ -319,7 +314,6 @@ L["Target Crosshair"] = "Cibler le réticule"
 L["Clear Focus"] = "Effacer le focus"
 L["Start Attack"] = "Lancer l'attaque"
 L["Pet Attack"] = "Attaque du familier"
-L["Toggle Focus Any"] = "Basculer le focus (tout)"
 L["Toggle Focus Enemy"] = "Basculer le focus (ennemi)"
 L["Run MACRO"] = "Exécuter MACRO"
 L["— none —"] = "— aucune —"
@@ -557,8 +551,8 @@ L["A reactive, fully customizable crosshair that adapts to your target and comba
   "Un réticule réactif et entièrement personnalisable qui s'adapte à votre cible et à l'état de combat.\n\nChoisissez son {apparence}, sa {taille} et sa {position}."
 L["Aim at an enemy and the HUD next to your crosshair suggests your {next spell} and shows its key.\n\nAim at something you can interact with and it shows its {name} and your {Interact key} instead.\n\nTurn either on or off, and set its {side}, {size} and {distance} from the crosshair."] =
   "Visez un ennemi et le HUD à côté de votre réticule suggère votre {prochain sort} et affiche sa touche.\n\nVisez quelque chose avec quoi interagir et il affiche son {nom} et votre {touche d'interaction}.\n\nActivez ou désactivez chacun, et réglez son {côté}, sa {taille} et sa {distance} par rapport au réticule."
-L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting.\n\n{Ignore Friendlies} makes it skip allies."] =
-  "Ciblez les ennemis simplement en les visant et lancez sorts au sol et capacités de zone exactement là où pointe votre réticule, sans ciblage par tabulation.\n\n{Ignorer les amis} lui fait ignorer les alliés."
+L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting."] =
+  "Ciblez les ennemis simplement en les visant et lancez sorts au sol et capacités de zone exactement là où pointe votre réticule, sans ciblage par tabulation."
 L["Ground-targeted spells that should be cast at the crosshair location.\n\nType a {spell name or ID} to add it."] =
   "Sorts au sol qui doivent être lancés à l'emplacement du réticule.\n\nSaisissez un {nom ou ID de sort} pour l'ajouter."
 L["{!Action buttons that are macros cannot inherit Reticle Targeting on their own.}\n\nPress {+} to open the {Macro Composer}, write your macro there and it gets the targeting logic added for you.\n\nThen drag it from this list onto your action bars; {right-click} an icon to edit it."] =
@@ -633,15 +627,9 @@ L["Open Options"] = "Ouvrir les options"
 -- Editors: macro composer, prelines, crosshair colors and textures, CVar editor
 L["%d / %d characters"] = "%d / %d caractères"
 L["%s (over the macro limit)"] = "%s (au-dessus de la limite de la macro)"
-L["Ignore Friendlies: %s"] = "Ignorer les amis : %s"
 L["Auto Target Lock: %s"] = "Verrouillage de cible automatique : %s"
-L["Preline: Ignore Friendlies + No Auto Lock"] =
-  "Préligne : Ignorer les amis + sans verrouillage auto"
-L["Preline: Ignore Friendlies + Auto Lock"] = "Préligne : Ignorer les amis + verrouillage auto"
-L["Preline: Target Any Unit + No Auto Lock"] =
-  "Préligne : Cibler n'importe quelle unité + sans verrouillage auto"
-L["Preline: Target Any Unit + Auto Lock"] =
-  "Préligne : Cibler n'importe quelle unité + verrouillage auto"
+L["Preline: No Auto Lock"] = "Préligne : sans verrouillage auto"
+L["Preline: Auto Lock"] = "Préligne : verrouillage auto"
 L["Macro Composer"] = "Compositeur de macros"
 L["The targeting logic preline matching your current Reticle Targeting settings is added automatically before your lines, as the highlighted portion of the macro. To modify it, use the Prelines Editor under %s."] =
   "La préligne de ciblage correspondant à vos réglages actuels de ciblage par réticule est ajoutée automatiquement avant vos lignes, comme partie surlignée de la macro. Pour la modifier, utilisez l'éditeur de prélignes dans %s."
@@ -660,10 +648,8 @@ L["Inactive — Auto Target Lock is OFF"] =
   "Inactif — Le verrouillage de cible automatique est DÉSACTIVÉ"
 L["Inactive — Auto Target Lock is ON"] =
   "Inactif — Le verrouillage de cible automatique est ACTIVÉ"
-L["Inactive — Ignore Friendlies is OFF"] = "Inactif — Ignorer les amis est DÉSACTIVÉ"
-L["Inactive — Ignore Friendlies is ON"] = "Inactif — Ignorer les amis est ACTIVÉ"
-L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s X %s settings is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
-  "Personnalisez les prélignes de ciblage injectées avant chaque capacité lorsque le ciblage par réticule est activé.\n\n• Seule la préligne correspondant à vos réglages actuels %s X %s est active.\n• Maximum de %s caractères par préligne — les macros SecureActionButton sont limitées à %s ; le reste est réservé à la ligne finale %s.\n• Utilisez %s pour recharger et appliquer les modifications."
+L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s setting is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
+  "Personnalisez les prélignes de ciblage injectées avant chaque capacité lorsque le ciblage par réticule est activé.\n\n• Seule la préligne correspondant à vos réglages actuels %s est active.\n• Maximum de %s caractères par préligne — les macros SecureActionButton sont limitées à %s ; le reste est réservé à la ligne finale %s.\n• Utilisez %s pour recharger et appliquer les modifications."
 L["Apply Changes"] = "Appliquer les modifications"
 L["Hostile"] = "Hostile"
 L["NPC"] = "PNJ"

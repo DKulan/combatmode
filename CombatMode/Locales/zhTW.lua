@@ -186,9 +186,6 @@ L["Enables aim-based unit targeting and precise placement of ground-targeted spe
 L["Enable Reticle Targeting"] = "啟用準星瞄準"
 L["Aim the crosshair at units to pick targets instead of tab-targeting."] =
   "將準星對準單位來選取目標，取代Tab選取。"
-L["Ignore Friendlies"] = "忽略友方"
-L["Ignore friendly NPCs and Players, and only target hostile units."] =
-  "忽略友方NPC和玩家，只選取敵對單位。"
 L["Click Casting Only"] = "僅點擊施法"
 L["Apply reticle targeting logic only to Click Casting binds."] =
   "僅對點擊施法綁定套用準星瞄準邏輯。"
@@ -216,11 +213,9 @@ L["Locks your target, or the unit under the crosshair. Tap again to unlock."] =
   "鎖定你的目標或準星下的單位。再次點按可解除鎖定。"
 L["Locks the unit under the crosshair, replacing any current lock. Tap with nothing under the crosshair to unlock. Aiming at the unit you already locked keeps the lock."] =
   "鎖定準星下的單位，並取代目前的鎖定。準星下沒有目標時點按可解除鎖定。瞄準已鎖定的單位則維持鎖定。"
-L["With Ignore Friendlies on, a friendly or dead unit under the crosshair is ignored: the lock stays where it is."] =
-  "開啟「忽略友方」後，準星下的友方或已死亡單位會被忽略：鎖定維持不變。"
 L["Auto Target Lock"] = "自動目標鎖定"
-L["Target Lock engages automatically when attacking units, and in Support Mode when healing an ally."] =
-  "攻擊單位時自動啟用目標鎖定；在輔助模式下治療友方時也會啟用。"
+L["Target Lock engages automatically when attacking units. In Support Mode it only locks the ally you heal."] =
+  "攻擊單位時自動啟用目標鎖定。在輔助模式下，只會鎖定你治療的友方。"
 L["Target Lock Marker"] = "目標鎖定標記"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "在被鎖定目標的名條上顯示準星標記。"
@@ -309,7 +304,6 @@ L["Target Crosshair"] = "以準星選取目標"
 L["Clear Focus"] = "清除專注目標"
 L["Start Attack"] = "開始攻擊"
 L["Pet Attack"] = "寵物攻擊"
-L["Toggle Focus Any"] = "切換專注目標（任意）"
 L["Toggle Focus Enemy"] = "切換專注目標（敵人）"
 L["Run MACRO"] = "執行 MACRO"
 L["— none —"] = "— 無 —"
@@ -539,8 +533,8 @@ L["A reactive, fully customizable crosshair that adapts to your target and comba
   "可依據目標和戰鬥狀態自動變化、完全可自訂的準星。\n\n選擇它的{外觀}、{大小}和{位置}。"
 L["Aim at an enemy and the HUD next to your crosshair suggests your {next spell} and shows its key.\n\nAim at something you can interact with and it shows its {name} and your {Interact key} instead.\n\nTurn either on or off, and set its {side}, {size} and {distance} from the crosshair."] =
   "瞄準敵人時，準星旁的 HUD 會建議你的{下一個法術}並顯示其按鍵。\n\n瞄準可互動的目標時，則顯示其{名稱}和你的{互動按鍵}。\n\n可分別開啟或關閉，並設定它相對準星的{方位}、{大小}和{距離}。"
-L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting.\n\n{Ignore Friendlies} makes it skip allies."] =
-  "只需瞄準即可選定敵人，並將指向性法術和範圍技能直接施放在準星所指之處，無需 Tab 選目標。\n\n{忽略友方}會讓它跳過友方。"
+L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting."] =
+  "只需瞄準即可選定敵人，並將指向性法術和範圍技能直接施放在準星所指之處，無需 Tab 選目標。"
 L["Ground-targeted spells that should be cast at the crosshair location.\n\nType a {spell name or ID} to add it."] =
   "應在準星位置施放的指向性法術。\n\n輸入{法術名稱或 ID}即可新增。"
 L["{!Action buttons that are macros cannot inherit Reticle Targeting on their own.}\n\nPress {+} to open the {Macro Composer}, write your macro there and it gets the targeting logic added for you.\n\nThen drag it from this list onto your action bars; {right-click} an icon to edit it."] =
@@ -615,12 +609,9 @@ L["Open Options"] = "開啟選項"
 -- Editors: macro composer, prelines, crosshair colors and textures, CVar editor
 L["%d / %d characters"] = "%d / %d 個字元"
 L["%s (over the macro limit)"] = "%s（超出巨集長度限制）"
-L["Ignore Friendlies: %s"] = "忽略友方：%s"
 L["Auto Target Lock: %s"] = "自動目標鎖定：%s"
-L["Preline: Ignore Friendlies + No Auto Lock"] = "前置行：忽略友方 + 無自動鎖定"
-L["Preline: Ignore Friendlies + Auto Lock"] = "前置行：忽略友方 + 自動鎖定"
-L["Preline: Target Any Unit + No Auto Lock"] = "前置行：選取任意單位 + 無自動鎖定"
-L["Preline: Target Any Unit + Auto Lock"] = "前置行：選取任意單位 + 自動鎖定"
+L["Preline: No Auto Lock"] = "前置行：無自動鎖定"
+L["Preline: Auto Lock"] = "前置行：自動鎖定"
 L["Macro Composer"] = "巨集編輯器"
 L["The targeting logic preline matching your current Reticle Targeting settings is added automatically before your lines, as the highlighted portion of the macro. To modify it, use the Prelines Editor under %s."] =
   "與你目前準星瞄準設定相符的瞄準前置行會自動加到你的行之前，作為巨集中的醒目部分。如需修改，請使用「%s」下的前置行編輯器。"
@@ -637,10 +628,8 @@ L["Preline must be %d characters or fewer (room for /click under the 255 macro l
   "前置行不得超過 %d 個字元（需在巨集的 255 字元上限內為 /click 留出空間）。"
 L["Inactive — Auto Target Lock is OFF"] = "未啟用 — 自動目標鎖定已關閉"
 L["Inactive — Auto Target Lock is ON"] = "未啟用 — 自動目標鎖定已開啟"
-L["Inactive — Ignore Friendlies is OFF"] = "未啟用 — 忽略友方已關閉"
-L["Inactive — Ignore Friendlies is ON"] = "未啟用 — 忽略友方已開啟"
-L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s X %s settings is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
-  "自訂啟用準星瞄準時在每個技能前注入的瞄準前置行。\n\n• 只有與你目前 %s X %s 設定相符的前置行處於啟用狀態。\n• 每條前置行最多 %s 個字元——SecureActionButton 巨集上限為 %s，其餘部分保留給結尾的 %s 行。\n• 使用 %s 重新載入並套用修改。"
+L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s setting is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
+  "自訂啟用準星瞄準時在每個技能前注入的瞄準前置行。\n\n• 只有與你目前 %s 設定相符的前置行處於啟用狀態。\n• 每條前置行最多 %s 個字元——SecureActionButton 巨集上限為 %s，其餘部分保留給結尾的 %s 行。\n• 使用 %s 重新載入並套用修改。"
 L["Apply Changes"] = "套用變更"
 L["Hostile"] = "敵對"
 L["NPC"] = "NPC"

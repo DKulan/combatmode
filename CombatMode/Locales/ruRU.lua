@@ -201,9 +201,6 @@ L["Enables aim-based unit targeting and precise placement of ground-targeted spe
 L["Enable Reticle Targeting"] = "Включить наведение по прицелу"
 L["Aim the crosshair at units to pick targets instead of tab-targeting."] =
   "Наводите прицел на цели, чтобы выбирать их вместо перебора клавишей Tab."
-L["Ignore Friendlies"] = "Игнорировать союзников"
-L["Ignore friendly NPCs and Players, and only target hostile units."] =
-  "Игнорирует дружественных NPC и игроков и выбирает только враждебные цели."
 L["Click Casting Only"] = "Только Click Casting"
 L["Apply reticle targeting logic only to Click Casting binds."] =
   "Применять логику наведения по прицелу только к привязкам Click Casting."
@@ -234,11 +231,9 @@ L["Locks your target, or the unit under the crosshair. Tap again to unlock."] =
   "Захватывает вашу цель или цель под прицелом. Повторное нажатие снимает захват."
 L["Locks the unit under the crosshair, replacing any current lock. Tap with nothing under the crosshair to unlock. Aiming at the unit you already locked keeps the lock."] =
   "Захватывает цель под прицелом, заменяя текущий захват. Нажатие, когда под прицелом ничего нет, снимает захват. Если навести прицел на уже захваченную цель, захват сохраняется."
-L["With Ignore Friendlies on, a friendly or dead unit under the crosshair is ignored: the lock stays where it is."] =
-  "Если включено «Игнорировать союзников», дружественная или мёртвая цель под прицелом игнорируется: захват остаётся на месте."
 L["Auto Target Lock"] = "Автозахват цели"
-L["Target Lock engages automatically when attacking units, and in Support Mode when healing an ally."] =
-  "Захват цели включается автоматически при атаке юнитов, а в режиме поддержки — при исцелении союзника."
+L["Target Lock engages automatically when attacking units. In Support Mode it only locks the ally you heal."] =
+  "Захват цели включается автоматически при атаке юнитов. В режиме поддержки захватывается только союзник, которого вы исцеляете."
 L["Target Lock Marker"] = "Метка захвата цели"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "Показывает метку прицела на индикаторе имени захваченной цели."
@@ -333,7 +328,6 @@ L["Target Crosshair"] = "Цель под прицелом"
 L["Clear Focus"] = "Сбросить фокус"
 L["Start Attack"] = "Начать атаку"
 L["Pet Attack"] = "Атака питомца"
-L["Toggle Focus Any"] = "Переключить фокус (любая цель)"
 L["Toggle Focus Enemy"] = "Переключить фокус (враг)"
 L["Run MACRO"] = "Запустить MACRO"
 L["— none —"] = "— нет —"
@@ -586,8 +580,8 @@ L["A reactive, fully customizable crosshair that adapts to your target and comba
   "Реактивный полностью настраиваемый прицел, который подстраивается под вашу цель и состояние боя.\n\nВыберите {вид}, {размер} и {положение}."
 L["Aim at an enemy and the HUD next to your crosshair suggests your {next spell} and shows its key.\n\nAim at something you can interact with and it shows its {name} and your {Interact key} instead.\n\nTurn either on or off, and set its {side}, {size} and {distance} from the crosshair."] =
   "Наведите прицел на врага, и HUD рядом с прицелом предложит {следующее заклинание} и покажет его клавишу.\n\nНаведите на объект взаимодействия, и HUD покажет его {название} и вашу {клавишу взаимодействия}.\n\nВключайте и выключайте любой из них и задайте {сторону}, {размер} и {расстояние} от прицела."
-L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting.\n\n{Ignore Friendlies} makes it skip allies."] =
-  "Выбирайте врагов, просто наводя на них прицел, и применяйте заклинания по площади точно туда, куда указывает прицел, без выбора по Tab.\n\n{Игнорировать союзников} пропускает союзников."
+L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting."] =
+  "Выбирайте врагов, просто наводя на них прицел, и применяйте заклинания по площади точно туда, куда указывает прицел, без выбора по Tab."
 L["Ground-targeted spells that should be cast at the crosshair location.\n\nType a {spell name or ID} to add it."] =
   "Заклинания по площади, которые нужно применять в точку прицела.\n\nВведите {название или ID заклинания}, чтобы добавить его."
 L["{!Action buttons that are macros cannot inherit Reticle Targeting on their own.}\n\nPress {+} to open the {Macro Composer}, write your macro there and it gets the targeting logic added for you.\n\nThen drag it from this list onto your action bars; {right-click} an icon to edit it."] =
@@ -666,16 +660,9 @@ L["Open Options"] = "Открыть настройки"
 -- Editors: macro composer, prelines, crosshair colors and textures, CVar editor
 L["%d / %d characters"] = "%d / %d символов"
 L["%s (over the macro limit)"] = "%s (превышен лимит макроса)"
-L["Ignore Friendlies: %s"] = "Игнорировать союзников: %s"
 L["Auto Target Lock: %s"] = "Автозахват цели: %s"
-L["Preline: Ignore Friendlies + No Auto Lock"] =
-  "Предстрока: игнорировать союзников + без автозахвата"
-L["Preline: Ignore Friendlies + Auto Lock"] =
-  "Предстрока: игнорировать союзников + автозахват"
-L["Preline: Target Any Unit + No Auto Lock"] =
-  "Предстрока: любая цель + без автозахвата"
-L["Preline: Target Any Unit + Auto Lock"] =
-  "Предстрока: любая цель + автозахват"
+L["Preline: No Auto Lock"] = "Предстрока: без автозахвата"
+L["Preline: Auto Lock"] = "Предстрока: автозахват"
 L["Macro Composer"] = "Конструктор макросов"
 L["The targeting logic preline matching your current Reticle Targeting settings is added automatically before your lines, as the highlighted portion of the macro. To modify it, use the Prelines Editor under %s."] =
   "Предстрока наведения, соответствующая текущим настройкам наведения по прицелу, автоматически добавляется перед вашими строками как выделенная часть макроса. Чтобы изменить ее, используйте редактор предстрок в разделе «%s»."
@@ -696,12 +683,8 @@ L["Inactive — Auto Target Lock is OFF"] =
   "Неактивно — автозахват цели ВЫКЛЮЧЕН"
 L["Inactive — Auto Target Lock is ON"] =
   "Неактивно — автозахват цели ВКЛЮЧЕН"
-L["Inactive — Ignore Friendlies is OFF"] =
-  "Неактивно — «Игнорировать союзников» ВЫКЛЮЧЕНО"
-L["Inactive — Ignore Friendlies is ON"] =
-  "Неактивно — «Игнорировать союзников» ВКЛЮЧЕНО"
-L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s X %s settings is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
-  "Настройте предстроки наведения, добавляемые перед каждой способностью, когда включено наведение по прицелу.\n\n• Активна только та предстрока, которая соответствует текущим настройкам %s X %s.\n• Не более %s символов на предстроку — макросы SecureActionButton ограничены %s; остальное зарезервировано для завершающей строки %s.\n• Используйте %s, чтобы перезагрузить интерфейс и применить изменения."
+L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s setting is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
+  "Настройте предстроки наведения, добавляемые перед каждой способностью, когда включено наведение по прицелу.\n\n• Активна только та предстрока, которая соответствует текущим настройкам %s.\n• Не более %s символов на предстроку — макросы SecureActionButton ограничены %s; остальное зарезервировано для завершающей строки %s.\n• Используйте %s, чтобы перезагрузить интерфейс и применить изменения."
 L["Apply Changes"] = "Применить изменения"
 L["Hostile"] = "Враждебные"
 L["NPC"] = "НИП"

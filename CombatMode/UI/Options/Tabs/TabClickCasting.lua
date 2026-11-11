@@ -43,7 +43,6 @@ local OVERRIDE_ORDER = {
   "TARGETMOUSEOVER",
   "STARTATTACK",
   "PETATTACK",
-  "TOGGLEFOCUSANY",
   "TOGGLEFOCUSENEMY",
   "MACRO",
 }
@@ -71,7 +70,6 @@ local OVERRIDE_LABELS = {
   CLEARFOCUS = "|cff69ccf0" .. L["Clear Focus"] .. "|r",
   STARTATTACK = "|cff69ccf0" .. L["Start Attack"] .. "|r",
   PETATTACK = "|cff69ccf0" .. L["Pet Attack"] .. "|r",
-  TOGGLEFOCUSANY = "|cff69ccf0" .. L["Toggle Focus Any"] .. "|r",
   TOGGLEFOCUSENEMY = "|cff69ccf0" .. L["Toggle Focus Enemy"] .. "|r",
   MACRO = "|cff69ccf0" .. L["Run MACRO"] .. "|r",
 }

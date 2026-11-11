@@ -156,8 +156,6 @@ L["Enables aim-based unit targeting and precise placement of ground-targeted spe
   true
 L["Enable Reticle Targeting"] = true
 L["Aim the crosshair at units to pick targets instead of tab-targeting."] = true
-L["Ignore Friendlies"] = true
-L["Ignore friendly NPCs and Players, and only target hostile units."] = true
 L["Click Casting Only"] = true
 L["Apply reticle targeting logic only to Click Casting binds."] = true
 L["Excluded Spells"] = true
@@ -180,10 +178,8 @@ L["What the Target Lock key does when you press it."] = true
 L["Locks your target, or the unit under the crosshair. Tap again to unlock."] = true
 L["Locks the unit under the crosshair, replacing any current lock. Tap with nothing under the crosshair to unlock. Aiming at the unit you already locked keeps the lock."] =
   true
-L["With Ignore Friendlies on, a friendly or dead unit under the crosshair is ignored: the lock stays where it is."] =
-  true
 L["Auto Target Lock"] = true
-L["Target Lock engages automatically when attacking units, and in Support Mode when healing an ally."] =
+L["Target Lock engages automatically when attacking units. In Support Mode it only locks the ally you heal."] =
   true
 L["Target Lock Marker"] = true
 L["Show a crosshair marker on the nameplate of the locked target."] = true
@@ -261,7 +257,6 @@ L["Target Crosshair"] = true
 L["Clear Focus"] = true
 L["Start Attack"] = true
 L["Pet Attack"] = true
-L["Toggle Focus Any"] = true
 L["Toggle Focus Enemy"] = true
 L["Run MACRO"] = true
 L["— none —"] = true
@@ -469,7 +464,7 @@ L["A reactive, fully customizable crosshair that adapts to your target and comba
   true
 L["Aim at an enemy and the HUD next to your crosshair suggests your {next spell} and shows its key.\n\nAim at something you can interact with and it shows its {name} and your {Interact key} instead.\n\nTurn either on or off, and set its {side}, {size} and {distance} from the crosshair."] =
   true
-L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting.\n\n{Ignore Friendlies} makes it skip allies."] =
+L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting."] =
   true
 L["Ground-targeted spells that should be cast at the crosshair location.\n\nType a {spell name or ID} to add it."] =
   true
@@ -540,12 +535,9 @@ L["Open Options"] = true
 -- Editors: macro composer, prelines, crosshair colors and textures, CVar editor
 L["%d / %d characters"] = true
 L["%s (over the macro limit)"] = true
-L["Ignore Friendlies: %s"] = true
 L["Auto Target Lock: %s"] = true
-L["Preline: Ignore Friendlies + No Auto Lock"] = true
-L["Preline: Ignore Friendlies + Auto Lock"] = true
-L["Preline: Target Any Unit + No Auto Lock"] = true
-L["Preline: Target Any Unit + Auto Lock"] = true
+L["Preline: No Auto Lock"] = true
+L["Preline: Auto Lock"] = true
 L["Macro Composer"] = true
 L["The targeting logic preline matching your current Reticle Targeting settings is added automatically before your lines, as the highlighted portion of the macro. To modify it, use the Prelines Editor under %s."] =
   true
@@ -560,9 +552,7 @@ L["Save Macro"] = true
 L["Preline must be %d characters or fewer (room for /click under the 255 macro limit)."] = true
 L["Inactive — Auto Target Lock is OFF"] = true
 L["Inactive — Auto Target Lock is ON"] = true
-L["Inactive — Ignore Friendlies is OFF"] = true
-L["Inactive — Ignore Friendlies is ON"] = true
-L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s X %s settings is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
+L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s setting is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
   true
 L["Apply Changes"] = true
 L["Hostile"] = true

@@ -127,9 +127,7 @@ CM.Constants.DatabaseDefaults = {
     -- reticle targeting
     reticleTargetingCVarOverrides = {},
     priorCVarSnapshot = nil,
-    targetingMacroPrelineAnyOverride = nil,
     targetingMacroPrelineEnemyOverride = nil,
-    targetingMacroPrelineAutoLockAnyOverride = nil,
     targetingMacroPrelineAutoLockEnemyOverride = nil,
     composedMacros = {},
     crosshairReactionColors = {},
@@ -205,7 +203,6 @@ return false
     shoulderOffset = 1.2,
     -- reticle targeting
     reticleTargeting = true,
-    reticleTargetingEnemyOnly = true,
     autoTargetLockOnAttack = false,
     -- Target Lock key: "toggle" = lock / tap again to unlock; "switch" = lock the unit under the
     -- crosshair (replacing any lock), tap with nothing under the crosshair to unlock.

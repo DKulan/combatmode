@@ -104,7 +104,7 @@ local STEPS = {
     section = L["RETICLE TARGETING"],
     title = L["Reticle Targeting"],
     slides = { "reticle", 5 },
-    body = L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting.\n\n{Ignore Friendlies} makes it skip allies."],
+    body = L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting."],
     warning = L["Turning Reticle Targeting on or off reloads the UI."],
   },
   {

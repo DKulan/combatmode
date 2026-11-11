@@ -3005,7 +3005,7 @@ function UI.MakeTextInput(parent, opts)
   end
 
   -- Optional DynamicCam-style stamp over the whole row while this field is inactive
-  -- (e.g. preline editor: only the active Auto Lock / Ignore Friendlies field is editable).
+  -- (e.g. preline editor: only the active Auto Lock field is editable).
   local markOpt = opts.watermarkWhenDisabled
   local markInitial = type(markOpt) == "function" and markOpt() or markOpt
   if type(markInitial) == "string" and markInitial ~= "" then

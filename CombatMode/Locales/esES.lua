@@ -192,9 +192,6 @@ L["Enables aim-based unit targeting and precise placement of ground-targeted spe
 L["Enable Reticle Targeting"] = "Activar selección por retícula"
 L["Aim the crosshair at units to pick targets instead of tab-targeting."] =
   "Apunta la mira a las unidades para elegir objetivos en lugar de usar el tabulador."
-L["Ignore Friendlies"] = "Ignorar amistosos"
-L["Ignore friendly NPCs and Players, and only target hostile units."] =
-  "Ignora PNJ y jugadores amistosos y selecciona solo unidades hostiles."
 L["Click Casting Only"] = "Solo lanzamiento por clic"
 L["Apply reticle targeting logic only to Click Casting binds."] =
   "Aplica la lógica de selección por retícula solo a las asignaciones de lanzamiento por clic."
@@ -225,11 +222,9 @@ L["Locks your target, or the unit under the crosshair. Tap again to unlock."] =
   "Fija tu objetivo o la unidad bajo la mira. Vuelve a pulsar para soltarla."
 L["Locks the unit under the crosshair, replacing any current lock. Tap with nothing under the crosshair to unlock. Aiming at the unit you already locked keeps the lock."] =
   "Fija la unidad bajo la mira y sustituye cualquier fijación actual. Pulsa sin nada bajo la mira para soltarla. Apuntar a la unidad ya fijada mantiene la fijación."
-L["With Ignore Friendlies on, a friendly or dead unit under the crosshair is ignored: the lock stays where it is."] =
-  "Con «Ignorar amistosos» activado, se ignora una unidad amistosa o muerta bajo la mira: la fijación se queda donde está."
 L["Auto Target Lock"] = "Fijar objetivo automáticamente"
-L["Target Lock engages automatically when attacking units, and in Support Mode when healing an ally."] =
-  "Fijar objetivo se activa automáticamente al atacar unidades y, en el Modo de apoyo, al sanar a un aliado."
+L["Target Lock engages automatically when attacking units. In Support Mode it only locks the ally you heal."] =
+  "Fijar objetivo se activa automáticamente al atacar unidades. En el Modo de apoyo solo fija al aliado al que sanas."
 L["Target Lock Marker"] = "Marcador de fijación"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "Muestra una marca de mira en la placa de nombre del objetivo fijado."
@@ -319,7 +314,6 @@ L["Target Crosshair"] = "Fijar objetivo en la mira"
 L["Clear Focus"] = "Borrar foco"
 L["Start Attack"] = "Iniciar ataque"
 L["Pet Attack"] = "Ataque de mascota"
-L["Toggle Focus Any"] = "Alternar foco (cualquiera)"
 L["Toggle Focus Enemy"] = "Alternar foco (enemigo)"
 L["Run MACRO"] = "Ejecutar MACRO"
 L["— none —"] = "— ninguna —"
@@ -556,8 +550,8 @@ L["A reactive, fully customizable crosshair that adapts to your target and comba
   "Una mira reactiva y totalmente personalizable que se adapta a tu objetivo y al estado de combate.\n\nElige su {aspecto}, {tamaño} y {posición}."
 L["Aim at an enemy and the HUD next to your crosshair suggests your {next spell} and shows its key.\n\nAim at something you can interact with and it shows its {name} and your {Interact key} instead.\n\nTurn either on or off, and set its {side}, {size} and {distance} from the crosshair."] =
   "Apunta a un enemigo y el HUD junto a tu mira sugiere tu {siguiente hechizo} y muestra su tecla.\n\nApunta a algo con lo que puedas interactuar y mostrará su {nombre} y tu {tecla de interacción}.\n\nActiva o desactiva cada uno y define su {lado}, {tamaño} y {distancia} respecto a la mira."
-L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting.\n\n{Ignore Friendlies} makes it skip allies."] =
-  "Selecciona enemigos solo apuntándoles y lanza hechizos de área y habilidades de zona justo donde apunta tu mira, sin selección con tabulador.\n\n{Ignorar amistosos} hace que omita a los aliados."
+L["Target enemies just by aiming at them, and drop ground-targeted spells and AoE abilities right where your crosshair points, with no tab-targeting."] =
+  "Selecciona enemigos solo apuntándoles y lanza hechizos de área y habilidades de zona justo donde apunta tu mira, sin selección con tabulador."
 L["Ground-targeted spells that should be cast at the crosshair location.\n\nType a {spell name or ID} to add it."] =
   "Hechizos de área que deben lanzarse en la posición de la mira.\n\nEscribe un {nombre o ID de hechizo} para añadirlo."
 L["{!Action buttons that are macros cannot inherit Reticle Targeting on their own.}\n\nPress {+} to open the {Macro Composer}, write your macro there and it gets the targeting logic added for you.\n\nThen drag it from this list onto your action bars; {right-click} an icon to edit it."] =
@@ -632,15 +626,9 @@ L["Open Options"] = "Abrir opciones"
 -- Editors: macro composer, prelines, crosshair colors and textures, CVar editor
 L["%d / %d characters"] = "%d / %d caracteres"
 L["%s (over the macro limit)"] = "%s (por encima del límite de la macro)"
-L["Ignore Friendlies: %s"] = "Ignorar amistosos: %s"
 L["Auto Target Lock: %s"] = "Fijar objetivo automáticamente: %s"
-L["Preline: Ignore Friendlies + No Auto Lock"] =
-  "Prelínea: Ignorar amistosos + sin fijado automático"
-L["Preline: Ignore Friendlies + Auto Lock"] = "Prelínea: Ignorar amistosos + fijado automático"
-L["Preline: Target Any Unit + No Auto Lock"] =
-  "Prelínea: Apuntar a cualquier unidad + sin fijado automático"
-L["Preline: Target Any Unit + Auto Lock"] =
-  "Prelínea: Apuntar a cualquier unidad + fijado automático"
+L["Preline: No Auto Lock"] = "Prelínea: sin fijado automático"
+L["Preline: Auto Lock"] = "Prelínea: fijado automático"
 L["Macro Composer"] = "Compositor de macros"
 L["The targeting logic preline matching your current Reticle Targeting settings is added automatically before your lines, as the highlighted portion of the macro. To modify it, use the Prelines Editor under %s."] =
   "La prelínea de selección que corresponde a tus ajustes actuales de selección por retícula se añade automáticamente antes de tus líneas, como la parte resaltada de la macro. Para modificarla, usa el editor de prelíneas en %s."
@@ -659,10 +647,8 @@ L["Inactive — Auto Target Lock is OFF"] =
   "Inactiva — Fijar objetivo automáticamente está DESACTIVADO"
 L["Inactive — Auto Target Lock is ON"] =
   "Inactiva — Fijar objetivo automáticamente está ACTIVADO"
-L["Inactive — Ignore Friendlies is OFF"] = "Inactiva — Ignorar amistosos está DESACTIVADO"
-L["Inactive — Ignore Friendlies is ON"] = "Inactiva — Ignorar amistosos está ACTIVADO"
-L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s X %s settings is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
-  "Personaliza las prelíneas de selección que se insertan antes de cada habilidad cuando la selección por retícula está activada.\n\n• Solo está activa la prelínea que coincide con tus ajustes actuales de %s X %s.\n• Máximo de %s caracteres por prelínea — las macros de SecureActionButton están limitadas a %s; el resto se reserva para la línea final %s.\n• Usa %s para recargar y aplicar los cambios."
+L["Customize the targeting prelines injected before each ability when Reticle Targeting is enabled.\n\n• Only the preline matching your current %s setting is active.\n• Max %s characters per preline — SecureActionButton macros are capped at %s; the rest is reserved for the trailing %s line.\n• Use %s to reload and pick up edits."] =
+  "Personaliza las prelíneas de selección que se insertan antes de cada habilidad cuando la selección por retícula está activada.\n\n• Solo está activa la prelínea que coincide con tus ajustes actuales de %s.\n• Máximo de %s caracteres por prelínea — las macros de SecureActionButton están limitadas a %s; el resto se reserva para la línea final %s.\n• Usa %s para recargar y aplicar los cambios."
 L["Apply Changes"] = "Aplicar cambios"
 L["Hostile"] = "Hostil"
 L["NPC"] = "PNJ"

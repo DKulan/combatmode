@@ -524,11 +524,12 @@ local function GetUnitReactionType(unitID)
 end
 
 local function IsEnemyOnlyReticleInCombat()
-  return CM.DB
-    and CM.DB.char
-    and CM.DB.char.reticleTargeting
-    and CM.DB.char.reticleTargetingEnemyOnly
-    and InCombatLockdown()
+  -- Not in Support Mode: aiming at allies is the point there, and the soft-enemy fallback below
+  -- would tint the reticle hostile-red over a friendly player whenever a hostile is targeted.
+  if CM.IsSupportModeActive and CM.IsSupportModeActive() then
+    return false
+  end
+  return CM.DB and CM.DB.char and CM.DB.char.reticleTargeting and InCombatLockdown()
 end
 
 local function GetUnitUnderCursor()
