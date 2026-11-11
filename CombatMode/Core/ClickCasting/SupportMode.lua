@@ -207,7 +207,10 @@ local function OnModeChanged()
   end
   Notify(active, SyncNameplates())
   -- The idle reticle is tinted while the mode is on (CM.GetCrosshairIdleColorState).
-  if CM.RefreshCrosshairAppearance then
+  -- The old reticle locks out while the new one locks in (Animations.lua).
+  if CM.PlayCrosshairModeSwap and CM.RefreshCrosshairAppearance then
+    CM.PlayCrosshairModeSwap(CM.RefreshCrosshairAppearance)
+  elseif CM.RefreshCrosshairAppearance then
     CM.RefreshCrosshairAppearance()
   end
   -- The Vignette takes the same color (Core/Vignette.lua).

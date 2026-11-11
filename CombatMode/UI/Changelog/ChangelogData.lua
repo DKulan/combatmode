@@ -14,15 +14,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/2.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [5.4.7] - 2026-11-09
+## [5.5.0] - 2026-11-11
 
 ### Added
 
-- **Support Mode**, with its own options tab and keybind (needs Reticle Targeting). While it is on, helpful spells on your click-cast buttons go to your friendly target first (such as an **Ally Cycle** pick), else to the friendly unit under the crosshair, else to the ally the game soft-targets in front of you. With no ally to take the spell, the game's own Self Cast setting decides whether it lands on you (Auto Self Cast and the Self Cast key both work). Friendly soft targeting is switched on while the mode is on. Harmful spells keep targeting enemies. It works in combat.
-  - **Support Bar Page** swaps your main action bar to a page for your healing and support abilities (page 2 by default), and back to page 1 when you leave.
-  - **Nameplates** picks which nameplates show while Support Mode is on: friendly only (the default), friendly and enemy, none, or your own settings unchanged. Your settings come back when you leave.
-  - The crosshair shows the mode: it switches to a **Support** texture (three chevrons by default; pick another, or turn it off, in **Appearance** on the Crosshair tab), and turns cyan while idle (the new **Support** tab of **Reaction Colors**).
-  - **Tint Vignette** gives the Vignette that same color while Support Mode is on. It shows only when your Vignette does.
+- **Support Mode**, a toggle with its own options tab and keybind (needs Reticle Targeting). It switches your main action bar to a dedicated support page and lets helpful spells on your click-cast buttons target the friendly unit under your crosshair, else your friendly target (such as an **Ally Cycle** pick), else the ally the game soft-targets in front of you. With no ally to take the spell, the game's own Self Cast setting decides whether it lands on you (Auto Self Cast and the Self Cast key both work). Friendly soft targeting is switched on while the mode is on. Harmful spells keep targeting enemies. It works in combat.
+  - **Prioritize Crosshair Target** (on by default) puts the ally under your crosshair ahead of other friendly targets, such as an Ally Cycle pick (Target Lock still comes first). Turn it off to prioritize your selected target instead.
+  - **Support Bar Page** is the main action bar page shown while the mode is on (page 2 by default). Place your support abilities there; leaving the mode returns to page 1.
+  - **Nameplate Behavior** picks which nameplates show while Support Mode is on: friendly only (the default), friendly and enemy, none, or your own settings unchanged. Your settings come back when you leave.
+  - The crosshair shows the mode: it switches to a **Support** texture (pick another, or turn it off, in **Appearance** on the Crosshair tab) and turns a mint green while idle (the new **Support** tab of **Reaction Colors**). Entering and leaving the mode swaps the reticle with a lock-out of the old look and a lock-in of the new one.
+  - **Tint Vignette** gives the Vignette that same color while Support Mode is on, as a soft, slowly breathing glow. It shows only when your Vignette does.
+  - The **Setup Wizard** has a **Support Mode** step, with screenshots and a check for your Support Mode key.
+- **Reset All Colors** button in the **Reaction Colors** editor, to clear every custom crosshair color at once.
+
+### Changed
+
+- The tab list in the options sidebar now scrolls when the window is too short to show every tab, and selecting a tab (from search, What's New or the wizard) scrolls it into view.
+- The help buttons in the options (beside dropdowns and keybinds, and in the code boxes) now use the game's gold "i" info icon instead of a "?", and the character-specific "C" badge is a matching gold button.
+
+## [5.4.7] - 2026-11-09
 
 ### Changed
 
@@ -920,7 +930,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rapidly toggling OPie rings could leave the cursor stuck and visible while Mouse Look was active.
 - Reloading could leave the cursor visible while still in the Mouse Look state after the loading screen.
 
-[Unreleased]: https://github.com/ThericGames/combatmode/compare/5.4.7...HEAD
+[Unreleased]: https://github.com/ThericGames/combatmode/compare/5.5.0...HEAD
+[5.5.0]: https://github.com/ThericGames/combatmode/compare/5.4.7...5.5.0
 [5.4.7]: https://github.com/ThericGames/combatmode/compare/5.4.6...5.4.7
 [5.4.6]: https://github.com/ThericGames/combatmode/compare/5.4.5...5.4.6
 [5.4.5]: https://github.com/ThericGames/combatmode/compare/5.4.4...5.4.5

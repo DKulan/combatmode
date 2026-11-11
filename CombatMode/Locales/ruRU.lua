@@ -465,24 +465,27 @@ L["Support Mode on. Nameplates switch after combat."] =
 L["Support Mode off. Nameplates switch after combat."] =
   "Режим поддержки выключен. Индикаторы здоровья переключатся после боя."
 L["SUPPORT MODE"] = "РЕЖИМ ПОДДЕРЖКИ"
-L["A second set of click casts for supporting your group. While Support Mode is on, helpful spells on your click-cast buttons go to your friendly target first (such as an Ally Cycle pick), else to the friendly unit under the crosshair, else to the ally the game soft-targets in front of you. With no ally to take the spell, the game's Self Cast setting decides whether it lands on you. Your main action bar shows a support page, and friendly nameplates replace enemy ones. Harmful spells keep targeting enemies."] =
-  "Второй набор применений по щелчку для поддержки группы. Пока режим поддержки включен, полезные заклинания на кнопках применения по щелчку применяются сначала к вашей дружественной цели (например, выбранной через «Смена союзника»), иначе к дружественной цели под прицелом, иначе к союзнику, которого игра выбирает мягкой целью перед вами. Если союзника для заклинания нет, настройка игры «Применение на себя» решает, попадет ли оно на вас. Основная панель команд показывает страницу поддержки, а дружественные индикаторы здоровья заменяют вражеские. Вредоносные заклинания по-прежнему применяются к противникам."
+L["A support-focused mode that, when active, switches your main action bar to a dedicated support page and allows helpful spells to target the friendly unit under your crosshair."] =
+  "Режим поддержки: при включении переключает основную панель команд на отдельную страницу поддержки и позволяет полезным заклинаниям выбирать целью дружественного юнита под прицелом."
 L["Support Mode Keybind"] = "Клавиша режима поддержки"
-L["Turns Support Mode on and off. Works in combat. Leave it unbound to disable the feature."] =
-  "Включает и выключает режим поддержки. Работает в бою. Оставьте без клавиши, чтобы отключить функцию."
+L["Prioritize Crosshair Target"] = "Приоритет цели под прицелом"
+L["Prioritizes the ally under your crosshair over other friendly targets (e.g. Ally Cycle). Disable to prioritize your selected target instead."] =
+  "Союзник под прицелом получает заклинание, даже если выбрана другая дружественная цель, например через смену союзника. Отключите, чтобы сначала применять заклинание на выбранную цель."
+L["Tap to toggle Support Mode on or off."] =
+  "Нажмите, чтобы включить или выключить режим поддержки."
 L["Support Bar Page"] = "Страница панели поддержки"
-L["The main action bar page shown while Support Mode is on. Put your healing and support abilities there. Leaving Support Mode returns to page 1."] =
-  "Страница основной панели команд, которая показывается, пока включен режим поддержки. Разместите на ней способности исцеления и поддержки. При выходе из режима поддержки возвращается страница 1."
+L["The main action bar page shown while Support Mode is on. Place support abilities here. Exiting Support Mode returns to Page 1."] =
+  "Страница основной панели команд, показываемая в режиме поддержки. Разместите здесь умения поддержки. При выходе из режима поддержки возвращается страница 1."
 L["Don't swap"] = "Не менять"
 L["Page %d"] = "Страница %d"
 L["Requires Reticle Targeting"] = "Требуется наведение по прицелу"
 L["Support"] = "Поддержка"
 L["Tint Vignette"] = "Окрашивать виньетку"
-L["While Support Mode is on, the Vignette takes the Support crosshair color, so you can tell the mode at a glance. It shows only when your Vignette does; with the Vignette off, nothing is tinted."] =
-  "Пока включен режим поддержки, виньетка принимает цвет прицела поддержки, чтобы режим было видно с первого взгляда. Она видна только тогда, когда видна ваша виньетка; если виньетка выключена, ничего не окрашивается."
-L["Nameplates"] = "Индикаторы здоровья"
-L["Which nameplates show while Support Mode is on. Your own nameplate settings come back when you leave it."] =
-  "Какие индикаторы здоровья показываются, пока включен режим поддержки. Ваши собственные настройки индикаторов возвращаются при выходе из него."
+L["While Support Mode is active, the Vignette adopts the Support crosshair color. It only appears when the Vignette is enabled."] =
+  "Пока режим поддержки включён, виньетка принимает цвет прицела поддержки. Она появляется только при включённой виньетке."
+L["Nameplate Behavior"] = "Поведение индикаторов здоровья"
+L["Choose which nameplates appear while in Support Mode. Normal settings are restored when exiting Support Mode."] =
+  "Выберите, какие индикаторы показываются в режиме поддержки. При выходе возвращаются обычные настройки."
 L["Don't change"] = "Не менять"
 L["Friendly only"] = "Только дружественные"
 L["Friendly and enemy"] = "Дружественные и вражеские"
@@ -572,6 +575,9 @@ L["Set an Ally Cycle - Next key"] =
   "Назначьте клавишу «Смена союзника – Следующий»"
 L["Set an Ally Cycle - Previous key"] =
   "Назначьте клавишу «Смена союзника – Предыдущий»"
+L["Set a Support Mode key"] = "Назначьте клавишу режима поддержки"
+L["A support-focused mode that, when active, switches your main action bar to a dedicated {support page} and allows {helpful spells} to target the friendly unit under your crosshair.\n\nSet your key."] =
+  "Режим поддержки: при включении переключает основную панель команд на отдельную {страницу поддержки} и позволяет {полезным заклинаниям} выбирать целью дружественного юнита под прицелом.\n\nНазначьте клавишу."
 L["Turning Reticle Targeting on or off reloads the UI."] =
   "Включение или выключение наведения по прицелу перезагружает интерфейс."
 L["Needs Reticle Targeting."] = "Требуется наведение по прицелу."
@@ -705,6 +711,7 @@ L["Object"] = "Объект"
 L["Select a tab to customize the color and alpha of the crosshair when targeting different types of units.\n\n• %s and %s animations use the Hostile color.\n• Inactive crosshair states use the Base style."] =
   "Выберите вкладку, чтобы настроить цвет и прозрачность прицела при наведении на разные типы целей.\n\n• Анимации «%s» и «%s» используют цвет враждебных целей.\n• Неактивные состояния прицела используют базовый стиль."
 L["Reset to Default"] = "Сбросить"
+L["Reset All Colors"] = "Сбросить все цвета"
 L["Show the inactive crosshair"] = "Показать неактивный прицел"
 L["Show the active crosshair"] = "Показать активный прицел"
 L["Show the mounted crosshair"] = "Показать прицел верхом"

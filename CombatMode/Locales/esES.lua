@@ -441,24 +441,26 @@ L["Support Mode on. Nameplates switch after combat."] =
 L["Support Mode off. Nameplates switch after combat."] =
   "Modo de apoyo desactivado. Las placas de nombre cambian tras el combate."
 L["SUPPORT MODE"] = "MODO DE APOYO"
-L["A second set of click casts for supporting your group. While Support Mode is on, helpful spells on your click-cast buttons go to your friendly target first (such as an Ally Cycle pick), else to the friendly unit under the crosshair, else to the ally the game soft-targets in front of you. With no ally to take the spell, the game's Self Cast setting decides whether it lands on you. Your main action bar shows a support page, and friendly nameplates replace enemy ones. Harmful spells keep targeting enemies."] =
-  "Un segundo conjunto de lanzamientos por clic para apoyar a tu grupo. Mientras el Modo de apoyo está activado, los hechizos beneficiosos de tus botones de lanzamiento por clic van primero a tu objetivo amistoso (por ejemplo, el elegido con Ciclo de aliados); si no lo hay, a la unidad amistosa bajo la mira; y si tampoco, al aliado que el juego selecciona como objetivo suave delante de ti. Si no hay ningún aliado que reciba el hechizo, el ajuste de autolanzamiento del juego decide si cae sobre ti. Tu barra de acción principal muestra una página de apoyo y las placas de nombre amistosas sustituyen a las enemigas. Los hechizos dañinos siguen apuntando a los enemigos."
+L["A support-focused mode that, when active, switches your main action bar to a dedicated support page and allows helpful spells to target the friendly unit under your crosshair."] =
+  "Un modo centrado en el apoyo que, al activarse, cambia tu barra de acción principal a una página de apoyo dedicada y permite que los hechizos beneficiosos apunten a la unidad amistosa bajo tu mira."
 L["Support Mode Keybind"] = "Tecla del modo de apoyo"
-L["Turns Support Mode on and off. Works in combat. Leave it unbound to disable the feature."] =
-  "Activa y desactiva el Modo de apoyo. Funciona en combate. Déjala sin asignar para desactivar la función."
+L["Prioritize Crosshair Target"] = "Priorizar el objetivo de la mira"
+L["Prioritizes the ally under your crosshair over other friendly targets (e.g. Ally Cycle). Disable to prioritize your selected target instead."] =
+  "El aliado bajo tu mira recibe el hechizo aunque tengas seleccionado otro objetivo amistoso, como una selección del Ciclo de aliados. Desactívalo para lanzar primero sobre tu objetivo seleccionado."
+L["Tap to toggle Support Mode on or off."] = "Pulsa para activar o desactivar el Modo de apoyo."
 L["Support Bar Page"] = "Página de la barra de apoyo"
-L["The main action bar page shown while Support Mode is on. Put your healing and support abilities there. Leaving Support Mode returns to page 1."] =
-  "La página de la barra de acción principal que se muestra mientras el Modo de apoyo está activado. Coloca ahí tus facultades de sanación y apoyo. Al salir del Modo de apoyo se vuelve a la página 1."
+L["The main action bar page shown while Support Mode is on. Place support abilities here. Exiting Support Mode returns to Page 1."] =
+  "La página de la barra de acción principal que se muestra mientras el Modo de apoyo está activo. Coloca aquí tus habilidades de apoyo. Al salir del Modo de apoyo vuelve a la página 1."
 L["Don't swap"] = "No cambiar"
 L["Page %d"] = "Página %d"
 L["Requires Reticle Targeting"] = "Requiere Selección por retícula"
 L["Support"] = "Apoyo"
 L["Tint Vignette"] = "Teñir la viñeta"
-L["While Support Mode is on, the Vignette takes the Support crosshair color, so you can tell the mode at a glance. It shows only when your Vignette does; with the Vignette off, nothing is tinted."] =
-  "Mientras el Modo de apoyo está activado, la viñeta toma el color de la mira de Apoyo para que reconozcas el modo de un vistazo. Solo se muestra cuando se muestra tu viñeta; con la viñeta desactivada no se tiñe nada."
-L["Nameplates"] = "Placas de nombre"
-L["Which nameplates show while Support Mode is on. Your own nameplate settings come back when you leave it."] =
-  "Qué placas de nombre se muestran mientras el Modo de apoyo está activado. Tus propios ajustes de placas de nombre vuelven al salir de él."
+L["While Support Mode is active, the Vignette adopts the Support crosshair color. It only appears when the Vignette is enabled."] =
+  "Mientras el Modo de apoyo está activo, la viñeta adopta el color de la mira de apoyo. Solo aparece cuando la viñeta está activada."
+L["Nameplate Behavior"] = "Comportamiento de las placas de nombre"
+L["Choose which nameplates appear while in Support Mode. Normal settings are restored when exiting Support Mode."] =
+  "Elige qué placas de nombre aparecen en el Modo de apoyo. Al salir se restauran los ajustes normales."
 L["Don't change"] = "No cambiar"
 L["Friendly only"] = "Solo amistosas"
 L["Friendly and enemy"] = "Amistosas y enemigas"
@@ -543,6 +545,9 @@ L["Set a Cycle Lock - Previous key"] = "Asigna una tecla de Ciclo de fijado: ant
 L["Set a Radial Menu key"] = "Asigna una tecla del menú radial"
 L["Set an Ally Cycle - Next key"] = "Asigna una tecla de Ciclo de aliados: siguiente"
 L["Set an Ally Cycle - Previous key"] = "Asigna una tecla de Ciclo de aliados: anterior"
+L["Set a Support Mode key"] = "Asigna una tecla de Modo de apoyo"
+L["A support-focused mode that, when active, switches your main action bar to a dedicated {support page} and allows {helpful spells} to target the friendly unit under your crosshair.\n\nSet your key."] =
+  "Un modo centrado en el apoyo que, al activarse, cambia tu barra de acción principal a una {página de apoyo} dedicada y permite que los {hechizos beneficiosos} apunten a la unidad amistosa bajo tu mira.\n\nAsigna tu tecla."
 L["Turning Reticle Targeting on or off reloads the UI."] =
   "Activar o desactivar la selección por retícula recarga la interfaz."
 L["Needs Reticle Targeting."] = "Requiere la selección por retícula."
@@ -667,6 +672,7 @@ L["Object"] = "Objeto"
 L["Select a tab to customize the color and alpha of the crosshair when targeting different types of units.\n\n• %s and %s animations use the Hostile color.\n• Inactive crosshair states use the Base style."] =
   "Selecciona una pestaña para personalizar el color y la opacidad de la mira al apuntar a distintos tipos de unidades.\n\n• Las animaciones de %s y %s usan el color Hostil.\n• Los estados inactivos de la mira usan el estilo Base."
 L["Reset to Default"] = "Restablecer valor"
+L["Reset All Colors"] = "Restablecer todos los colores"
 L["Show the inactive crosshair"] = "Mostrar la mira inactiva"
 L["Show the active crosshair"] = "Mostrar la mira activa"
 L["Show the mounted crosshair"] = "Mostrar la mira de montura"

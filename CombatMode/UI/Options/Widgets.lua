@@ -10,7 +10,7 @@
 --      step by opts.step (dim until hover) and stop at min/max.
 --    • Dropdown menus match the select's laid-out width. opts.itemInfo(id) -> { icon|atlas, detail, detailColor }
 --      adds a round icon and a dim right-hand tag to menu rows and the closed select; values/order
---      may be functions (re-read on open). opts.helpTooltip (dropdowns and keybinds) adds a round "?"
+--      may be functions (re-read on open). opts.helpTooltip (dropdowns and keybinds) adds Blizzard's round "i"
 --      badge left of the select (control.widgetLeftInset keeps the layout room) that shows
 --      the tooltip on hover. ESC closes the open menu only (its own keyboard handler), not the window.
 --    • Text inputs: multiline opts.lockedPrefix (string|function) pins dim,
@@ -684,7 +684,31 @@ end
 local TEXT_FRAC = 0.58
 local ROW_PAD_X = 8
 
---- Round glyph badge (the code-box "?" help button, the character-specific "C"): two stacked
+local BADGE_DIM = 0.8 -- alpha of the image badges until hovered
+local HELP_INFO_TEXTURE = "Interface\\common\\help-i" -- Blizzard's tutorial "i" button
+-- That art is a 64 px canvas with the round button in the middle (about 13..50): crop the empty
+-- margin so the button fills its badge instead of shrinking.
+local HELP_INFO_CROP = { 13 / 64, 50 / 64, 13 / 64, 50 / 64 }
+
+--- Gold round image badge (the help "i", the character-specific "C") filling `parent`, dimmed until
+--- hovered. `crop` ({ left, right, top, bottom }) trims the texture's empty margin. Returns the badge
+--- with badge:SetHover(on).
+local function CreateImageBadge(parent, texture, crop)
+  local icon = parent:CreateTexture(nil, "ARTWORK")
+  icon:SetAllPoints(parent)
+  icon:SetTexture(texture)
+  if crop then
+    icon:SetTexCoord(crop[1], crop[2], crop[3], crop[4])
+  end
+  icon:SetAlpha(BADGE_DIM)
+  local badge = { icon = icon }
+  function badge.SetHover(_, on)
+    icon:SetAlpha(on and 1 or BADGE_DIM)
+  end
+  return badge
+end
+
+--- Round glyph badge (the icon badges): two stacked
 --- discs (UI.CreateCircle) with the button outline gradient on the ring and the button fill
 --- gradient on the face, and a cream glyph. `size` is the outer diameter; (dx, dy) nudge the
 --- glyph so it looks centred; optional `fontSize` / `color` override the glyph (default: button
@@ -724,7 +748,7 @@ local function CreateGlyphBadge(parent, size, glyph, dx, dy, fontSize, color)
   return badge
 end
 
---- Round badge (same chrome as the "?" help button) holding a texture icon instead of a glyph.
+--- Round badge (same chrome as the glyph badges) holding a texture icon instead of a glyph.
 --- Returns the badge with badge:SetHover(on) and badge:SetIcon(path). `parent` is the (square)
 --- button that hosts it; `size` is the outer diameter.
 function UI.CreateIconBadge(parent, size, texturePath)
@@ -765,8 +789,7 @@ local DESC_BELOW_GAP = 6
 local CONTROL_GAP = 20
 local ICON_GAP = 6
 local DEFAULT_ICON_SIZE = 20
-local CHAR_SCOPE_MARK = "C"
-local CHAR_SCOPE_MARK_W = 14
+local CHAR_SCOPE_MARK_W = 16
 local CHAR_SCOPE_MARK_GAP = 4
 local CHAR_SCOPE_TOOLTIP = L["Character-specific option."]
 
@@ -911,8 +934,7 @@ local function AttachOptionText(control, row, opts, widgetH)
     local hit = CreateFrame("Frame", nil, row)
     hit:SetSize(CHAR_SCOPE_MARK_W, CHAR_SCOPE_MARK_W)
     hit:EnableMouse(true)
-    local badge = CreateGlyphBadge(hit, CHAR_SCOPE_MARK_W, CHAR_SCOPE_MARK, 1, 0, 8, C.textDim)
-    hit.mark = badge.mark
+    local badge = CreateImageBadge(hit, CM.Constants.CharBadge)
     control.scopeTag = hit
     UI.AttachTooltip(hit, CHAR_SCOPE_TOOLTIP)
     hit:HookScript("OnEnter", function()
@@ -1801,7 +1823,7 @@ end
 local HELP_BADGE_SIZE = 20
 local HELP_BADGE_GAP = 6
 
---- Round "?" badge left of `button` that shows `tooltip` (see UI.ShowTooltip) on hover, and
+--- Round "i" badge left of `button` that shows `tooltip` (see UI.ShowTooltip) on hover, and
 --- reserves its room on the control. No-op without a tooltip.
 local function AddHelpBadge(control, row, button, tooltip)
   if not tooltip then
@@ -1810,7 +1832,7 @@ local function AddHelpBadge(control, row, button, tooltip)
   local helpBtn = CreateFrame("Button", nil, row)
   helpBtn:SetSize(HELP_BADGE_SIZE, HELP_BADGE_SIZE)
   helpBtn:SetPoint("RIGHT", button, "LEFT", -HELP_BADGE_GAP, 0)
-  local help = CreateGlyphBadge(helpBtn, HELP_BADGE_SIZE, "?", 2, 0, nil, C.textDim)
+  local help = CreateImageBadge(helpBtn, HELP_INFO_TEXTURE, HELP_INFO_CROP)
   helpBtn:SetScript("OnEnter", function()
     help:SetHover(true)
   end)
@@ -1826,7 +1848,7 @@ end
 --- `opts.headers` (`{ [id] = title }`) turns those ids in `opts.order` into non-clickable section
 --- headers with a divider above (hidden while filtering).
 --- `opts.helpTooltip` (string, `{ title?, text?, lines? }` or a function returning either; see
---- UI.ShowTooltip) adds a round "?" badge to the left of the select that shows it on hover.
+--- UI.ShowTooltip) adds Blizzard's round "i" info badge to the left of the select that shows it on hover.
 function UI.MakeDropdown(parent, opts)
   local row = CreateFrame("Frame", nil, parent)
   row:SetHeight(ROW_H)
@@ -2855,9 +2877,7 @@ function UI.MakeTextInput(parent, opts)
     if helpBtn.SetPropagateMouseClicks then
       helpBtn:SetPropagateMouseClicks(false)
     end
-    -- Round "?" badge (same look as the character-specific "C"); the glyph is nudged to look
-    -- centred in the circle.
-    local help = CreateGlyphBadge(helpBtn, 20, "?", 2, 0, nil, C.textDim)
+    local help = CreateImageBadge(helpBtn, HELP_INFO_TEXTURE, HELP_INFO_CROP)
     helpBtn:SetScript("OnEnter", function()
       help:SetHover(true)
     end)
@@ -3473,7 +3493,7 @@ function UI.MakePillMultiSelect(parent, opts, resolver)
   local pillScroll, pillContent, pillBar = UI.CreateScrollFrame(box)
   pillScroll:SetPoint("TOPLEFT", box, "TOPLEFT", 8, -6)
   -- Boxes with a pick button keep their pills clear of it.
-  -- Same layout as the code box with its "?" icon: the icon sits in the corner and the scrollbar
+  -- Same layout as the code box with its "i" icon: the icon sits in the corner and the scrollbar
   -- starts below it.
   pillScroll:SetPoint("BOTTOMRIGHT", box, "BOTTOMRIGHT", resolver.pickFrame and -26 or -18, 6)
   pillBar:SetPoint(

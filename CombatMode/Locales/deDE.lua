@@ -442,24 +442,27 @@ L["Support Mode on. Nameplates switch after combat."] =
 L["Support Mode off. Nameplates switch after combat."] =
   "Unterstützungsmodus aus. Namensplaketten wechseln nach dem Kampf."
 L["SUPPORT MODE"] = "UNTERSTÜTZUNGSMODUS"
-L["A second set of click casts for supporting your group. While Support Mode is on, helpful spells on your click-cast buttons go to your friendly target first (such as an Ally Cycle pick), else to the friendly unit under the crosshair, else to the ally the game soft-targets in front of you. With no ally to take the spell, the game's Self Cast setting decides whether it lands on you. Your main action bar shows a support page, and friendly nameplates replace enemy ones. Harmful spells keep targeting enemies."] =
-  "Ein zweiter Satz Klick-Zauber zur Unterstützung deiner Gruppe. Solange der Unterstützungsmodus an ist, gehen hilfreiche Zauber auf deinen Klick-Zauber-Tasten zuerst auf dein freundliches Ziel (etwa eine Auswahl des Verbündetenwechsels), sonst auf die freundliche Einheit unter dem Fadenkreuz, sonst auf den Verbündeten, den das Spiel vor dir als weiches Ziel wählt. Gibt es keinen Verbündeten für den Zauber, entscheidet die Selbstzauber-Einstellung des Spiels, ob er auf dich geht. Deine Hauptaktionsleiste zeigt eine Unterstützungsseite und freundliche Namensplaketten ersetzen die feindlichen. Schädliche Zauber zielen weiterhin auf Gegner."
+L["A support-focused mode that, when active, switches your main action bar to a dedicated support page and allows helpful spells to target the friendly unit under your crosshair."] =
+  "Ein unterstützungsorientierter Modus, der im aktiven Zustand deine Hauptaktionsleiste auf eine eigene Unterstützungsseite umschaltet und es hilfreichen Zaubern erlaubt, die freundliche Einheit unter deinem Fadenkreuz anzuvisieren."
 L["Support Mode Keybind"] = "Tastenbelegung für Unterstützungsmodus"
-L["Turns Support Mode on and off. Works in combat. Leave it unbound to disable the feature."] =
-  "Schaltet den Unterstützungsmodus an und aus. Funktioniert im Kampf. Ohne Belegung ist die Funktion deaktiviert."
+L["Prioritize Crosshair Target"] = "Fadenkreuz-Ziel priorisieren"
+L["Prioritizes the ally under your crosshair over other friendly targets (e.g. Ally Cycle). Disable to prioritize your selected target instead."] =
+  "Der Verbündete unter deinem Fadenkreuz erhält den Zauber, auch wenn ein anderes freundliches Ziel ausgewählt ist, etwa eine Auswahl per Verbündetenwechsel. Ausschalten, um zuerst auf das ausgewählte Ziel zu wirken."
+L["Tap to toggle Support Mode on or off."] =
+  "Tippen, um den Unterstützungsmodus ein- oder auszuschalten."
 L["Support Bar Page"] = "Unterstützungsleistenseite"
-L["The main action bar page shown while Support Mode is on. Put your healing and support abilities there. Leaving Support Mode returns to page 1."] =
-  "Die Seite der Hauptaktionsleiste, die im Unterstützungsmodus angezeigt wird. Lege dort deine Heil- und Unterstützungsfähigkeiten ab. Beim Verlassen des Unterstützungsmodus geht es zurück zu Seite 1."
+L["The main action bar page shown while Support Mode is on. Place support abilities here. Exiting Support Mode returns to Page 1."] =
+  "Die Hauptaktionsleistenseite, die im Unterstützungsmodus angezeigt wird. Lege hier deine Unterstützungsfähigkeiten ab. Beim Verlassen des Unterstützungsmodus geht es zurück zu Seite 1."
 L["Don't swap"] = "Nicht wechseln"
 L["Page %d"] = "Seite %d"
 L["Requires Reticle Targeting"] = "Erfordert Fadenkreuz-Zielerfassung"
 L["Support"] = "Support"
 L["Tint Vignette"] = "Vignette einfärben"
-L["While Support Mode is on, the Vignette takes the Support crosshair color, so you can tell the mode at a glance. It shows only when your Vignette does; with the Vignette off, nothing is tinted."] =
-  "Solange der Unterstützungsmodus an ist, nimmt die Vignette die Support-Fadenkreuzfarbe an, damit du den Modus auf einen Blick erkennst. Sie erscheint nur, wenn deine Vignette erscheint; ist die Vignette aus, wird nichts eingefärbt."
-L["Nameplates"] = "Namensplaketten"
-L["Which nameplates show while Support Mode is on. Your own nameplate settings come back when you leave it."] =
-  "Welche Namensplaketten angezeigt werden, solange der Unterstützungsmodus an ist. Deine eigenen Namensplaketten-Einstellungen kehren zurück, wenn du ihn verlässt."
+L["While Support Mode is active, the Vignette adopts the Support crosshair color. It only appears when the Vignette is enabled."] =
+  "Solange der Unterstützungsmodus aktiv ist, übernimmt die Vignette die Fadenkreuzfarbe des Unterstützungsmodus. Sie erscheint nur, wenn die Vignette aktiviert ist."
+L["Nameplate Behavior"] = "Verhalten der Namensplaketten"
+L["Choose which nameplates appear while in Support Mode. Normal settings are restored when exiting Support Mode."] =
+  "Wähle, welche Namensplaketten im Unterstützungsmodus erscheinen. Beim Verlassen werden die normalen Einstellungen wiederhergestellt."
 L["Don't change"] = "Nicht ändern"
 L["Friendly only"] = "Nur freundliche"
 L["Friendly and enemy"] = "Freundliche und feindliche"
@@ -544,6 +547,9 @@ L["Set a Cycle Lock - Previous key"] = "Taste „Sperre wechseln – Vorheriger�
 L["Set a Radial Menu key"] = "Radialmenü-Taste festlegen"
 L["Set an Ally Cycle - Next key"] = "Taste „Verbündetenwechsel – Nächster“ festlegen"
 L["Set an Ally Cycle - Previous key"] = "Taste „Verbündetenwechsel – Vorheriger“ festlegen"
+L["Set a Support Mode key"] = "Taste für den Unterstützungsmodus festlegen"
+L["A support-focused mode that, when active, switches your main action bar to a dedicated {support page} and allows {helpful spells} to target the friendly unit under your crosshair.\n\nSet your key."] =
+  "Ein unterstützungsorientierter Modus, der im aktiven Zustand deine Hauptaktionsleiste auf eine eigene {Unterstützungsseite} umschaltet und {hilfreichen Zaubern} erlaubt, die freundliche Einheit unter deinem Fadenkreuz anzuvisieren.\n\nLege deine Taste fest."
 L["Turning Reticle Targeting on or off reloads the UI."] =
   "Das Ein- oder Ausschalten der Fadenkreuz-Zielerfassung lädt die Benutzeroberfläche neu."
 L["Needs Reticle Targeting."] = "Benötigt die Fadenkreuz-Zielerfassung."
@@ -667,6 +673,7 @@ L["Object"] = "Objekt"
 L["Select a tab to customize the color and alpha of the crosshair when targeting different types of units.\n\n• %s and %s animations use the Hostile color.\n• Inactive crosshair states use the Base style."] =
   "Wähle einen Reiter, um Farbe und Transparenz des Fadenkreuzes für verschiedene Einheitentypen anzupassen.\n\n• Die Animationen von %s und %s verwenden die Farbe für Feindlich.\n• Inaktive Fadenkreuz-Zustände verwenden den Basis-Stil."
 L["Reset to Default"] = "Auf Standard zurücksetzen"
+L["Reset All Colors"] = "Alle Farben zurücksetzen"
 L["Show the inactive crosshair"] = "Inaktives Fadenkreuz anzeigen"
 L["Show the active crosshair"] = "Aktives Fadenkreuz anzeigen"
 L["Show the mounted crosshair"] = "Fadenkreuz beim Reiten anzeigen"

@@ -365,22 +365,25 @@ L["Support Mode off"] = true
 L["Support Mode on. Nameplates switch after combat."] = true
 L["Support Mode off. Nameplates switch after combat."] = true
 L["SUPPORT MODE"] = true
-L["A second set of click casts for supporting your group. While Support Mode is on, helpful spells on your click-cast buttons go to your friendly target first (such as an Ally Cycle pick), else to the friendly unit under the crosshair, else to the ally the game soft-targets in front of you. With no ally to take the spell, the game's Self Cast setting decides whether it lands on you. Your main action bar shows a support page, and friendly nameplates replace enemy ones. Harmful spells keep targeting enemies."] =
+L["A support-focused mode that, when active, switches your main action bar to a dedicated support page and allows helpful spells to target the friendly unit under your crosshair."] =
   true
 L["Support Mode Keybind"] = true
-L["Turns Support Mode on and off. Works in combat. Leave it unbound to disable the feature."] = true
+L["Prioritize Crosshair Target"] = true
+L["Prioritizes the ally under your crosshair over other friendly targets (e.g. Ally Cycle). Disable to prioritize your selected target instead."] =
+  true
+L["Tap to toggle Support Mode on or off."] = true
 L["Support Bar Page"] = true
-L["The main action bar page shown while Support Mode is on. Put your healing and support abilities there. Leaving Support Mode returns to page 1."] =
+L["The main action bar page shown while Support Mode is on. Place support abilities here. Exiting Support Mode returns to Page 1."] =
   true
 L["Don't swap"] = true
 L["Page %d"] = true
 L["Requires Reticle Targeting"] = true
 L["Support"] = true
 L["Tint Vignette"] = true
-L["While Support Mode is on, the Vignette takes the Support crosshair color, so you can tell the mode at a glance. It shows only when your Vignette does; with the Vignette off, nothing is tinted."] =
+L["While Support Mode is active, the Vignette adopts the Support crosshair color. It only appears when the Vignette is enabled."] =
   true
-L["Nameplates"] = true
-L["Which nameplates show while Support Mode is on. Your own nameplate settings come back when you leave it."] =
+L["Nameplate Behavior"] = true
+L["Choose which nameplates appear while in Support Mode. Normal settings are restored when exiting Support Mode."] =
   true
 L["Don't change"] = true
 L["Friendly only"] = true
@@ -453,6 +456,9 @@ L["Set a Cycle Lock - Previous key"] = true
 L["Set a Radial Menu key"] = true
 L["Set an Ally Cycle - Next key"] = true
 L["Set an Ally Cycle - Previous key"] = true
+L["Set a Support Mode key"] = true
+L["A support-focused mode that, when active, switches your main action bar to a dedicated {support page} and allows {helpful spells} to target the friendly unit under your crosshair.\n\nSet your key."] =
+  true
 L["Turning Reticle Targeting on or off reloads the UI."] = true
 L["Needs Reticle Targeting."] = true
 L["Lock your cursor to the center of the screen and steer by moving the mouse, no more holding right-click.\n\nSet a {key to toggle it}, and {one to interact with} whatever you're aiming at."] =
@@ -564,6 +570,7 @@ L["Object"] = true
 L["Select a tab to customize the color and alpha of the crosshair when targeting different types of units.\n\n• %s and %s animations use the Hostile color.\n• Inactive crosshair states use the Base style."] =
   true
 L["Reset to Default"] = true
+L["Reset All Colors"] = true
 L["Show the inactive crosshair"] = true
 L["Show the active crosshair"] = true
 L["Show the mounted crosshair"] = true

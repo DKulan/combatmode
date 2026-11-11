@@ -443,24 +443,26 @@ L["Support Mode on. Nameplates switch after combat."] =
 L["Support Mode off. Nameplates switch after combat."] =
   "지원 모드 꺼짐. 이름표는 전투가 끝난 뒤 전환됩니다."
 L["SUPPORT MODE"] = "지원 모드"
-L["A second set of click casts for supporting your group. While Support Mode is on, helpful spells on your click-cast buttons go to your friendly target first (such as an Ally Cycle pick), else to the friendly unit under the crosshair, else to the ally the game soft-targets in front of you. With no ally to take the spell, the game's Self Cast setting decides whether it lands on you. Your main action bar shows a support page, and friendly nameplates replace enemy ones. Harmful spells keep targeting enemies."] =
-  "파티를 지원하기 위한 두 번째 클릭 시전 세트입니다. 지원 모드가 켜져 있는 동안 클릭 시전 버튼의 이로운 주문은 먼저 우호적인 현재 대상(예: 아군 순환으로 선택한 대상)에게 시전되고, 없으면 조준점 아래의 우호적 대상에게, 그것도 없으면 게임이 앞쪽에서 부드러운 대상으로 잡은 아군에게 시전됩니다. 주문을 받을 아군이 없으면 게임의 자신에게 시전 설정에 따라 자신에게 시전될지가 정해집니다. 주 행동 단축바는 지원 페이지를 표시하고, 적 이름표 대신 우호적 이름표가 표시됩니다. 해로운 주문은 계속 적을 대상으로 합니다."
+L["A support-focused mode that, when active, switches your main action bar to a dedicated support page and allows helpful spells to target the friendly unit under your crosshair."] =
+  "활성화하면 주 행동 단축바를 전용 지원 페이지로 전환하고, 이로운 주문이 조준점 아래의 우호적 대상을 지정할 수 있게 하는 지원 중심 모드입니다."
 L["Support Mode Keybind"] = "지원 모드 단축키"
-L["Turns Support Mode on and off. Works in combat. Leave it unbound to disable the feature."] =
-  "지원 모드를 켜고 끕니다. 전투 중에도 작동합니다. 단축키를 지정하지 않으면 기능이 비활성화됩니다."
+L["Prioritize Crosshair Target"] = "조준점 대상 우선"
+L["Prioritizes the ally under your crosshair over other friendly targets (e.g. Ally Cycle). Disable to prioritize your selected target instead."] =
+  "다른 우호적 대상(아군 순환으로 고른 대상 등)을 선택해 두었더라도 조준점 아래의 아군에게 주문이 시전됩니다. 끄면 선택한 대상에게 먼저 시전합니다."
+L["Tap to toggle Support Mode on or off."] = "눌러서 지원 모드를 켜거나 끕니다."
 L["Support Bar Page"] = "지원 단축바 페이지"
-L["The main action bar page shown while Support Mode is on. Put your healing and support abilities there. Leaving Support Mode returns to page 1."] =
-  "지원 모드가 켜져 있는 동안 표시되는 주 행동 단축바 페이지입니다. 치유 및 지원 능력을 그곳에 배치하세요. 지원 모드를 끄면 1페이지로 돌아갑니다."
+L["The main action bar page shown while Support Mode is on. Place support abilities here. Exiting Support Mode returns to Page 1."] =
+  "지원 모드가 켜져 있는 동안 표시되는 주 행동 단축바 페이지입니다. 지원 능력을 여기에 두세요. 지원 모드를 끝내면 1페이지로 돌아갑니다."
 L["Don't swap"] = "전환 안 함"
 L["Page %d"] = "%d페이지"
 L["Requires Reticle Targeting"] = "조준선 대상 지정 필요"
 L["Support"] = "지원"
 L["Tint Vignette"] = "비네트 색 입히기"
-L["While Support Mode is on, the Vignette takes the Support crosshair color, so you can tell the mode at a glance. It shows only when your Vignette does; with the Vignette off, nothing is tinted."] =
-  "지원 모드가 켜져 있는 동안 비네트가 지원 조준점 색상으로 바뀌어 모드를 한눈에 알 수 있습니다. 비네트가 표시될 때만 나타나며, 비네트가 꺼져 있으면 아무것도 물들지 않습니다."
-L["Nameplates"] = "이름표"
-L["Which nameplates show while Support Mode is on. Your own nameplate settings come back when you leave it."] =
-  "지원 모드가 켜져 있는 동안 표시할 이름표입니다. 모드를 끄면 원래 이름표 설정으로 돌아갑니다."
+L["While Support Mode is active, the Vignette adopts the Support crosshair color. It only appears when the Vignette is enabled."] =
+  "지원 모드가 켜져 있는 동안 비네트가 지원 조준점 색을 띱니다. 비네트가 켜져 있을 때만 나타납니다."
+L["Nameplate Behavior"] = "이름표 동작"
+L["Choose which nameplates appear while in Support Mode. Normal settings are restored when exiting Support Mode."] =
+  "지원 모드 중에 표시할 이름표를 선택합니다. 종료하면 기본 설정이 복원됩니다."
 L["Don't change"] = "변경 안 함"
 L["Friendly only"] = "우호적 대상만"
 L["Friendly and enemy"] = "우호적 대상과 적"
@@ -544,6 +546,9 @@ L["Set a Cycle Lock - Previous key"] = "고정 순환 - 이전 단축키 지정"
 L["Set a Radial Menu key"] = "방사형 메뉴 단축키 지정"
 L["Set an Ally Cycle - Next key"] = "아군 순환 - 다음 단축키 지정"
 L["Set an Ally Cycle - Previous key"] = "아군 순환 - 이전 단축키 지정"
+L["Set a Support Mode key"] = "지원 모드 단축키 지정"
+L["A support-focused mode that, when active, switches your main action bar to a dedicated {support page} and allows {helpful spells} to target the friendly unit under your crosshair.\n\nSet your key."] =
+  "활성화하면 주 행동 단축바를 전용 {지원 페이지}로 전환하고, {이로운 주문}이 조준점 아래의 우호적 대상을 지정할 수 있게 하는 지원 중심 모드입니다.\n\n단축키를 지정하세요."
 L["Turning Reticle Targeting on or off reloads the UI."] =
   "조준선 대상 지정을 켜거나 끄면 UI가 다시 불러와집니다."
 L["Needs Reticle Targeting."] = "조준선 대상 지정이 필요합니다."
@@ -664,6 +669,7 @@ L["Object"] = "오브젝트"
 L["Select a tab to customize the color and alpha of the crosshair when targeting different types of units.\n\n• %s and %s animations use the Hostile color.\n• Inactive crosshair states use the Base style."] =
   "탭을 선택해 서로 다른 유형의 유닛을 조준할 때의 조준점 색상과 투명도를 사용자 지정합니다.\n\n• %s 및 %s 애니메이션은 적대 색상을 사용합니다.\n• 비활성 조준점 상태는 기본 스타일을 사용합니다."
 L["Reset to Default"] = "기본값으로 초기화"
+L["Reset All Colors"] = "모든 색상 초기화"
 L["Show the inactive crosshair"] = "비활성 조준점 표시"
 L["Show the active crosshair"] = "활성 조준점 표시"
 L["Show the mounted crosshair"] = "탈것 조준점 표시"

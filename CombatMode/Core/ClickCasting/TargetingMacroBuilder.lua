@@ -856,6 +856,21 @@ local SUPPORT_ALLY_UNITS = "[@mouseover,help][@softfriend,help]"
 -- cycled ally still works when nobody else is aimed at.
 local SUPPORT_LIVING_TARGET = "[@target,help,nodead]"
 local SUPPORT_CAST_UNITS = SUPPORT_LIVING_TARGET .. SUPPORT_ALLY_UNITS
+-- Crosshair First (char.supportModeCrosshairFirst, default on): the unit under the crosshair
+-- beats a hard target or an Ally Cycle pick, but not Target Lock (a living friendly focus), as
+-- with enemies; then the living hard target, then the soft friend. Off: the order above (the
+-- hard target first).
+local SUPPORT_CAST_UNITS_CROSSHAIR_FIRST = "[@focus,help,nodead][@mouseover,help]"
+  .. SUPPORT_LIVING_TARGET
+  .. "[@softfriend,help]"
+
+local function SupportCastUnits()
+  local char = CM.DB and CM.DB.char
+  if char and CM.DbBool(char.supportModeCrosshairFirst, true) then
+    return SUPPORT_CAST_UNITS_CROSSHAIR_FIRST
+  end
+  return SUPPORT_CAST_UNITS
+end
 
 local SUPPORT_SELF_KEY = "[mod:SELFCAST,@player]"
 
@@ -870,17 +885,18 @@ end
 -- helpful /click without a friendly target would raise the targeting cursor, so the macro stops
 -- there unless the Self Cast key is held.
 local function SupportPreLine()
-  local line = "/tar " .. SUPPORT_CAST_UNITS
+  local line = "/tar " .. SupportCastUnits()
   if AutoSelfCastOn() then
     return line
   end
   return line .. "\n/stopmacro [nomod:SELFCAST,nohelp]"
 end
 
--- Support Mode cast as one line that never changes your hard target. Order: you while the
--- game's Self Cast key is held, your living friendly hard target (an Ally Cycle pick wins over
--- whatever you aim at; clear the target to heal by aim again), the aimed-at ally (under the
--- crosshair, else the friendly soft target), the hard target when it is a dead ally, and last
+-- Support Mode cast as one line that never changes your hard target. Order (SupportCastUnits):
+-- you while the game's Self Cast key is held, then either the aimed-at ally first (Crosshair
+-- First, default) or your living friendly hard target first (an Ally Cycle pick wins over
+-- whatever you aim at; clear the target to heal by aim again), then the other, the soft friend,
+-- the hard target when it is a dead ally, and last
 -- you when the game's Auto Self Cast is on (off: every condition fails and nothing is cast).
 -- Any friendly hard target counts: a macro can't tell who picked it.
 -- /click can't name a unit, so this is a named /cast of the spell on the slot when the macro is
@@ -902,7 +918,7 @@ local function SupportCastLine(spellId)
       name = name .. "(" .. subtext .. ")"
     end
   end
-  local units = SUPPORT_SELF_KEY .. SUPPORT_CAST_UNITS .. "[@target,help]"
+  local units = SUPPORT_SELF_KEY .. SupportCastUnits() .. "[@target,help]"
   if AutoSelfCastOn() then
     units = units .. "[@player]"
   end

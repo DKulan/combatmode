@@ -101,6 +101,9 @@ CM.Constants.VignetteTint = uiPath .. "vignette-tint.tga"
 CM.Constants.ColorPickerThumbs = uiPath .. "colorpicker-buttons.tga"
 CM.Constants.CheckMark = uiPath .. "checkbox-check.tga"
 CM.Constants.UnknownAddonIcon = uiPath .. "question-mark.tga"
+-- The character-specific "C" badge: a gold round button like Blizzard's "i" info button, 64x64 with
+-- the disc filling the canvas (scripts/art/make-char-badge.py builds it).
+CM.Constants.CharBadge = uiPath .. "char-badge.tga"
 -- Setup wizard preview slides: `<key>_<n>.blp` (16:9 crops of in-game screenshots stored as 512x256 DXT1, drawn back at 16:9) and the
 -- shared frame drawn over them (680x438, transparent 552x310 window centred), both built by
 -- scripts/art/make-wizard-previews.py.
@@ -151,9 +154,10 @@ CM.Constants.CrosshairDotTexture = crosshairPath .. "crosshairDot.blp"
 CM.Constants.CrosshairIdleDefaultId = "Dot"
 -- Support Mode reticle (global.crosshairSupportId): one texture in place of Inactive and Active
 -- while that mode is on, so the shape tells the mode and the color still tells the target.
--- Default: the Triangle preset's inactive texture (three chevrons). "none" = no Support texture
--- (the normal ones stay).
-CM.Constants.CrosshairSupportDefaultId = "Triangle"
+-- Default: crosshairDefault-support.blp, a plain catalog entry (id below). "none" = no Support
+-- texture (the normal ones stay).
+CM.Constants.CrosshairSupportDefaultId = "Default-support"
+CM.Constants.CrosshairSupportTexture = crosshairPath .. "crosshairDefault-support.blp"
 
 local PACK_COUNT = 202
 
@@ -210,6 +214,12 @@ do
     CM.Constants.CrosshairIdleDefaultId,
     CM.Constants.CrosshairDotTexture,
     "Dot",
+    "curated"
+  )
+  AddCrosshairTexture(
+    CM.Constants.CrosshairSupportDefaultId,
+    CM.Constants.CrosshairSupportTexture,
+    "Support",
     "curated"
   )
   for i = 0, PACK_COUNT - 1 do
@@ -275,7 +285,7 @@ CM.Constants.CrosshairReactionColors = {
   friendly_player = { 0.3, 0.6, 1, 0.8 }, -- blue (friendly players)
   object = { 1, 0.8, 0.2, 0.8 }, -- yellow
   base = { 1, 1, 1, 0.5 }, -- white
-  support = { 0.2, 1, 0.9, 0.7 }, -- cyan: the idle (base) reticle while Support Mode is on
+  support = { 0.333, 1, 0.737, 0.7 }, -- #55FFBC, mint green with a touch of light blue: the idle (base) reticle while Support Mode is on
   mounted = { 1, 1, 1, 0 }, -- transparent
   --  focus = { 1, 0.2, 0.3, 1 }, -- defaults only; runtime focus tint uses hostile via getter
 }

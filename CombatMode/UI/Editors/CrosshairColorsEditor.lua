@@ -6,7 +6,7 @@
 --  Architecture / how it works:
 --    • Tabs: hostile, friendly_npc, friendly_player, object, base, support (idle reticle in
 --      Support Mode). CM.OpenCrosshairColorsEditor(key) opens on that tab.
---    • DB.global.crosshairReactionColors[state] = { r, g, b, a }; Reset Color clears one override.
+--    • DB.global.crosshairReactionColors[state] = { r, g, b, a }; Reset to Default clears one override, Reset All Colors (last button) all of them.
 --    • Opens beside CombatModeOptionsFrame when visible; combat-guarded.
 --  Does not: Edit mounted/focus colors (mounted fixed; focus → hostile at runtime).
 --  Related: Core/Crosshair/Crosshair.lua, UI/Options/ColorPickerDialog.lua,
@@ -39,7 +39,8 @@ local REACTION_STATES = {
 
 local TAB_BAR_W = 396 -- one 66 px step per reaction tab
 local EDITOR_W = TAB_BAR_W + 32
-local EDITOR_H = 398
+local EDITOR_GAP = 8
+local EDITOR_H = 398 + UI.Sizes.control + EDITOR_GAP
 local PICKER_CARD_PAD = 10
 local RESET_BTN_H = UI.Sizes.control
 local PICKER_BODY_H = UI.PickerBodyHeight
@@ -199,6 +200,24 @@ local function Build()
       RefreshColorPreviews()
       SelectReactionTab(activeKey)
     end
+  end)
+
+  local resetAllBtn = CreateFrame("Button", nil, content)
+  resetAllBtn:SetHeight(RESET_BTN_H)
+  resetAllBtn:SetPoint("TOPLEFT", pickerCard, "BOTTOMLEFT", 0, -EDITOR_GAP)
+  resetAllBtn:SetPoint("TOPRIGHT", pickerCard, "BOTTOMRIGHT", 0, -EDITOR_GAP)
+  UI.StyleControl(resetAllBtn)
+  local resetAllText =
+    UI.CreateFontString(resetAllBtn, "OVERLAY", UI.Fonts.button, "GameFontNormal")
+  resetAllText:SetPoint("CENTER")
+  resetAllText:SetText(L["Reset All Colors"])
+  UI.WireControlHover(resetAllBtn, resetAllText)
+  resetAllBtn:SetScript("OnClick", function()
+    for _, state in ipairs(REACTION_STATES) do
+      CM.ResetCrosshairReactionColor(state.key)
+    end
+    RefreshColorPreviews()
+    SelectReactionTab(activeKey)
   end)
 
   window:SetScript("OnShow", function()

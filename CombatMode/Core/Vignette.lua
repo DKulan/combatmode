@@ -25,7 +25,7 @@
 --    • Support Mode tint (CM.RefreshVignetteTint): the art is black, which a vertex color can't
 --      tint, so a white copy (Constants.VignetteTint) sits above it in the "support" crosshair
 --      reaction color. While Support Mode is on and char.supportModeTintVignette is set, the two
---      cross-fade (tintBlend); both follow the same conditions and alpha, so the tint only shows
+--      cross-fade (tintBlend) and the tint breathes softly (TINT_BREATH_*); both follow the same conditions and alpha, so the tint only shows
 --      when the vignette does.
 --  Does not: Own any UI chrome, options tab wiring, or event handlers.
 --  Related: Core/Runtime/Bootstrap.lua, UI/Options/Tabs/{TabGeneral,TabSupportMode}.lua,
@@ -43,13 +43,19 @@ local C_PlayerInteractionManager = _G.C_PlayerInteractionManager
 
 -- Lua stdlib
 local math = _G.math
+local cos = math.cos
 local max = math.max
 local min = math.min
 
 local VIGNETTE_ATLAS = "Artifacts-BG-Shadow"
 local VIGNETTE_OPACITY = 0.6
--- Used until the crosshair module can answer (same cyan as CrosshairReactionColors.support).
-local TINT_FALLBACK_COLOR = { 0.2, 1, 0.9 }
+-- Used until the crosshair module can answer (same color as CrosshairReactionColors.support).
+local TINT_FALLBACK_COLOR = { 0.333, 1, 0.737 }
+-- The tinted copy is white art, so at full alpha it brightens the screen edges: it breathes
+-- between these two strengths (a share of the vignette's alpha) over one cycle.
+local TINT_BREATH_MIN = 0.12
+local TINT_BREATH_MAX = 0.34
+local TINT_BREATH_PERIOD = 5
 
 local function VignetteFadeDuration()
   return (CM.Constants and CM.Constants.MouseLookCameraFadeDuration) or 0.35
@@ -68,6 +74,7 @@ local fadeElapsed = 0
 -- 0 = the dark vignette, 1 = the tinted one (Support Mode); eases toward tintTarget.
 local tintBlend = 0
 local tintTarget = 0
+local breathElapsed = 0
 
 -- Open NPC windows by PLAYER_INTERACTION_MANAGER type (a set, so a repeated SHOW is harmless).
 local openInteractions = {}
@@ -145,8 +152,10 @@ end
 
 -- The dark art and its tinted copy share the vignette's alpha, split by tintBlend.
 local function ApplyAlphas()
+  local wave = 0.5 - 0.5 * cos(breathElapsed / TINT_BREATH_PERIOD * 2 * math.pi)
+  local strength = TINT_BREATH_MIN + (TINT_BREATH_MAX - TINT_BREATH_MIN) * wave
   vignetteTexture:SetAlpha(currentAlpha * (1 - tintBlend))
-  vignetteTintTexture:SetAlpha(currentAlpha * tintBlend)
+  vignetteTintTexture:SetAlpha(currentAlpha * tintBlend * strength)
 end
 
 local function VignetteOnUpdate(_, elapsed)
@@ -164,6 +173,10 @@ local function VignetteOnUpdate(_, elapsed)
     else
       tintBlend = max(tintTarget, tintBlend - step)
     end
+    changed = true
+  end
+  if tintBlend > 0 then
+    breathElapsed = (breathElapsed + elapsed) % TINT_BREATH_PERIOD
     changed = true
   end
   if fadeActive then

@@ -202,6 +202,23 @@ local STEPS = {
     },
   },
   {
+    tab = "supportmode",
+    section = L["SUPPORT MODE"],
+    title = L["Support Mode"],
+    slides = { "supportmode", 3 },
+    body = L["A support-focused mode that, when active, switches your main action bar to a dedicated {support page} and allows {helpful spells} to target the friendly unit under your crosshair.\n\nSet your key."],
+    warning = L["Needs Reticle Targeting."],
+    -- The key can't be set while Reticle Targeting is off, so it doesn't block then.
+    tasks = {
+      {
+        label = L["Set a Support Mode key"],
+        done = function()
+          return not CM.DB.char.reticleTargeting or Bound("Combat Mode - Support Mode")
+        end,
+      },
+    },
+  },
+  {
     tab = "autocursorunlock",
     section = L["AUTO UNLOCK"],
     title = L["Auto Unlock"],

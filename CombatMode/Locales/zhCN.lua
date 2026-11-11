@@ -426,24 +426,26 @@ L["Support Mode on. Nameplates switch after combat."] =
 L["Support Mode off. Nameplates switch after combat."] =
   "辅助模式已关闭。姓名板将在战斗结束后切换。"
 L["SUPPORT MODE"] = "辅助模式"
-L["A second set of click casts for supporting your group. While Support Mode is on, helpful spells on your click-cast buttons go to your friendly target first (such as an Ally Cycle pick), else to the friendly unit under the crosshair, else to the ally the game soft-targets in front of you. With no ally to take the spell, the game's Self Cast setting decides whether it lands on you. Your main action bar shows a support page, and friendly nameplates replace enemy ones. Harmful spells keep targeting enemies."] =
-  "用于支援队伍的第二套点击施法。辅助模式开启时，点击施法按键上的有益法术会优先施放给你的友方目标（例如用友方循环选中的目标）；没有时施放给准星下的友方单位；再没有时施放给游戏在你前方软选中的友方。没有可施放的友方时，由游戏的自我施法设置决定是否施放给自己。主动作条显示辅助页，友方姓名板取代敌方姓名板。有害法术仍然以敌人为目标。"
+L["A support-focused mode that, when active, switches your main action bar to a dedicated support page and allows helpful spells to target the friendly unit under your crosshair."] =
+  "一种以支援为核心的模式：启用后会将主动作条切换到专用的支援页，并允许增益法术以准星下的友方单位为目标。"
 L["Support Mode Keybind"] = "辅助模式按键"
-L["Turns Support Mode on and off. Works in combat. Leave it unbound to disable the feature."] =
-  "开启或关闭辅助模式。战斗中可用。不绑定按键即可停用此功能。"
+L["Prioritize Crosshair Target"] = "优先准星目标"
+L["Prioritizes the ally under your crosshair over other friendly targets (e.g. Ally Cycle). Disable to prioritize your selected target instead."] =
+  "即使已选中其他友方目标（例如通过友方循环选中），准星下的盟友也会优先获得法术。关闭后将优先施放给已选中的目标。"
+L["Tap to toggle Support Mode on or off."] = "点按以开启或关闭辅助模式。"
 L["Support Bar Page"] = "辅助动作条页"
-L["The main action bar page shown while Support Mode is on. Put your healing and support abilities there. Leaving Support Mode returns to page 1."] =
-  "辅助模式开启时显示的主动作条页。把你的治疗和辅助技能放在那里。离开辅助模式会回到第 1 页。"
+L["The main action bar page shown while Support Mode is on. Place support abilities here. Exiting Support Mode returns to Page 1."] =
+  "支援模式开启期间显示的主动作条页面。请将支援技能放在这里。退出支援模式后会返回第 1 页。"
 L["Don't swap"] = "不切换"
 L["Page %d"] = "第 %d 页"
 L["Requires Reticle Targeting"] = "需要准星瞄准"
 L["Support"] = "辅助"
 L["Tint Vignette"] = "暗角着色"
-L["While Support Mode is on, the Vignette takes the Support crosshair color, so you can tell the mode at a glance. It shows only when your Vignette does; with the Vignette off, nothing is tinted."] =
-  "辅助模式开启时，暗角会变为辅助准星颜色，让你一眼就能看出当前模式。它只在暗角显示时出现；暗角关闭时不会着色。"
-L["Nameplates"] = "姓名板"
-L["Which nameplates show while Support Mode is on. Your own nameplate settings come back when you leave it."] =
-  "辅助模式开启时显示哪些姓名板。退出后会恢复你自己的姓名板设置。"
+L["While Support Mode is active, the Vignette adopts the Support crosshair color. It only appears when the Vignette is enabled."] =
+  "辅助模式开启时，暗角会采用辅助准星的颜色。仅在启用暗角时显示。"
+L["Nameplate Behavior"] = "姓名板行为"
+L["Choose which nameplates appear while in Support Mode. Normal settings are restored when exiting Support Mode."] =
+  "选择辅助模式下显示哪些姓名板。退出后会恢复正常设置。"
 L["Don't change"] = "不更改"
 L["Friendly only"] = "仅友方"
 L["Friendly and enemy"] = "友方和敌方"
@@ -526,6 +528,9 @@ L["Set a Cycle Lock - Previous key"] = "设置“循环锁定 - 上一个”按�
 L["Set a Radial Menu key"] = "设置轮盘菜单按键"
 L["Set an Ally Cycle - Next key"] = "设置“友方循环 - 下一个”按键"
 L["Set an Ally Cycle - Previous key"] = "设置“友方循环 - 上一个”按键"
+L["Set a Support Mode key"] = "设置支援模式按键"
+L["A support-focused mode that, when active, switches your main action bar to a dedicated {support page} and allows {helpful spells} to target the friendly unit under your crosshair.\n\nSet your key."] =
+  "一种以支援为核心的模式：启用后会将主动作条切换到专用的{支援页}，并允许{增益法术}以准星下的友方单位为目标。\n\n请设置你的按键。"
 L["Turning Reticle Targeting on or off reloads the UI."] =
   "开启或关闭准星瞄准会重新加载界面。"
 L["Needs Reticle Targeting."] = "需要准星瞄准。"
@@ -645,6 +650,7 @@ L["Object"] = "物体"
 L["Select a tab to customize the color and alpha of the crosshair when targeting different types of units.\n\n• %s and %s animations use the Hostile color.\n• Inactive crosshair states use the Base style."] =
   "选择一个标签页，自定义准星在瞄准不同类型单位时的颜色和透明度。\n\n• %s和%s动画使用敌对颜色。\n• 未激活的准星状态使用基础样式。"
 L["Reset to Default"] = "恢复默认"
+L["Reset All Colors"] = "恢复所有颜色默认值"
 L["Show the inactive crosshair"] = "显示未激活的准星"
 L["Show the active crosshair"] = "显示激活的准星"
 L["Show the mounted crosshair"] = "显示骑乘时的准星"

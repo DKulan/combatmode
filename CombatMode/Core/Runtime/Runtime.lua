@@ -395,7 +395,7 @@ function CM.InitDatabase()
         sv.global.seenWizard = sv.global.seenWizard or CM.DbBool(charDb.seenWizard, false)
         charDb.seenWizard = nil
       end
-      -- Support Mode's Swap Nameplates toggle became the Nameplates dropdown (5.4.7, before its
+      -- Support Mode's Swap Nameplates toggle became the Nameplates dropdown (5.5.0, before its
       -- first release): off = "keep", on = the default "friendly".
       if charDb.supportModeNameplates ~= nil then
         if not CM.DbBool(charDb.supportModeNameplates, true) then
