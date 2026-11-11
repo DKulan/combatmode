@@ -229,8 +229,8 @@ L["Target Lock Marker"] = "Marcador de fijación"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "Muestra una marca de mira en la placa de nombre del objetivo fijado."
 L["Focus Locked Target"] = "Enfocar objetivo fijado"
-L["Pulls the camera toward your locked target, keeping it in focus."] =
-  "Atrae la cámara hacia tu objetivo fijado para mantenerlo enfocado."
+L["Pulls the camera toward your locked target, keeping it in focus. Works on hostile targets only."] =
+  "Atrae la cámara hacia tu objetivo fijado para mantenerlo enfocado. Solo funciona con objetivos hostiles."
 L["TARGETING INDICATORS"] = "INDICADORES DE OBJETIVO"
 L["Visual indicators that highlight targets in the world for easier identification."] =
   "Indicadores visuales que resaltan los objetivos en el mundo para identificarlos mejor."

@@ -184,7 +184,8 @@ L["Target Lock engages automatically when attacking units. In Support Mode it on
 L["Target Lock Marker"] = true
 L["Show a crosshair marker on the nameplate of the locked target."] = true
 L["Focus Locked Target"] = true
-L["Pulls the camera toward your locked target, keeping it in focus."] = true
+L["Pulls the camera toward your locked target, keeping it in focus. Works on hostile targets only."] =
+  true
 L["TARGETING INDICATORS"] = true
 L["Visual indicators that highlight targets in the world for easier identification."] = true
 L["Target Outline"] = true

@@ -238,8 +238,8 @@ L["Target Lock Marker"] = "Метка захвата цели"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "Показывает метку прицела на индикаторе имени захваченной цели."
 L["Focus Locked Target"] = "Фокус на захваченной цели"
-L["Pulls the camera toward your locked target, keeping it in focus."] =
-  "Притягивает камеру к захваченной цели, удерживая её в фокусе."
+L["Pulls the camera toward your locked target, keeping it in focus. Works on hostile targets only."] =
+  "Притягивает камеру к захваченной цели, удерживая её в фокусе. Работает только с враждебными целями."
 L["TARGETING INDICATORS"] = "ИНДИКАТОРЫ ЦЕЛИ"
 L["Visual indicators that highlight targets in the world for easier identification."] =
   "Визуальные индикаторы, выделяющие цели в мире для лучшего распознавания."

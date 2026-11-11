@@ -220,8 +220,8 @@ L["Target Lock Marker"] = "目標鎖定標記"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "在被鎖定目標的名條上顯示準星標記。"
 L["Focus Locked Target"] = "聚焦鎖定目標"
-L["Pulls the camera toward your locked target, keeping it in focus."] =
-  "將鏡頭拉向被鎖定的目標，使其保持在焦點中。"
+L["Pulls the camera toward your locked target, keeping it in focus. Works on hostile targets only."] =
+  "將鏡頭拉向被鎖定的目標，使其保持在焦點中。僅對敵對目標有效。"
 L["TARGETING INDICATORS"] = "目標指示"
 L["Visual indicators that highlight targets in the world for easier identification."] =
   "在世界中醒目標示目標的視覺指示，便於辨認。"

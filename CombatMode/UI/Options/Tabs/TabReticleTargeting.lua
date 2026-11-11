@@ -490,7 +490,7 @@ UI.Options.AddTab({
     })
     ctx:Toggle({
       label = L["Focus Locked Target"],
-      desc = L["Pulls the camera toward your locked target, keeping it in focus."],
+      desc = L["Pulls the camera toward your locked target, keeping it in focus. Works on hostile targets only."],
       watermarkWhenDisabled = function()
         if CM.MotionSicknessProtectionOn and CM.MotionSicknessProtectionOn() == true then
           return L["Disabled while Motion Sickness Protection is on"]

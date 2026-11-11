@@ -229,8 +229,8 @@ L["Target Lock Marker"] = "대상 고정 표시"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "고정된 대상의 이름표에 조준점 표시를 보여줍니다."
 L["Focus Locked Target"] = "고정된 대상에 집중"
-L["Pulls the camera toward your locked target, keeping it in focus."] =
-  "카메라를 고정된 대상 쪽으로 당겨 계속 초점을 맞춥니다."
+L["Pulls the camera toward your locked target, keeping it in focus. Works on hostile targets only."] =
+  "카메라를 고정된 대상 쪽으로 당겨 계속 초점을 맞춥니다. 적대적 대상에서만 작동합니다."
 L["TARGETING INDICATORS"] = "대상 표시기"
 L["Visual indicators that highlight targets in the world for easier identification."] =
   "월드의 대상을 강조하여 더 쉽게 식별할 수 있게 하는 시각 표시기입니다."

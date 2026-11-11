@@ -229,8 +229,8 @@ L["Target Lock Marker"] = "Marcador de trava de alvo"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "Mostra um marcador de mira na placa de nome do alvo travado."
 L["Focus Locked Target"] = "Focar no alvo travado"
-L["Pulls the camera toward your locked target, keeping it in focus."] =
-  "Puxa a câmera em direção ao alvo travado, mantendo-o em foco."
+L["Pulls the camera toward your locked target, keeping it in focus. Works on hostile targets only."] =
+  "Puxa a câmera em direção ao alvo travado, mantendo-o em foco. Funciona apenas com alvos hostis."
 L["TARGETING INDICATORS"] = "INDICADORES DE ALVO"
 L["Visual indicators that highlight targets in the world for easier identification."] =
   "Indicadores visuais que destacam alvos no mundo para facilitar a identificação."

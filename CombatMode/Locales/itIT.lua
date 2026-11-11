@@ -229,8 +229,8 @@ L["Target Lock Marker"] = "Indicatore di blocco bersaglio"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "Mostra un indicatore a mirino sulla targhetta del bersaglio bloccato."
 L["Focus Locked Target"] = "Metti a fuoco il bersaglio bloccato"
-L["Pulls the camera toward your locked target, keeping it in focus."] =
-  "Attira la telecamera verso il bersaglio bloccato, mantenendolo a fuoco."
+L["Pulls the camera toward your locked target, keeping it in focus. Works on hostile targets only."] =
+  "Attira la telecamera verso il bersaglio bloccato, mantenendolo a fuoco. Funziona solo con bersagli ostili."
 L["TARGETING INDICATORS"] = "INDICATORI DEL BERSAGLIO"
 L["Visual indicators that highlight targets in the world for easier identification."] =
   "Indicatori visivi che evidenziano i bersagli nel mondo per riconoscerli più facilmente."

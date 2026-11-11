@@ -228,8 +228,8 @@ L["Target Lock Marker"] = "Marqueur de verrouillage"
 L["Show a crosshair marker on the nameplate of the locked target."] =
   "Affiche un marqueur de réticule sur la barre de nom de la cible verrouillée."
 L["Focus Locked Target"] = "Focaliser la cible verrouillée"
-L["Pulls the camera toward your locked target, keeping it in focus."] =
-  "Attire la caméra vers votre cible verrouillée pour la garder au centre."
+L["Pulls the camera toward your locked target, keeping it in focus. Works on hostile targets only."] =
+  "Attire la caméra vers votre cible verrouillée pour la garder au centre. Ne fonctionne que sur les cibles hostiles."
 L["TARGETING INDICATORS"] = "INDICATEURS DE CIBLE"
 L["Visual indicators that highlight targets in the world for easier identification."] =
   "Indicateurs visuels qui mettent en évidence les cibles dans le monde pour les repérer plus facilement."
