@@ -274,9 +274,7 @@ local function MatchingPreline(body)
   local global = CM.DB and CM.DB.global
   if global then
     for _, key in pairs({
-      "targetingMacroPrelineAnyOverride",
       "targetingMacroPrelineEnemyOverride",
-      "targetingMacroPrelineAutoLockAnyOverride",
       "targetingMacroPrelineAutoLockEnemyOverride",
     }) do
       if type(global[key]) == "string" then
