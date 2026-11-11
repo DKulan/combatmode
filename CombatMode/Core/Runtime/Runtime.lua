@@ -395,6 +395,18 @@ function CM.InitDatabase()
         sv.global.seenWizard = sv.global.seenWizard or CM.DbBool(charDb.seenWizard, false)
         charDb.seenWizard = nil
       end
+      -- Support Mode's Swap Nameplates toggle became the Nameplates dropdown (5.4.7, before its
+      -- first release): off = "keep", on = the default "friendly".
+      if charDb.supportModeNameplates ~= nil then
+        if not CM.DbBool(charDb.supportModeNameplates, true) then
+          charDb.supportModeNameplateMode = "keep"
+        end
+        charDb.supportModeNameplates = nil
+      end
+      -- Its Key Behavior (toggle / hold) and Self-Cast Modifier options were removed before
+      -- release: the key toggles, and self-casting is left to a player macro.
+      charDb.supportModeKeyBehavior = nil
+      charDb.supportModeSelfCastModifier = nil
     end
   end
   -- Party Radial removed in 4.7.0; drop leftover settings so they do not linger in SV.

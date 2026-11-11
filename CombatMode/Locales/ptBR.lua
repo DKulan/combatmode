@@ -431,6 +431,39 @@ L["Scales the size of the Ally HUD."] = "Ajusta o tamanho do HUD de aliados."
 L["Distance between the Ally HUD and the crosshair."] =
   "Distância entre o HUD de aliados e a mira."
 
+-- Support Mode: keybind label, notices and options tab (SupportMode.lua, TabSupportMode.lua)
+L["Support Mode"] = "Modo de Suporte"
+L["support mode keybinding"] = "atalho do modo de suporte"
+L["Support Mode on"] = "Modo de Suporte ativado"
+L["Support Mode off"] = "Modo de Suporte desativado"
+L["Support Mode on. Nameplates switch after combat."] =
+  "Modo de Suporte ativado. As placas de identificação mudam após o combate."
+L["Support Mode off. Nameplates switch after combat."] =
+  "Modo de Suporte desativado. As placas de identificação mudam após o combate."
+L["SUPPORT MODE"] = "MODO DE SUPORTE"
+L["A second set of click casts for supporting your group. While Support Mode is on, helpful spells on your click-cast buttons go to your friendly target first (such as an Ally Cycle pick), else to the friendly unit under the crosshair, else to the ally the game soft-targets in front of you. With no ally to take the spell, the game's Self Cast setting decides whether it lands on you. Your main action bar shows a support page, and friendly nameplates replace enemy ones. Harmful spells keep targeting enemies."] =
+  "Um segundo conjunto de lançamentos por clique para apoiar seu grupo. Enquanto o Modo de Suporte está ativado, os feitiços benéficos dos seus botões de lançamento por clique vão primeiro para o seu alvo amigável (por exemplo, o escolhido com o Ciclo de aliados); se não houver, para a unidade amigável sob a mira; e, se também não houver, para o aliado que o jogo seleciona como alvo suave à sua frente. Sem nenhum aliado para receber o feitiço, a configuração de autolançamento do jogo decide se ele cai em você. Sua barra de ação principal mostra uma página de suporte e as placas de identificação amigáveis substituem as inimigas. Feitiços nocivos continuam mirando inimigos."
+L["Support Mode Keybind"] = "Atalho do Modo de Suporte"
+L["Turns Support Mode on and off. Works in combat. Leave it unbound to disable the feature."] =
+  "Ativa e desativa o Modo de Suporte. Funciona em combate. Deixe sem atalho para desativar o recurso."
+L["Support Bar Page"] = "Página da barra de suporte"
+L["The main action bar page shown while Support Mode is on. Put your healing and support abilities there. Leaving Support Mode returns to page 1."] =
+  "A página da barra de ação principal exibida enquanto o Modo de Suporte está ativado. Coloque nela suas habilidades de cura e suporte. Sair do Modo de Suporte volta para a página 1."
+L["Don't swap"] = "Não trocar"
+L["Page %d"] = "Página %d"
+L["Requires Reticle Targeting"] = "Requer Mira de Alvo"
+L["Support"] = "Suporte"
+L["Tint Vignette"] = "Tingir a vinheta"
+L["While Support Mode is on, the Vignette takes the Support crosshair color, so you can tell the mode at a glance. It shows only when your Vignette does; with the Vignette off, nothing is tinted."] =
+  "Enquanto o Modo de Suporte está ativado, a vinheta assume a cor da mira de Suporte para você reconhecer o modo de relance. Ela só aparece quando a sua vinheta aparece; com a vinheta desativada, nada é tingido."
+L["Nameplates"] = "Placas de identificação"
+L["Which nameplates show while Support Mode is on. Your own nameplate settings come back when you leave it."] =
+  "Quais placas de identificação aparecem enquanto o Modo de Suporte está ativado. Suas próprias configurações de placas voltam quando você sai dele."
+L["Don't change"] = "Não alterar"
+L["Friendly only"] = "Somente amigáveis"
+L["Friendly and enemy"] = "Amigáveis e inimigas"
+L["Hide all"] = "Ocultar todas"
+
 -- TabAutoCursorUnlock.lua: Auto Unlock tab
 L["Auto Unlock"] = "Desbloqueio automático"
 L["AUTO UNLOCK"] = "DESBLOQUEIO AUTOMÁTICO"
@@ -652,6 +685,13 @@ L["Not aiming at anything"] = "Sem mirar em nada"
 L["Aiming at a unit or object"] = "Mirando em uma unidade ou objeto"
 L["While you are mounted"] = "Enquanto você estiver montado"
 L["While Target Lock holds"] = "Enquanto a trava de alvo estiver ativa"
+L["SUPPORT"] = "SUPORTE"
+L["Use a Support Mode crosshair"] = "Usar uma mira para o Modo de Suporte"
+L["Use the normal crosshair in Support Mode"] = "Usar a mira normal no Modo de Suporte"
+L["Support Mode keeps your Inactive and Active textures."] =
+  "O Modo de Suporte mantém suas texturas Inativa e Ativa."
+L["While Support Mode is on, in place of Inactive and Active"] =
+  "Enquanto o Modo de Suporte está ativado, no lugar de Inativa e Ativa"
 L["Brings back the texture you had before hiding it."] =
   "Restaura a textura que você tinha antes de ocultá-la."
 L["Crosshair Textures"] = "Texturas da mira"

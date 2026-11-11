@@ -11,7 +11,8 @@
 --      minCameraZoom, dynamicPitch, dynamicPitchStrength, vignette, shoulderFollowsMouseLook, respectMotionSickness,
 --      autofocusLockedTarget) / allyCycle / debug.
 --      Crosshair also stores crosshairSituationalCondition + crosshairSituationalAppearance.
---    • char: reticle targeting, click-cast bindings, useGlobalBindings, shoulderOffset.
+--    • char: reticle targeting, click-cast bindings, useGlobalBindings, shoulderOffset,
+--      supportMode* (Support Mode page / nameplates / Vignette tint).
 --    • InitDatabase merges missing keys, then coerces Forever-style 1/0 flags to real
 --      booleans wherever these defaults declare a boolean (CM.DbBool / NormalizeBools).
 --    • MigrateMouseLookCameraDB (CVarManager) seeds shoulder/dynamicPitch from legacy
@@ -107,6 +108,7 @@ CM.Constants.DatabaseDefaults = {
     crosshairAppearance = CM.Constants.CrosshairTextureObj.Default,
     crosshairMountedId = CM.Constants.CrosshairIdleDefaultId, -- texture while mounted
     crosshairTargetLockId = CM.Constants.CrosshairIdleDefaultId, -- texture while Target Lock holds
+    crosshairSupportId = CM.Constants.CrosshairSupportDefaultId, -- texture in Support Mode
     crosshairScale = 1.0,
     crosshairY = 100,
     -- crosshair HUD: interaction mode toggle (layout is shared with combat assist)
@@ -212,5 +214,11 @@ return false
     -- click casting
     useGlobalBindings = true,
     bindings = DefaultBindings,
+    -- Support Mode (enable = keybind bound; Core/ClickCasting/SupportMode.lua)
+    supportModePage = 2, -- bar page shown while the mode is on (2-6); 0 = no page swap
+    -- Nameplates while the mode is on: "keep" (untouched) | "friendly" | "all" | "none"
+    supportModeNameplateMode = "friendly",
+    supportModeTintVignette = true, -- the Vignette takes the Support crosshair color while on
+    supportModeActive = false, -- session flag: a reload while on returns to page 1
   },
 }

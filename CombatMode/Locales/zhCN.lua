@@ -416,6 +416,39 @@ L["Where the Ally HUD sits relative to the crosshair."] = "友方 HUD 相对于�
 L["Scales the size of the Ally HUD."] = "缩放友方 HUD 的大小。"
 L["Distance between the Ally HUD and the crosshair."] = "友方 HUD 与准星之间的距离。"
 
+-- Support Mode: keybind label, notices and options tab (SupportMode.lua, TabSupportMode.lua)
+L["Support Mode"] = "辅助模式"
+L["support mode keybinding"] = "辅助模式按键绑定"
+L["Support Mode on"] = "辅助模式已开启"
+L["Support Mode off"] = "辅助模式已关闭"
+L["Support Mode on. Nameplates switch after combat."] =
+  "辅助模式已开启。姓名板将在战斗结束后切换。"
+L["Support Mode off. Nameplates switch after combat."] =
+  "辅助模式已关闭。姓名板将在战斗结束后切换。"
+L["SUPPORT MODE"] = "辅助模式"
+L["A second set of click casts for supporting your group. While Support Mode is on, helpful spells on your click-cast buttons go to your friendly target first (such as an Ally Cycle pick), else to the friendly unit under the crosshair, else to the ally the game soft-targets in front of you. With no ally to take the spell, the game's Self Cast setting decides whether it lands on you. Your main action bar shows a support page, and friendly nameplates replace enemy ones. Harmful spells keep targeting enemies."] =
+  "用于支援队伍的第二套点击施法。辅助模式开启时，点击施法按键上的有益法术会优先施放给你的友方目标（例如用友方循环选中的目标）；没有时施放给准星下的友方单位；再没有时施放给游戏在你前方软选中的友方。没有可施放的友方时，由游戏的自我施法设置决定是否施放给自己。主动作条显示辅助页，友方姓名板取代敌方姓名板。有害法术仍然以敌人为目标。"
+L["Support Mode Keybind"] = "辅助模式按键"
+L["Turns Support Mode on and off. Works in combat. Leave it unbound to disable the feature."] =
+  "开启或关闭辅助模式。战斗中可用。不绑定按键即可停用此功能。"
+L["Support Bar Page"] = "辅助动作条页"
+L["The main action bar page shown while Support Mode is on. Put your healing and support abilities there. Leaving Support Mode returns to page 1."] =
+  "辅助模式开启时显示的主动作条页。把你的治疗和辅助技能放在那里。离开辅助模式会回到第 1 页。"
+L["Don't swap"] = "不切换"
+L["Page %d"] = "第 %d 页"
+L["Requires Reticle Targeting"] = "需要准星瞄准"
+L["Support"] = "辅助"
+L["Tint Vignette"] = "暗角着色"
+L["While Support Mode is on, the Vignette takes the Support crosshair color, so you can tell the mode at a glance. It shows only when your Vignette does; with the Vignette off, nothing is tinted."] =
+  "辅助模式开启时，暗角会变为辅助准星颜色，让你一眼就能看出当前模式。它只在暗角显示时出现；暗角关闭时不会着色。"
+L["Nameplates"] = "姓名板"
+L["Which nameplates show while Support Mode is on. Your own nameplate settings come back when you leave it."] =
+  "辅助模式开启时显示哪些姓名板。退出后会恢复你自己的姓名板设置。"
+L["Don't change"] = "不更改"
+L["Friendly only"] = "仅友方"
+L["Friendly and enemy"] = "友方和敌方"
+L["Hide all"] = "全部隐藏"
+
 -- TabAutoCursorUnlock.lua: Auto Unlock tab
 L["Auto Unlock"] = "自动解锁"
 L["AUTO UNLOCK"] = "自动解锁"
@@ -631,6 +664,13 @@ L["Not aiming at anything"] = "未瞄准任何目标"
 L["Aiming at a unit or object"] = "正在瞄准单位或物体"
 L["While you are mounted"] = "骑乘时"
 L["While Target Lock holds"] = "目标锁定期间"
+L["SUPPORT"] = "辅助"
+L["Use a Support Mode crosshair"] = "使用辅助模式准星"
+L["Use the normal crosshair in Support Mode"] = "在辅助模式中使用普通准星"
+L["Support Mode keeps your Inactive and Active textures."] =
+  "辅助模式沿用你的未激活和已激活纹理。"
+L["While Support Mode is on, in place of Inactive and Active"] =
+  "辅助模式开启时，取代未激活和已激活"
 L["Brings back the texture you had before hiding it."] = "恢复隐藏之前使用的纹理。"
 L["Crosshair Textures"] = "准星纹理"
 L["Select a state, then pick a texture below, or apply a preset for a curated appearance."] =

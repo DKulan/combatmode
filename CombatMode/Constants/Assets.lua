@@ -57,6 +57,7 @@ local BINDING_DISPLAY_NAMES = {
   { id = "Cycle Focus Next", text = L["Cycle Focus Next"] },
   { id = "Cycle Focus Previous", text = L["Cycle Focus Previous"] },
   { id = "Radial Menu", text = L["Radial Menu"] },
+  { id = "Support Mode", text = L["Support Mode"] },
 }
 for _, entry in ipairs(BINDING_DISPLAY_NAMES) do
   _G["BINDING_NAME_Combat Mode - " .. entry.id] = "Action Combat Mode - " .. entry.text
@@ -66,6 +67,7 @@ end
 _G["BINDING_HEADER_Action Combat Mode - Mouse Look"] = "Action Combat Mode - " .. L["Mouse Look"]
 _G["BINDING_HEADER_Ally Cycle"] = L["Ally Cycle"]
 _G["BINDING_HEADER_Radial Menu"] = L["Radial Menu"]
+_G["BINDING_HEADER_Support Mode"] = L["Support Mode"]
 _G["BINDING_HEADER_Reticle Targeting"] = L["Reticle Targeting"]
 
 CM.Constants.BasePrintMsg = CM.METADATA["TITLE"]
@@ -91,6 +93,9 @@ end
 -- Soft window drop shadow: 128x128 TGA, a blurred rounded box (box 48..80, radius 10) sliced as
 -- 9 pieces by UI.AddWindowShadow.
 CM.Constants.Shadow = uiPath .. "shadow.tga"
+-- The vignette art (Assets/atlas/Artifacts-BG-Shadow.tga, black) with white RGB and the same
+-- alpha, so Core/Vignette.lua can tint it (scripts/art/make-vignette-tint.py builds it).
+CM.Constants.VignetteTint = uiPath .. "vignette-tint.tga"
 -- Blizzard textures shipped as TGAs (so they do not depend on the client): color picker thumbs
 -- (64x16 sheet), the wizard check mark and the frame picker's fallback addon icon.
 CM.Constants.ColorPickerThumbs = uiPath .. "colorpicker-buttons.tga"
@@ -144,6 +149,11 @@ local crosshairAssetNames = {
 -- can pick any catalog texture for it (global.crosshairMountedId / crosshairTargetLockId); the Dot is a plain catalog entry.
 CM.Constants.CrosshairDotTexture = crosshairPath .. "crosshairDot.blp"
 CM.Constants.CrosshairIdleDefaultId = "Dot"
+-- Support Mode reticle (global.crosshairSupportId): one texture in place of Inactive and Active
+-- while that mode is on, so the shape tells the mode and the color still tells the target.
+-- Default: the Triangle preset's inactive texture (three chevrons). "none" = no Support texture
+-- (the normal ones stay).
+CM.Constants.CrosshairSupportDefaultId = "Triangle"
 
 local PACK_COUNT = 202
 
@@ -265,6 +275,7 @@ CM.Constants.CrosshairReactionColors = {
   friendly_player = { 0.3, 0.6, 1, 0.8 }, -- blue (friendly players)
   object = { 1, 0.8, 0.2, 0.8 }, -- yellow
   base = { 1, 1, 1, 0.5 }, -- white
+  support = { 0.2, 1, 0.9, 0.7 }, -- cyan: the idle (base) reticle while Support Mode is on
   mounted = { 1, 1, 1, 0 }, -- transparent
   --  focus = { 1, 0.2, 0.3, 1 }, -- defaults only; runtime focus tint uses hostile via getter
 }

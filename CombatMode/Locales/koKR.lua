@@ -433,6 +433,39 @@ L["Scales the size of the Ally HUD."] = "아군 HUD의 크기를 조절합니다
 L["Distance between the Ally HUD and the crosshair."] =
   "아군 HUD와 조준점 사이의 거리입니다."
 
+-- Support Mode: keybind label, notices and options tab (SupportMode.lua, TabSupportMode.lua)
+L["Support Mode"] = "지원 모드"
+L["support mode keybinding"] = "지원 모드 단축키"
+L["Support Mode on"] = "지원 모드 켜짐"
+L["Support Mode off"] = "지원 모드 꺼짐"
+L["Support Mode on. Nameplates switch after combat."] =
+  "지원 모드 켜짐. 이름표는 전투가 끝난 뒤 전환됩니다."
+L["Support Mode off. Nameplates switch after combat."] =
+  "지원 모드 꺼짐. 이름표는 전투가 끝난 뒤 전환됩니다."
+L["SUPPORT MODE"] = "지원 모드"
+L["A second set of click casts for supporting your group. While Support Mode is on, helpful spells on your click-cast buttons go to your friendly target first (such as an Ally Cycle pick), else to the friendly unit under the crosshair, else to the ally the game soft-targets in front of you. With no ally to take the spell, the game's Self Cast setting decides whether it lands on you. Your main action bar shows a support page, and friendly nameplates replace enemy ones. Harmful spells keep targeting enemies."] =
+  "파티를 지원하기 위한 두 번째 클릭 시전 세트입니다. 지원 모드가 켜져 있는 동안 클릭 시전 버튼의 이로운 주문은 먼저 우호적인 현재 대상(예: 아군 순환으로 선택한 대상)에게 시전되고, 없으면 조준점 아래의 우호적 대상에게, 그것도 없으면 게임이 앞쪽에서 부드러운 대상으로 잡은 아군에게 시전됩니다. 주문을 받을 아군이 없으면 게임의 자신에게 시전 설정에 따라 자신에게 시전될지가 정해집니다. 주 행동 단축바는 지원 페이지를 표시하고, 적 이름표 대신 우호적 이름표가 표시됩니다. 해로운 주문은 계속 적을 대상으로 합니다."
+L["Support Mode Keybind"] = "지원 모드 단축키"
+L["Turns Support Mode on and off. Works in combat. Leave it unbound to disable the feature."] =
+  "지원 모드를 켜고 끕니다. 전투 중에도 작동합니다. 단축키를 지정하지 않으면 기능이 비활성화됩니다."
+L["Support Bar Page"] = "지원 단축바 페이지"
+L["The main action bar page shown while Support Mode is on. Put your healing and support abilities there. Leaving Support Mode returns to page 1."] =
+  "지원 모드가 켜져 있는 동안 표시되는 주 행동 단축바 페이지입니다. 치유 및 지원 능력을 그곳에 배치하세요. 지원 모드를 끄면 1페이지로 돌아갑니다."
+L["Don't swap"] = "전환 안 함"
+L["Page %d"] = "%d페이지"
+L["Requires Reticle Targeting"] = "조준선 대상 지정 필요"
+L["Support"] = "지원"
+L["Tint Vignette"] = "비네트 색 입히기"
+L["While Support Mode is on, the Vignette takes the Support crosshair color, so you can tell the mode at a glance. It shows only when your Vignette does; with the Vignette off, nothing is tinted."] =
+  "지원 모드가 켜져 있는 동안 비네트가 지원 조준점 색상으로 바뀌어 모드를 한눈에 알 수 있습니다. 비네트가 표시될 때만 나타나며, 비네트가 꺼져 있으면 아무것도 물들지 않습니다."
+L["Nameplates"] = "이름표"
+L["Which nameplates show while Support Mode is on. Your own nameplate settings come back when you leave it."] =
+  "지원 모드가 켜져 있는 동안 표시할 이름표입니다. 모드를 끄면 원래 이름표 설정으로 돌아갑니다."
+L["Don't change"] = "변경 안 함"
+L["Friendly only"] = "우호적 대상만"
+L["Friendly and enemy"] = "우호적 대상과 적"
+L["Hide all"] = "모두 숨기기"
+
 -- TabAutoCursorUnlock.lua: Auto Unlock tab
 L["Auto Unlock"] = "자동 해제"
 L["AUTO UNLOCK"] = "자동 해제"
@@ -651,6 +684,13 @@ L["Not aiming at anything"] = "아무것도 조준하지 않음"
 L["Aiming at a unit or object"] = "유닛이나 오브젝트를 조준 중"
 L["While you are mounted"] = "탈것에 탑승한 동안"
 L["While Target Lock holds"] = "대상 고정이 유지되는 동안"
+L["SUPPORT"] = "지원"
+L["Use a Support Mode crosshair"] = "지원 모드 조준점 사용"
+L["Use the normal crosshair in Support Mode"] = "지원 모드에서 일반 조준점 사용"
+L["Support Mode keeps your Inactive and Active textures."] =
+  "지원 모드에서도 비활성 및 활성 텍스처를 그대로 사용합니다."
+L["While Support Mode is on, in place of Inactive and Active"] =
+  "지원 모드가 켜져 있는 동안 비활성 및 활성 대신 사용"
 L["Brings back the texture you had before hiding it."] =
   "숨기기 전에 사용하던 텍스처를 되돌립니다."
 L["Crosshair Textures"] = "조준점 텍스처"

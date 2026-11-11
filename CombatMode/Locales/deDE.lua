@@ -432,6 +432,39 @@ L["Scales the size of the Ally HUD."] = "Skaliert die Größe des Verbündeten-H
 L["Distance between the Ally HUD and the crosshair."] =
   "Abstand zwischen Verbündeten-HUD und Fadenkreuz."
 
+-- Support Mode: keybind label, notices and options tab (SupportMode.lua, TabSupportMode.lua)
+L["Support Mode"] = "Unterstützungsmodus"
+L["support mode keybinding"] = "Belegung für Unterstützungsmodus"
+L["Support Mode on"] = "Unterstützungsmodus an"
+L["Support Mode off"] = "Unterstützungsmodus aus"
+L["Support Mode on. Nameplates switch after combat."] =
+  "Unterstützungsmodus an. Namensplaketten wechseln nach dem Kampf."
+L["Support Mode off. Nameplates switch after combat."] =
+  "Unterstützungsmodus aus. Namensplaketten wechseln nach dem Kampf."
+L["SUPPORT MODE"] = "UNTERSTÜTZUNGSMODUS"
+L["A second set of click casts for supporting your group. While Support Mode is on, helpful spells on your click-cast buttons go to your friendly target first (such as an Ally Cycle pick), else to the friendly unit under the crosshair, else to the ally the game soft-targets in front of you. With no ally to take the spell, the game's Self Cast setting decides whether it lands on you. Your main action bar shows a support page, and friendly nameplates replace enemy ones. Harmful spells keep targeting enemies."] =
+  "Ein zweiter Satz Klick-Zauber zur Unterstützung deiner Gruppe. Solange der Unterstützungsmodus an ist, gehen hilfreiche Zauber auf deinen Klick-Zauber-Tasten zuerst auf dein freundliches Ziel (etwa eine Auswahl des Verbündetenwechsels), sonst auf die freundliche Einheit unter dem Fadenkreuz, sonst auf den Verbündeten, den das Spiel vor dir als weiches Ziel wählt. Gibt es keinen Verbündeten für den Zauber, entscheidet die Selbstzauber-Einstellung des Spiels, ob er auf dich geht. Deine Hauptaktionsleiste zeigt eine Unterstützungsseite und freundliche Namensplaketten ersetzen die feindlichen. Schädliche Zauber zielen weiterhin auf Gegner."
+L["Support Mode Keybind"] = "Tastenbelegung für Unterstützungsmodus"
+L["Turns Support Mode on and off. Works in combat. Leave it unbound to disable the feature."] =
+  "Schaltet den Unterstützungsmodus an und aus. Funktioniert im Kampf. Ohne Belegung ist die Funktion deaktiviert."
+L["Support Bar Page"] = "Unterstützungsleistenseite"
+L["The main action bar page shown while Support Mode is on. Put your healing and support abilities there. Leaving Support Mode returns to page 1."] =
+  "Die Seite der Hauptaktionsleiste, die im Unterstützungsmodus angezeigt wird. Lege dort deine Heil- und Unterstützungsfähigkeiten ab. Beim Verlassen des Unterstützungsmodus geht es zurück zu Seite 1."
+L["Don't swap"] = "Nicht wechseln"
+L["Page %d"] = "Seite %d"
+L["Requires Reticle Targeting"] = "Erfordert Fadenkreuz-Zielerfassung"
+L["Support"] = "Support"
+L["Tint Vignette"] = "Vignette einfärben"
+L["While Support Mode is on, the Vignette takes the Support crosshair color, so you can tell the mode at a glance. It shows only when your Vignette does; with the Vignette off, nothing is tinted."] =
+  "Solange der Unterstützungsmodus an ist, nimmt die Vignette die Support-Fadenkreuzfarbe an, damit du den Modus auf einen Blick erkennst. Sie erscheint nur, wenn deine Vignette erscheint; ist die Vignette aus, wird nichts eingefärbt."
+L["Nameplates"] = "Namensplaketten"
+L["Which nameplates show while Support Mode is on. Your own nameplate settings come back when you leave it."] =
+  "Welche Namensplaketten angezeigt werden, solange der Unterstützungsmodus an ist. Deine eigenen Namensplaketten-Einstellungen kehren zurück, wenn du ihn verlässt."
+L["Don't change"] = "Nicht ändern"
+L["Friendly only"] = "Nur freundliche"
+L["Friendly and enemy"] = "Freundliche und feindliche"
+L["Hide all"] = "Alle ausblenden"
+
 -- TabAutoCursorUnlock.lua: Auto Unlock tab
 L["Auto Unlock"] = "Auto-Entsperren"
 L["AUTO UNLOCK"] = "AUTO-ENTSPERREN"
@@ -653,6 +686,14 @@ L["Not aiming at anything"] = "Zielt auf nichts"
 L["Aiming at a unit or object"] = "Zielt auf eine Einheit oder ein Objekt"
 L["While you are mounted"] = "Solange du reitest"
 L["While Target Lock holds"] = "Solange die Zielsperre aktiv ist"
+L["SUPPORT"] = "SUPPORT"
+L["Use a Support Mode crosshair"] = "Ein Fadenkreuz für den Unterstützungsmodus verwenden"
+L["Use the normal crosshair in Support Mode"] =
+  "Im Unterstützungsmodus das normale Fadenkreuz verwenden"
+L["Support Mode keeps your Inactive and Active textures."] =
+  "Der Unterstützungsmodus behält deine Texturen für Inaktiv und Aktiv."
+L["While Support Mode is on, in place of Inactive and Active"] =
+  "Solange der Unterstützungsmodus an ist, anstelle von Inaktiv und Aktiv"
 L["Brings back the texture you had before hiding it."] =
   "Stellt die Textur wieder her, die du vor dem Ausblenden hattest."
 L["Crosshair Textures"] = "Fadenkreuz-Texturen"

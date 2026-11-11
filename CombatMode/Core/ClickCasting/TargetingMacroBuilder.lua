@@ -6,7 +6,8 @@
 --  Ally Cycle restore post-line, /click bar button or /cast [@cursor] for ground spells,
 --  and membership tests for cast-at-cursor / exclude lists (spell IDs).
 --  Architecture / how it works:
---    • BuildClickCastMacroText(bindingValue) — no-op text when reticleTargeting off.
+--    • BuildClickCastMacroText(bindingValue, opts) — nil when reticleTargeting is off; opts =
+--      Support Mode bar page + friendly-only preline for helpful spells (SupportMode.lua).
 --    • Default prelines clear dead focus + dead hostile hard target (friendly corpses
 --      kept for res), then /tar (any/enemy + autoLockAny/autoLockEnemy). Overrides from
 --      global.targetingMacroPreline*Override keys.
@@ -35,7 +36,7 @@
 --  Core/ClickCasting/ComposedMacros.lua, UI/Editors/TargetingMacroPrelinesEditor.lua,
 --  UI/Options/Tabs/TabReticleTargeting.lua, UI/Options/SpellMultiSelect.lua,
 --  Constants/DatabaseDefaults.lua, Constants/Gameplay.lua,
---  Core/ClickCasting/AddonActionBarResolver.lua
+--  Core/ClickCasting/{AddonActionBarResolver,SupportMode}.lua
 ---------------------------------------------------------------------------------------
 local _, CM = ...
 local _G = _G
@@ -407,6 +408,25 @@ local function ComputeActionButtonSlot(buttonNum)
   return id + ((page - 1) * buttons)
 end
 
+-- ACTIONBUTTON index → action slot on a given bar page, whichever page is showing now (Support
+-- Mode builds macros for the page it will swap to). Blizzard only shows the bonus bar (forms,
+-- stealth) on page 1 (ActionBarController_UpdateAll).
+local function ComputeActionButtonSlotOnPage(buttonNum, page)
+  local id = tonumber(buttonNum)
+  local buttons = tonumber(_G.NUM_ACTIONBAR_BUTTONS) or 12
+  if not id or id < 1 or id > buttons then
+    return nil
+  end
+  if page == 1 then
+    local bonusOffset = GetBonusBarOffsetSafe()
+    if HasBonusActionBarSafe() and bonusOffset ~= 0 then
+      local pages = tonumber(_G.NUM_ACTIONBAR_PAGES) or 6
+      return id + ((pages + bonusOffset - 1) * buttons)
+    end
+  end
+  return id + ((page - 1) * buttons)
+end
+
 local function ReadFrameActionId(frameName)
   if not frameName then
     return nil
@@ -432,16 +452,21 @@ end
 --- Currently displayed action for ACTIONBUTTON / MULTIACTIONBAR* bindings.
 --- Prefers the live button action attribute; rejects stale override slots (121–132)
 --- after dismount; falls back to page/bonus math or ResolveClickCastBindingToActionSlot.
-function CM.GetDisplayedActionSlotInfo(bindingValue)
+--- `page` (optional, ACTIONBUTTON only): the action on that bar page instead of the shown one.
+function CM.GetDisplayedActionSlotInfo(bindingValue, page)
   if not bindingValue or bindingValue == "" then
     return nil
   end
 
-  local frameName = CM.GetEffectiveBarButtonFrameName(bindingValue)
-  local action = ReadFrameActionId(frameName)
+  local buttonNum = bindingValue:match("^ACTIONBUTTON(%d+)$")
+  local action
+  if page and buttonNum then
+    action = ComputeActionButtonSlotOnPage(buttonNum, page)
+  else
+    action = ReadFrameActionId(CM.GetEffectiveBarButtonFrameName(bindingValue))
+  end
 
   if not action then
-    local buttonNum = bindingValue:match("^ACTIONBUTTON(%d+)$")
     if buttonNum then
       action = ComputeActionButtonSlot(buttonNum)
     elseif CM.ResolveClickCastBindingToActionSlot then
@@ -807,12 +832,94 @@ function CM.GetActiveTargetingPreline()
   return GetOverride("targetingMacroPrelineAnyOverride") or CLICKCAST_PRE_LINE_ANY
 end
 
-local function GetClickCastPreLine(spellId, routeOverride)
+-- Support Mode (Core/ClickCasting/SupportMode.lua): a helpful spell on a click-cast button only
+-- goes to your living friendly hard target (an Ally Cycle pick: top priority, the user's call),
+-- else to the aimed-at ally (SUPPORT_ALLY_UNITS below). SupportCastLine below does that without
+-- touching your target; the target-then-click preline is only its fallback. `help` is true for a
+-- dead ally, so a resurrection still works.
+-- Casting on yourself follows the game's own Self Cast setting, as a normal action button does
+-- (asked for after testing: Support Mode cast nothing with no ally to take the spell):
+--  • Auto Self Cast (CVar autoSelfCast) on: with no friendly unit in any of them the spell lands
+--    on you ([@player] last). Off: nothing is cast.
+--  • Self Cast key: [mod:SELFCAST,@player] first, evaluated live (never true when the key is
+--    "None"). Like the game, it also fires on a click bind that includes that key.
+-- The addon has no self-cast option of its own: a hold key and a Shift / Ctrl / Alt modifier
+-- were built and removed before release.
+-- The aimed-at ally: the unit whose model is under the crosshair, else the friendly soft target.
+-- A nameplate is not a mouseover unit in Mouse Look (reported in game: aiming at a friendly
+-- nameplate cast nothing), so Support Mode turns friendly soft targeting on (SoftTargetFriend,
+-- CVarManager) and @softfriend picks the ally in front of you. Blizzard picks it from an arc in
+-- front of the character, not from the crosshair, so it is looser than a mouseover.
+local SUPPORT_ALLY_UNITS = "[@mouseover,help][@softfriend,help]"
+-- The friendly hard target comes first, but only while alive: a dead pick must not block heals
+-- on the aimed-at ally. Dead, it is the last resort (SupportCastLine), so a resurrection on a
+-- cycled ally still works when nobody else is aimed at.
+local SUPPORT_LIVING_TARGET = "[@target,help,nodead]"
+local SUPPORT_CAST_UNITS = SUPPORT_LIVING_TARGET .. SUPPORT_ALLY_UNITS
+
+local SUPPORT_SELF_KEY = "[mod:SELFCAST,@player]"
+
+-- Read when the macro is built; EventRouter rebuilds the macros on this CVar's CVAR_UPDATE.
+local function AutoSelfCastOn()
+  return C_CVar and C_CVar.GetCVar and C_CVar.GetCVar("autoSelfCast") == "1"
+end
+
+-- Fallback preline (target, then /click). A living friendly target "retargets" itself (no
+-- change); a dead one stays when nothing is aimed at. The /click applies the game's Self Cast
+-- setting by itself, so with Auto Self Cast on nothing may stop the macro; with it off, a
+-- helpful /click without a friendly target would raise the targeting cursor, so the macro stops
+-- there unless the Self Cast key is held.
+local function SupportPreLine()
+  local line = "/tar " .. SUPPORT_CAST_UNITS
+  if AutoSelfCastOn() then
+    return line
+  end
+  return line .. "\n/stopmacro [nomod:SELFCAST,nohelp]"
+end
+
+-- Support Mode cast as one line that never changes your hard target. Order: you while the
+-- game's Self Cast key is held, your living friendly hard target (an Ally Cycle pick wins over
+-- whatever you aim at; clear the target to heal by aim again), the aimed-at ally (under the
+-- crosshair, else the friendly soft target), the hard target when it is a dead ally, and last
+-- you when the game's Auto Self Cast is on (off: every condition fails and nothing is cast).
+-- Any friendly hard target counts: a macro can't tell who picked it.
+-- /click can't name a unit, so this is a named /cast of the spell on the slot when the macro is
+-- built; a Classic rank rides along as "Name(Rank N)".
+-- nil = no name yet: the caller keeps SupportPreLine + /click.
+local function SupportCastLine(spellId)
+  if not spellId or not (C_Spell and C_Spell.GetSpellInfo) then
+    return nil
+  end
+  local info = C_Spell.GetSpellInfo(spellId)
+  local name = info and info.name
+  if type(name) ~= "string" or name == "" then
+    return nil
+  end
+  local getSubtext = C_Spell.GetSpellSubtext or _G.GetSpellSubtext
+  if getSubtext then
+    local ok, subtext = pcall(getSubtext, spellId)
+    if ok and type(subtext) == "string" and subtext:find("%d") then
+      name = name .. "(" .. subtext .. ")"
+    end
+  end
+  local units = SUPPORT_SELF_KEY .. SUPPORT_CAST_UNITS .. "[@target,help]"
+  if AutoSelfCastOn() then
+    units = units .. "[@player]"
+  end
+  return "/cast " .. units .. " " .. name
+end
+
+-- Second return: true when the Support Mode preline was used.
+local function GetClickCastPreLine(spellId, routeOverride, opts)
   if not CM.DB.char.reticleTargeting then
     return nil
   end
 
   local route = routeOverride or GetAllyCycleSpellRoute(spellId)
+
+  if route == "help" and opts and opts.support then
+    return SupportPreLine(), true
+  end
 
   -- Helpful: Reticle Targeting friendly-preserving path (not Ally Cycle–gated).
   if route == "help" then
@@ -845,7 +952,11 @@ local function GetClickCastPostLine(spellId, routeOverride)
   return GetAllyCycleHarmPostLine()
 end
 
-function CM.BuildClickCastMacroText(bindingValue)
+--- `opts` (optional, Support Mode): `page` classifies an ACTIONBUTTON by that bar page instead of
+--- the shown one; `support = true` gives helpful spells the Support Mode cast (your living
+--- friendly hard target, else the ally under the crosshair or soft-targeted, else you if the
+--- game's Self Cast setting says so). Second return: true when that cast was used.
+function CM.BuildClickCastMacroText(bindingValue, opts)
   -- When reticle targeting is off, no macro wrapping (no pre-line, no castAtCursor, no excludeFromTargeting).
   if not CM.DB.char.reticleTargeting then
     return nil
@@ -889,7 +1000,7 @@ function CM.BuildClickCastMacroText(bindingValue)
 
   -- Classify from the currently displayed slot (paged / bonus / override-aware).
   -- Macros: no pre-line so the macro runs as written (e.g. [mod:shift], [@cursor]).
-  local atype, id, slot = CM.GetDisplayedActionSlotInfo(bindingValue)
+  local atype, id, slot = CM.GetDisplayedActionSlotInfo(bindingValue, opts and opts.page)
   local spellIdForPreline
   -- Single-Button Assistant: its slot spell is whatever is suggested right now, so it is never
   -- classified by spell. It gets the harmful targeting route and skips the spell-based exclude /
@@ -952,7 +1063,13 @@ function CM.BuildClickCastMacroText(bindingValue)
   end
 
   local routeOverride = isAssistedButton and "harm" or nil
-  local pre = GetClickCastPreLine(spellIdForPreline, routeOverride)
+  local pre, supportPreline = GetClickCastPreLine(spellIdForPreline, routeOverride, opts)
+  if supportPreline then
+    local supportLine = SupportCastLine(spellIdForPreline)
+    if supportLine then
+      return supportLine, true
+    end
+  end
   local post = GetClickCastPostLine(spellIdForPreline, routeOverride)
   -- Do not prefix pre-line with [nooverridebar]; that can be misinterpreted in combat and echo to chat.
   local function Assemble(preLine)
@@ -971,5 +1088,5 @@ function CM.BuildClickCastMacroText(bindingValue)
   if slimmer and #text > SECURE_MACROTEXT_MAX then
     text = Assemble(slimmer)
   end
-  return text
+  return text, supportPreline or false
 end

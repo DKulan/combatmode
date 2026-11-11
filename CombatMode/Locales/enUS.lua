@@ -357,6 +357,36 @@ L["Where the Ally HUD sits relative to the crosshair."] = true
 L["Scales the size of the Ally HUD."] = true
 L["Distance between the Ally HUD and the crosshair."] = true
 
+-- Support Mode: keybind label, notices and options tab (SupportMode.lua, TabSupportMode.lua)
+L["Support Mode"] = true
+L["support mode keybinding"] = true
+L["Support Mode on"] = true
+L["Support Mode off"] = true
+L["Support Mode on. Nameplates switch after combat."] = true
+L["Support Mode off. Nameplates switch after combat."] = true
+L["SUPPORT MODE"] = true
+L["A second set of click casts for supporting your group. While Support Mode is on, helpful spells on your click-cast buttons go to your friendly target first (such as an Ally Cycle pick), else to the friendly unit under the crosshair, else to the ally the game soft-targets in front of you. With no ally to take the spell, the game's Self Cast setting decides whether it lands on you. Your main action bar shows a support page, and friendly nameplates replace enemy ones. Harmful spells keep targeting enemies."] =
+  true
+L["Support Mode Keybind"] = true
+L["Turns Support Mode on and off. Works in combat. Leave it unbound to disable the feature."] = true
+L["Support Bar Page"] = true
+L["The main action bar page shown while Support Mode is on. Put your healing and support abilities there. Leaving Support Mode returns to page 1."] =
+  true
+L["Don't swap"] = true
+L["Page %d"] = true
+L["Requires Reticle Targeting"] = true
+L["Support"] = true
+L["Tint Vignette"] = true
+L["While Support Mode is on, the Vignette takes the Support crosshair color, so you can tell the mode at a glance. It shows only when your Vignette does; with the Vignette off, nothing is tinted."] =
+  true
+L["Nameplates"] = true
+L["Which nameplates show while Support Mode is on. Your own nameplate settings come back when you leave it."] =
+  true
+L["Don't change"] = true
+L["Friendly only"] = true
+L["Friendly and enemy"] = true
+L["Hide all"] = true
+
 -- TabAutoCursorUnlock.lua: Auto Unlock tab
 L["Auto Unlock"] = true
 L["AUTO UNLOCK"] = true
@@ -550,6 +580,11 @@ L["Not aiming at anything"] = true
 L["Aiming at a unit or object"] = true
 L["While you are mounted"] = true
 L["While Target Lock holds"] = true
+L["SUPPORT"] = true
+L["Use a Support Mode crosshair"] = true
+L["Use the normal crosshair in Support Mode"] = true
+L["Support Mode keeps your Inactive and Active textures."] = true
+L["While Support Mode is on, in place of Inactive and Active"] = true
 L["Brings back the texture you had before hiding it."] = true
 L["Crosshair Textures"] = true
 L["Select a state, then pick a texture below, or apply a preset for a curated appearance."] = true

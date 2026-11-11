@@ -455,6 +455,39 @@ L["Scales the size of the Ally HUD."] =
 L["Distance between the Ally HUD and the crosshair."] =
   "Расстояние между HUD союзника и прицелом."
 
+-- Support Mode: keybind label, notices and options tab (SupportMode.lua, TabSupportMode.lua)
+L["Support Mode"] = "Режим поддержки"
+L["support mode keybinding"] = "привязка режима поддержки"
+L["Support Mode on"] = "Режим поддержки включен"
+L["Support Mode off"] = "Режим поддержки выключен"
+L["Support Mode on. Nameplates switch after combat."] =
+  "Режим поддержки включен. Индикаторы здоровья переключатся после боя."
+L["Support Mode off. Nameplates switch after combat."] =
+  "Режим поддержки выключен. Индикаторы здоровья переключатся после боя."
+L["SUPPORT MODE"] = "РЕЖИМ ПОДДЕРЖКИ"
+L["A second set of click casts for supporting your group. While Support Mode is on, helpful spells on your click-cast buttons go to your friendly target first (such as an Ally Cycle pick), else to the friendly unit under the crosshair, else to the ally the game soft-targets in front of you. With no ally to take the spell, the game's Self Cast setting decides whether it lands on you. Your main action bar shows a support page, and friendly nameplates replace enemy ones. Harmful spells keep targeting enemies."] =
+  "Второй набор применений по щелчку для поддержки группы. Пока режим поддержки включен, полезные заклинания на кнопках применения по щелчку применяются сначала к вашей дружественной цели (например, выбранной через «Смена союзника»), иначе к дружественной цели под прицелом, иначе к союзнику, которого игра выбирает мягкой целью перед вами. Если союзника для заклинания нет, настройка игры «Применение на себя» решает, попадет ли оно на вас. Основная панель команд показывает страницу поддержки, а дружественные индикаторы здоровья заменяют вражеские. Вредоносные заклинания по-прежнему применяются к противникам."
+L["Support Mode Keybind"] = "Клавиша режима поддержки"
+L["Turns Support Mode on and off. Works in combat. Leave it unbound to disable the feature."] =
+  "Включает и выключает режим поддержки. Работает в бою. Оставьте без клавиши, чтобы отключить функцию."
+L["Support Bar Page"] = "Страница панели поддержки"
+L["The main action bar page shown while Support Mode is on. Put your healing and support abilities there. Leaving Support Mode returns to page 1."] =
+  "Страница основной панели команд, которая показывается, пока включен режим поддержки. Разместите на ней способности исцеления и поддержки. При выходе из режима поддержки возвращается страница 1."
+L["Don't swap"] = "Не менять"
+L["Page %d"] = "Страница %d"
+L["Requires Reticle Targeting"] = "Требуется наведение по прицелу"
+L["Support"] = "Поддержка"
+L["Tint Vignette"] = "Окрашивать виньетку"
+L["While Support Mode is on, the Vignette takes the Support crosshair color, so you can tell the mode at a glance. It shows only when your Vignette does; with the Vignette off, nothing is tinted."] =
+  "Пока включен режим поддержки, виньетка принимает цвет прицела поддержки, чтобы режим было видно с первого взгляда. Она видна только тогда, когда видна ваша виньетка; если виньетка выключена, ничего не окрашивается."
+L["Nameplates"] = "Индикаторы здоровья"
+L["Which nameplates show while Support Mode is on. Your own nameplate settings come back when you leave it."] =
+  "Какие индикаторы здоровья показываются, пока включен режим поддержки. Ваши собственные настройки индикаторов возвращаются при выходе из него."
+L["Don't change"] = "Не менять"
+L["Friendly only"] = "Только дружественные"
+L["Friendly and enemy"] = "Дружественные и вражеские"
+L["Hide all"] = "Скрыть все"
+
 -- TabAutoCursorUnlock.lua: Auto Unlock tab
 L["Auto Unlock"] = "Авторазблокировка"
 L["AUTO UNLOCK"] = "АВТОРАЗБЛОКИРОВКА"
@@ -692,6 +725,15 @@ L["Not aiming at anything"] = "Ни на что не наведен"
 L["Aiming at a unit or object"] = "Наведен на цель или объект"
 L["While you are mounted"] = "Пока вы в седле"
 L["While Target Lock holds"] = "Пока активен захват цели"
+L["SUPPORT"] = "ПОДДЕРЖКА"
+L["Use a Support Mode crosshair"] =
+  "Использовать прицел для режима поддержки"
+L["Use the normal crosshair in Support Mode"] =
+  "Использовать обычный прицел в режиме поддержки"
+L["Support Mode keeps your Inactive and Active textures."] =
+  "Режим поддержки сохраняет ваши текстуры «Неактивен» и «Активен»."
+L["While Support Mode is on, in place of Inactive and Active"] =
+  "Пока включен режим поддержки, вместо «Неактивен» и «Активен»"
 L["Brings back the texture you had before hiding it."] =
   "Возвращает текстуру, которая была до скрытия."
 L["Crosshair Textures"] = "Текстуры прицела"
