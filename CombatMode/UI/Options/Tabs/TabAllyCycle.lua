@@ -93,6 +93,7 @@ end
 UI.Options.AddTab({
   id = "allycycle",
   label = L["Ally Cycle"],
+  newFeatureFlag = true,
   onSelect = function()
     if CM.SetAllyCycleOptionsPreview then
       CM.SetAllyCycleOptionsPreview(true)

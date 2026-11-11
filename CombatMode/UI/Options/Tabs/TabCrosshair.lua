@@ -91,6 +91,7 @@ UI.Options.AddTab({
     ctx:Button({
       layout = "row",
       label = L["Appearance"],
+      newFeatureFlag = true,
       desc = L["Textures utilized by the crosshair for each state. Click one to pick its texture, or start from a preset."],
       tiles = {
         { slot = "base", caption = L["Inactive"], tint = "base" },
@@ -211,7 +212,6 @@ UI.Options.AddTab({
     })
     ctx:Toggle({
       label = L["Player Interaction Prompt"],
-      newFeatureFlag = true,
       desc = L["Show an indicator while aiming at a player for one second. Holding the Interact Key opens their context menu."],
       get = function()
         return CM.IsInteractionHUDPlayersEnabled()
