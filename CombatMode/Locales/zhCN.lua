@@ -400,6 +400,11 @@ L["Target the next group member."] = "选定下一位队伍成员。"
 L["Ally Cycle - Previous"] = "友方循环 - 上一个"
 L["Target the previous group member."] = "选定上一位队伍成员。"
 L["Skip Self"] = "跳过自己"
+L["Also Cycle Through"] = "同时循环选取"
+L["Adds pets after the group members: your own pet, and the pets of everyone else in your party or raid."] =
+  "在队伍成员之后加入宠物：你自己的宠物，以及队伍或团队中其他所有人的宠物。"
+L["Your Pet"] = "你的宠物"
+L["Party Pets"] = "队伍宠物"
 L["Skip yourself when cycling through group members."] =
   "在循环切换队伍成员时跳过自己。"
 L["Keep Ally After Harm"] = "攻击后保留友方"

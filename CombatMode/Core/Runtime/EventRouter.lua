@@ -314,6 +314,9 @@ local function HandleEventByCategory(category, event, ...)
       if CM.RefreshAllyCycleAvailability then
         CM.RefreshAllyCycleAvailability()
       end
+      if event == "UNIT_PET" and CM.RefreshAllyCycleHUD then
+        CM.RefreshAllyCycleHUD()
+      end
     end,
     INTERACT_HUD_EVENTS = function()
       if CM.UpdateCrosshairAssistedHighlight then

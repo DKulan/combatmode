@@ -180,6 +180,7 @@ CM.Constants.BLIZZARD_EVENTS = {
     "UNIT_CONNECTION",
     "ZONE_CHANGED_NEW_AREA",
     "PLAYER_ENTERING_WORLD",
+    "UNIT_PET", -- A pet (un)summoned: the cycle count follows the extra units
   },
   -- Soft-interact target changed: refresh the interaction mode of the crosshair HUD
   INTERACT_HUD_EVENTS = {

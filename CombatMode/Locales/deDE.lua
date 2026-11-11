@@ -413,6 +413,11 @@ L["Target the next group member."] = "Nächstes Gruppenmitglied anvisieren."
 L["Ally Cycle - Previous"] = "Verbündetenwechsel – Vorheriger"
 L["Target the previous group member."] = "Vorheriges Gruppenmitglied anvisieren."
 L["Skip Self"] = "Sich selbst überspringen"
+L["Also Cycle Through"] = "Auch durchschalten"
+L["Adds pets after the group members: your own pet, and the pets of everyone else in your party or raid."] =
+  "Fügt nach den Gruppenmitgliedern Begleiter hinzu: dein eigener und die aller anderen in deiner Gruppe oder deinem Schlachtzug."
+L["Your Pet"] = "Dein Begleiter"
+L["Party Pets"] = "Gruppenbegleiter"
 L["Skip yourself when cycling through group members."] =
   "Überspringt dich selbst beim Durchwechseln der Gruppenmitglieder."
 L["Keep Ally After Harm"] = "Verbündeten nach Schaden behalten"

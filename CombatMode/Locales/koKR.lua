@@ -414,6 +414,11 @@ L["Target the next group member."] = "다음 파티원을 대상으로 지정합
 L["Ally Cycle - Previous"] = "아군 순환 - 이전"
 L["Target the previous group member."] = "이전 파티원을 대상으로 지정합니다."
 L["Skip Self"] = "자신 건너뛰기"
+L["Also Cycle Through"] = "함께 순환할 대상"
+L["Adds pets after the group members: your own pet, and the pets of everyone else in your party or raid."] =
+  "그룹원 다음에 소환수를 추가합니다: 내 소환수와 파티 또는 공격대 내 다른 모든 사람의 소환수."
+L["Your Pet"] = "내 소환수"
+L["Party Pets"] = "파티 소환수"
 L["Skip yourself when cycling through group members."] =
   "파티원을 순환할 때 자신을 건너뜁니다."
 L["Keep Ally After Harm"] = "공격 후 아군 유지"

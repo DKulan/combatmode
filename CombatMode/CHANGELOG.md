@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - **Tint Vignette** gives the Vignette that same color while Support Mode is on, as a soft, slowly breathing glow. It shows only when your Vignette does.
   - The **Setup Wizard** has a **Support Mode** step, with screenshots and a check for your Support Mode key.
 - **Reset All Colors** button in the **Reaction Colors** editor, to clear every custom crosshair color at once.
+- **Also Cycle Through** on the **Ally Cycle** tab: add **Your Pet** and/or **Party Pets** (everyone else's pets) to the cycle, after the group members. The Ally HUD shows a targeted pet with a gold paw-print crest in place of the role icon, and the count includes them. **Your Pet** is on by default.
 
 ### Changed
 

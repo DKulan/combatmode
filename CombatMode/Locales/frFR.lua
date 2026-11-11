@@ -412,6 +412,11 @@ L["Target the next group member."] = "Cible le membre de groupe suivant."
 L["Ally Cycle - Previous"] = "Cycle d'alliés – Précédent"
 L["Target the previous group member."] = "Cible le membre de groupe précédent."
 L["Skip Self"] = "S'ignorer"
+L["Also Cycle Through"] = "Parcourir aussi"
+L["Adds pets after the group members: your own pet, and the pets of everyone else in your party or raid."] =
+  "Ajoute des familiers après les membres du groupe : le vôtre et ceux de tous les autres membres de votre groupe ou raid."
+L["Your Pet"] = "Votre familier"
+L["Party Pets"] = "Familiers du groupe"
 L["Skip yourself when cycling through group members."] =
   "Vous ignore lors du parcours des membres du groupe."
 L["Keep Ally After Harm"] = "Garder l'allié après une attaque"

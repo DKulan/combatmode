@@ -412,6 +412,11 @@ L["Target the next group member."] = "Seleciona o próximo membro do grupo."
 L["Ally Cycle - Previous"] = "Ciclo de aliados – Anterior"
 L["Target the previous group member."] = "Seleciona o membro anterior do grupo."
 L["Skip Self"] = "Pular a si mesmo"
+L["Also Cycle Through"] = "Alternar também entre"
+L["Adds pets after the group members: your own pet, and the pets of everyone else in your party or raid."] =
+  "Adiciona bichos de estimação após os membros do grupo: o seu e os de todos os outros no seu grupo ou raide."
+L["Your Pet"] = "Seu bicho de estimação"
+L["Party Pets"] = "Bichos do grupo"
 L["Skip yourself when cycling through group members."] =
   "Pula você ao alternar entre os membros do grupo."
 L["Keep Ally After Harm"] = "Manter aliado após dano"

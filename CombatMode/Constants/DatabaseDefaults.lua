@@ -178,6 +178,8 @@ return false
       scale = 1.0,
       padding = 24,
       skipPlayer = true,
+      -- Extra units cycled after the group: CSV of playerPet | partyPets ("" = group only)
+      extraUnits = "playerPet",
       -- false + Set=false → follow healer spec until the user toggles.
       restoreAllyAfterHarm = false,
       restoreAllyAfterHarmSet = false,

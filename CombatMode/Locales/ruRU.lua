@@ -435,6 +435,11 @@ L["Ally Cycle - Previous"] = "Смена союзника – Предыдущи
 L["Target the previous group member."] =
   "Выбирает предыдущего участника группы."
 L["Skip Self"] = "Пропускать себя"
+L["Also Cycle Through"] = "Также переключаться между"
+L["Adds pets after the group members: your own pet, and the pets of everyone else in your party or raid."] =
+  "Добавляет питомцев после участников группы: вашего и питомцев всех остальных в вашей группе или рейде."
+L["Your Pet"] = "Ваш питомец"
+L["Party Pets"] = "Питомцы группы"
 L["Skip yourself when cycling through group members."] =
   "Пропускает вас при переборе участников группы."
 L["Keep Ally After Harm"] = "Сохранять союзника после атаки"

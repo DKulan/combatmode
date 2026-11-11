@@ -344,6 +344,11 @@ L["Target the next group member."] = true
 L["Ally Cycle - Previous"] = true
 L["Target the previous group member."] = true
 L["Skip Self"] = true
+L["Also Cycle Through"] = true
+L["Adds pets after the group members: your own pet, and the pets of everyone else in your party or raid."] =
+  true
+L["Your Pet"] = true
+L["Party Pets"] = true
 L["Skip yourself when cycling through group members."] = true
 L["Keep Ally After Harm"] = true
 L["After a harmful spell targets the reticle enemy, restore the previous ally. On by default for Healer specs until changed."] =

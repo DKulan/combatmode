@@ -104,6 +104,9 @@ CM.Constants.UnknownAddonIcon = uiPath .. "question-mark.tga"
 -- The character-specific "C" badge: a gold round button like Blizzard's "i" info button, 64x64 with
 -- the disc filling the canvas (scripts/art/make-char-badge.py builds it).
 CM.Constants.CharBadge = uiPath .. "char-badge.tga"
+-- The Ally HUD's pet crest (a paw print on the same gold button, in the role icon's place for pets;
+-- scripts/art/make-pet-crest.py builds it).
+CM.Constants.PetCrest = uiPath .. "pet-crest.tga"
 -- Setup wizard preview slides: `<key>_<n>.blp` (16:9 crops of in-game screenshots stored as 512x256 DXT1, drawn back at 16:9) and the
 -- shared frame drawn over them (680x438, transparent 552x310 window centred), both built by
 -- scripts/art/make-wizard-previews.py.
