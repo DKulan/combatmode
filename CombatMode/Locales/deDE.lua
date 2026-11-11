@@ -440,12 +440,6 @@ L["Distance between the Ally HUD and the crosshair."] =
 -- Support Mode: keybind label, notices and options tab (SupportMode.lua, TabSupportMode.lua)
 L["Support Mode"] = "Unterstützungsmodus"
 L["support mode keybinding"] = "Belegung für Unterstützungsmodus"
-L["Support Mode on"] = "Unterstützungsmodus an"
-L["Support Mode off"] = "Unterstützungsmodus aus"
-L["Support Mode on. Nameplates switch after combat."] =
-  "Unterstützungsmodus an. Namensplaketten wechseln nach dem Kampf."
-L["Support Mode off. Nameplates switch after combat."] =
-  "Unterstützungsmodus aus. Namensplaketten wechseln nach dem Kampf."
 L["SUPPORT MODE"] = "UNTERSTÜTZUNGSMODUS"
 L["A support-focused mode that, when active, switches your main action bar to a dedicated support page and allows helpful spells to target the friendly unit under your crosshair."] =
   "Ein unterstützungsorientierter Modus, der im aktiven Zustand deine Hauptaktionsleiste auf eine eigene Unterstützungsseite umschaltet und es hilfreichen Zaubern erlaubt, die freundliche Einheit unter deinem Fadenkreuz anzuvisieren."

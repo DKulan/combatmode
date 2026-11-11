@@ -20,7 +20,7 @@
 --      were removed); the macro texts follow the game's Self Cast setting instead.
 --    • Insecure side: Handler.SupportModeChanged (CallMethod) → nameplates
 --      (CM.SyncSupportModeNameplates in CVarManager; only if a client protects those CVars in
---      combat do they wait for PLAYER_REGEN_ENABLED), the on / off notice, the crosshair
+--      combat do they wait for PLAYER_REGEN_ENABLED), the crosshair
 --      (Support texture + idle tint) and the Vignette tint (CM.RefreshVignetteTint).
 --      CM.IsSupportModeActive reads the attribute.
 --    • The mode never survives a reload: CM.InitializeSupportMode turns a leftover support
@@ -32,7 +32,6 @@
 --  UI/Options/Tabs/TabSupportMode.lua, Constants/DatabaseDefaults.lua, Bindings.xml
 ---------------------------------------------------------------------------------------
 local _, CM = ...
-local L = CM.L
 local _G = _G
 
 -- WoW API
@@ -184,28 +183,13 @@ local function SyncNameplates()
   return applied
 end
 
-local function Notify(active, nameplatesApplied)
-  local frame = _G.UIErrorsFrame
-  if not frame or not frame.AddMessage then
-    return
-  end
-  local text
-  if nameplatesApplied == false then
-    text = active and L["Support Mode on. Nameplates switch after combat."]
-      or L["Support Mode off. Nameplates switch after combat."]
-  else
-    text = active and L["Support Mode on"] or L["Support Mode off"]
-  end
-  frame:AddMessage(text, 1, 0.82, 0)
-end
-
 -- Runs from the secure snippet (CallMethod), in or out of combat: nothing protected in here.
 local function OnModeChanged()
   local active = CM.IsSupportModeActive()
   if CM.DB and CM.DB.char then
     CM.DB.char.supportModeActive = active
   end
-  Notify(active, SyncNameplates())
+  SyncNameplates()
   -- The idle reticle is tinted while the mode is on (CM.GetCrosshairIdleColorState).
   -- The old reticle locks out while the new one locks in (Animations.lua).
   if CM.PlayCrosshairModeSwap and CM.RefreshCrosshairAppearance then

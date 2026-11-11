@@ -424,12 +424,6 @@ L["Distance between the Ally HUD and the crosshair."] = "友方 HUD 與準星之
 -- Support Mode: keybind label, notices and options tab (SupportMode.lua, TabSupportMode.lua)
 L["Support Mode"] = "輔助模式"
 L["support mode keybinding"] = "輔助模式按鍵綁定"
-L["Support Mode on"] = "輔助模式已開啟"
-L["Support Mode off"] = "輔助模式已關閉"
-L["Support Mode on. Nameplates switch after combat."] =
-  "輔助模式已開啟。名條將在戰鬥結束後切換。"
-L["Support Mode off. Nameplates switch after combat."] =
-  "輔助模式已關閉。名條將在戰鬥結束後切換。"
 L["SUPPORT MODE"] = "輔助模式"
 L["A support-focused mode that, when active, switches your main action bar to a dedicated support page and allows helpful spells to target the friendly unit under your crosshair."] =
   "一種以支援為核心的模式：啟用後會將主動作列切換到專用的支援頁，並允許增益法術以準星下的友方單位為目標。"
