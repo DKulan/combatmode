@@ -557,8 +557,8 @@ L["Ground-targeted spells that should be cast at the crosshair location.\n\nType
   "조준점 위치에 시전할 지면 지정 주문입니다.\n\n{주문 이름 또는 ID}를 입력해 추가하세요."
 L["{!Action buttons that are macros cannot inherit Reticle Targeting on their own.}\n\nPress {+} to open the {Macro Composer}, write your macro there and it gets the targeting logic added for you.\n\nThen drag it from this list onto your action bars; {right-click} an icon to edit it."] =
   "{!매크로인 행동 버튼은 조준선 대상 지정을 스스로 적용받을 수 없습니다.}\n\n{+}를 눌러 {매크로 작성기}를 열고 매크로를 작성하면 대상 지정 로직이 자동으로 추가됩니다.\n\n그런 다음 이 목록에서 행동 단축바로 끌어다 놓으세요. 아이콘을 {오른쪽 클릭}하면 편집할 수 있습니다."
-L["Lock onto a target with one tap so the reticle stops swapping. While locked, the cycle keys jump to nearby enemies.\n\n{Target Lock Behavior} decides whether tapping again unlocks ({Toggle}) or moves the lock to whatever is under the crosshair ({Switch Target}).\n\nSet your keys."] =
-  "한 번 눌러 대상을 고정하면 조준점이 더 이상 대상을 바꾸지 않습니다. 고정 중에는 순환 단축키가 근처 적으로 넘어갑니다.\n\n{대상 고정 동작}은 다시 눌렀을 때 해제할지({전환}) 조준점 아래의 대상으로 고정을 옮길지({대상 교체}) 정합니다.\n\n단축키를 지정하세요."
+L["Lock onto a target with one tap so the reticle stops swapping. While locked, the cycle keys jump to nearby enemies, or to nearby allies in Support Mode.\n\n{Target Lock Behavior} decides whether tapping again unlocks ({Toggle}) or moves the lock to whatever is under the crosshair ({Switch Target}).\n\nSet your keys."] =
+  "한 번 눌러 대상을 고정하면 조준점이 더 이상 대상을 바꾸지 않습니다. 고정 중에는 순환 단축키가 근처 적으로, 지원 모드에서는 근처 아군으로 넘어갑니다.\n\n{대상 고정 동작}은 다시 눌렀을 때 해제할지({전환}) 조준점 아래의 대상으로 고정을 옮길지({대상 교체}) 정합니다.\n\n단축키를 지정하세요."
 L["Turn your mouse clicks into actions while in Mouse Look, such as casting your action bar spells with {Left and Right Click}.\n\nPick what each click does, with or without a {modifier key}."] =
   "마우스 룩 중에 마우스 클릭을 동작으로 바꿉니다. 예를 들어 {왼쪽·오른쪽 클릭}으로 행동 단축바의 주문을 시전할 수 있습니다.\n\n{보조 키}를 함께 쓰거나 쓰지 않고 각 클릭이 하는 일을 정하세요."
 L["A wheel of your {spells, items, macros and shortcuts} that works in combat.\n\nHold its key, move the mouse toward a slice and release to use it.\n\n{Scroll} to switch between wheels."] =

@@ -125,7 +125,7 @@ local STEPS = {
     section = L["TARGET LOCK"],
     title = L["Target Lock"],
     slides = { "targetlock", 4 },
-    body = L["Lock onto a target with one tap so the reticle stops swapping. While locked, the cycle keys jump to nearby enemies.\n\n{Target Lock Behavior} decides whether tapping again unlocks ({Toggle}) or moves the lock to whatever is under the crosshair ({Switch Target}).\n\nSet your keys."],
+    body = L["Lock onto a target with one tap so the reticle stops swapping. While locked, the cycle keys jump to nearby enemies, or to nearby allies in Support Mode.\n\n{Target Lock Behavior} decides whether tapping again unlocks ({Toggle}) or moves the lock to whatever is under the crosshair ({Switch Target}).\n\nSet your keys."],
     -- These keys can't be set while Reticle Targeting is off, so they don't block then.
     tasks = {
       {

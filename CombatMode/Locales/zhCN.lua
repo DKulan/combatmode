@@ -539,8 +539,8 @@ L["Ground-targeted spells that should be cast at the crosshair location.\n\nType
   "应在准星位置释放的指向性法术。\n\n输入{法术名称或 ID}即可添加。"
 L["{!Action buttons that are macros cannot inherit Reticle Targeting on their own.}\n\nPress {+} to open the {Macro Composer}, write your macro there and it gets the targeting logic added for you.\n\nThen drag it from this list onto your action bars; {right-click} an icon to edit it."] =
   "{!作为宏的动作按钮无法自行继承准星瞄准。}\n\n点击 {+} 打开{宏编辑器}，在其中编写宏，系统会自动为其添加瞄准逻辑。\n\n然后将它从此列表拖到你的动作条上；{右键点击}图标可进行编辑。"
-L["Lock onto a target with one tap so the reticle stops swapping. While locked, the cycle keys jump to nearby enemies.\n\n{Target Lock Behavior} decides whether tapping again unlocks ({Toggle}) or moves the lock to whatever is under the crosshair ({Switch Target}).\n\nSet your keys."] =
-  "一键锁定目标，让准星不再切换。锁定期间，循环按键会跳到附近的敌人。\n\n{目标锁定行为}决定再次按键是解除锁定（{切换}），还是将锁定转移到准星下的目标（{切换目标}）。\n\n设置你的按键。"
+L["Lock onto a target with one tap so the reticle stops swapping. While locked, the cycle keys jump to nearby enemies, or to nearby allies in Support Mode.\n\n{Target Lock Behavior} decides whether tapping again unlocks ({Toggle}) or moves the lock to whatever is under the crosshair ({Switch Target}).\n\nSet your keys."] =
+  "一键锁定目标，让准星不再切换。锁定期间，循环按键会跳到附近的敌人，在辅助模式下则跳到附近的盟友。\n\n{目标锁定行为}决定再次按键是解除锁定（{切换}），还是将锁定转移到准星下的目标（{切换目标}）。\n\n设置你的按键。"
 L["Turn your mouse clicks into actions while in Mouse Look, such as casting your action bar spells with {Left and Right Click}.\n\nPick what each click does, with or without a {modifier key}."] =
   "在鼠标视角下将鼠标点击变为动作，例如用{左键和右键}施放动作条上的法术。\n\n选择每次点击的功能，可搭配或不搭配{修饰键}。"
 L["A wheel of your {spells, items, macros and shortcuts} that works in combat.\n\nHold its key, move the mouse toward a slice and release to use it.\n\n{Scroll} to switch between wheels."] =
