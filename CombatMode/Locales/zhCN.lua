@@ -197,8 +197,8 @@ L["Spells to skip the reticle targeting logic."] = "跳过准星瞄准逻辑的�
 L["Cast at Crosshair"] = "在准星处施放"
 L["Ground spells to cast at the crosshair location."] = "在准星位置施放的地面法术。"
 L["TARGET LOCK"] = "目标锁定"
-L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific enemies."] =
-  "锁定目标以防止误切换，并在单位间循环以优先处理特定敌人。"
+L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific ones."] =
+  "锁定目标以防止误切换，并在单位间循环以优先处理特定单位。"
 L["Warning: Target Lock uses your Focus Target. Anything else that sets your focus will interfere with it."] =
   "警告：目标锁定会使用你的焦点目标。其他任何设置焦点的功能都会与之冲突。"
 L["Target Lock Keybind"] = "目标锁定按键"

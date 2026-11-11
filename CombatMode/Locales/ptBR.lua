@@ -205,8 +205,8 @@ L["Cast at Crosshair"] = "Lançar na mira"
 L["Ground spells to cast at the crosshair location."] =
   "Feitiços de solo para lançar na posição da mira."
 L["TARGET LOCK"] = "TRAVAR ALVO"
-L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific enemies."] =
-  "Trave um alvo para evitar trocas acidentais e alterne entre unidades para priorizar inimigos específicos."
+L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific ones."] =
+  "Trave um alvo para evitar trocas acidentais e alterne entre unidades para priorizar unidades específicas."
 L["Warning: Target Lock uses your Focus Target. Anything else that sets your focus will interfere with it."] =
   "Aviso: Travar alvo usa o seu alvo de foco. Qualquer outra coisa que defina o foco interferirá."
 L["Target Lock Keybind"] = "Tecla de travar alvo"

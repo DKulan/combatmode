@@ -205,8 +205,8 @@ L["Cast at Crosshair"] = "조준점에 시전"
 L["Ground spells to cast at the crosshair location."] =
   "조준점 위치에 시전할 지면 지정 주문입니다."
 L["TARGET LOCK"] = "대상 고정"
-L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific enemies."] =
-  "대상을 고정해 실수로 바뀌는 것을 막고, 유닛을 순환하며 특정 적을 우선 지정합니다."
+L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific ones."] =
+  "대상을 고정해 실수로 바뀌는 것을 막고, 유닛을 순환하며 특정 대상을 우선 지정합니다."
 L["Warning: Target Lock uses your Focus Target. Anything else that sets your focus will interfere with it."] =
   "경고: 대상 고정은 주시 대상을 사용합니다. 주시 대상을 바꾸는 다른 기능은 이를 방해합니다."
 L["Target Lock Keybind"] = "대상 고정 단축키"

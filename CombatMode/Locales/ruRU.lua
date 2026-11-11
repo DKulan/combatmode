@@ -214,8 +214,8 @@ L["Cast at Crosshair"] = "Применять в прицел"
 L["Ground spells to cast at the crosshair location."] =
   "Заклинания по земле, применяемые в точку прицела."
 L["TARGET LOCK"] = "ЗАХВАТ ЦЕЛИ"
-L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific enemies."] =
-  "Захватывайте цель, чтобы случайно не сменить её, и переключайтесь между целями, чтобы выделять нужных врагов."
+L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific ones."] =
+  "Захватывайте цель, чтобы случайно не сменить её, и переключайтесь между целями, чтобы выделять нужные."
 L["Warning: Target Lock uses your Focus Target. Anything else that sets your focus will interfere with it."] =
   "Внимание: захват цели использует вашу цель фокуса. Всё, что меняет фокус, будет ему мешать."
 L["Target Lock Keybind"] = "Клавиша захвата цели"

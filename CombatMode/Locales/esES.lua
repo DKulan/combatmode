@@ -205,8 +205,8 @@ L["Cast at Crosshair"] = "Lanzar en la mira"
 L["Ground spells to cast at the crosshair location."] =
   "Hechizos de suelo que se lanzan en la posición de la mira."
 L["TARGET LOCK"] = "FIJAR OBJETIVO"
-L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific enemies."] =
-  "Fija un objetivo para evitar cambios accidentales y alterna entre unidades para priorizar enemigos concretos."
+L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific ones."] =
+  "Fija un objetivo para evitar cambios accidentales y alterna entre unidades para priorizar unidades concretas."
 L["Warning: Target Lock uses your Focus Target. Anything else that sets your focus will interfere with it."] =
   "Advertencia: Fijar objetivo usa tu objetivo en foco. Cualquier otra cosa que cambie tu foco interferirá con ella."
 L["Target Lock Keybind"] = "Tecla de fijar objetivo"

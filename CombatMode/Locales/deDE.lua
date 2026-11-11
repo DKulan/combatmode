@@ -205,8 +205,8 @@ L["Cast at Crosshair"] = "Auf Fadenkreuz wirken"
 L["Ground spells to cast at the crosshair location."] =
   "Bodenzauber, die an der Fadenkreuzposition gewirkt werden."
 L["TARGET LOCK"] = "ZIELSPERRE"
-L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific enemies."] =
-  "Sperre ein Ziel, um versehentliches Wechseln zu verhindern, und wechsle zwischen Einheiten, um bestimmte Gegner zu priorisieren."
+L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific ones."] =
+  "Sperre ein Ziel, um versehentliches Wechseln zu verhindern, und wechsle zwischen Einheiten, um bestimmte Ziele zu priorisieren."
 L["Warning: Target Lock uses your Focus Target. Anything else that sets your focus will interfere with it."] =
   "Warnung: Die Zielsperre nutzt dein Fokusziel. Alles andere, was deinen Fokus setzt, stört sie."
 L["Target Lock Keybind"] = "Taste für Zielsperre"

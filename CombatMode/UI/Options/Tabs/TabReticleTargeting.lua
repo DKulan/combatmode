@@ -387,7 +387,7 @@ UI.Options.AddTab({
     ctx:Gap()
     ctx:Header(L["TARGET LOCK"])
     ctx:Description({
-      text = L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific enemies."],
+      text = L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific ones."],
       warning = L["Warning: Target Lock uses your Focus Target. Anything else that sets your focus will interfere with it."],
     })
 

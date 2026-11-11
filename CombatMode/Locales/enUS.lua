@@ -165,7 +165,7 @@ L["Spells to skip the reticle targeting logic."] = true
 L["Cast at Crosshair"] = true
 L["Ground spells to cast at the crosshair location."] = true
 L["TARGET LOCK"] = true
-L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific enemies."] =
+L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific ones."] =
   true
 L["Warning: Target Lock uses your Focus Target. Anything else that sets your focus will interfere with it."] =
   true

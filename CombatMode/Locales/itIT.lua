@@ -205,8 +205,8 @@ L["Cast at Crosshair"] = "Lancia sul mirino"
 L["Ground spells to cast at the crosshair location."] =
   "Incantesimi a terra da lanciare nella posizione del mirino."
 L["TARGET LOCK"] = "BLOCCO BERSAGLIO"
-L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific enemies."] =
-  "Blocca un bersaglio per evitare cambi accidentali e passa da un'unità all'altra per dare priorità a nemici specifici."
+L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific ones."] =
+  "Blocca un bersaglio per evitare cambi accidentali e passa da un'unità all'altra per dare priorità a unità specifiche."
 L["Warning: Target Lock uses your Focus Target. Anything else that sets your focus will interfere with it."] =
   "Attenzione: il Blocco bersaglio usa il tuo bersaglio focus. Qualsiasi altra cosa che imposta il focus interferirà."
 L["Target Lock Keybind"] = "Tasto blocco bersaglio"

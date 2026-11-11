@@ -204,8 +204,8 @@ L["Cast at Crosshair"] = "Lancer au réticule"
 L["Ground spells to cast at the crosshair location."] =
   "Sorts au sol à lancer à l'emplacement du réticule."
 L["TARGET LOCK"] = "VERROUILLAGE DE CIBLE"
-L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific enemies."] =
-  "Verrouillez une cible pour éviter les changements accidentels et alternez entre les unités pour prioriser certains ennemis."
+L["Lock onto a target to prevent accidental switching, and cycle between units to prioritize specific ones."] =
+  "Verrouillez une cible pour éviter les changements accidentels et alternez entre les unités pour prioriser certaines d'entre elles."
 L["Warning: Target Lock uses your Focus Target. Anything else that sets your focus will interfere with it."] =
   "Attention : le Verrouillage de cible utilise votre cible focalisée. Tout ce qui modifie votre focus le perturbera."
 L["Target Lock Keybind"] = "Touche de verrouillage de cible"
