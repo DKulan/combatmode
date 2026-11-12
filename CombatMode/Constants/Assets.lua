@@ -107,6 +107,9 @@ CM.Constants.CharBadge = uiPath .. "char-badge.tga"
 -- The same gold button with a "?", beside options that have a short explanation tooltip
 -- (scripts/art/make-help-badge.py builds it).
 CM.Constants.HelpBadge = uiPath .. "help-badge.tga"
+-- The same gold button with a crosshair, for the Extra Frames "pick a frame on screen" button
+-- (scripts/art/make-pick-badge.py builds it).
+CM.Constants.PickBadge = uiPath .. "pick-badge.tga"
 -- The gold pill behind the "NEW" tag (no text; scripts/art/make-new-badge.py builds it).
 CM.Constants.NewBadge = uiPath .. "new-badge.tga"
 -- The Ally HUD's pet crest (a paw print on the same gold button, in the role icon's place for pets;

@@ -14,6 +14,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/2.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.5.1] - 2026-11-12
+
+### Added
+
+- The **Reticle Targeting Macros** list has an **"i" button** too.
+
+### Changed
+
+- The **"i" buttons** explain each feature in more detail, and their tooltip now reads "Learn more about this feature".
+- The **Extra Frames** window picker has a new magnifying-glass button.
+
 ## [5.5.0] - 2026-11-11
 
 ### Added
@@ -940,7 +951,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rapidly toggling OPie rings could leave the cursor stuck and visible while Mouse Look was active.
 - Reloading could leave the cursor visible while still in the Mouse Look state after the loading screen.
 
-[Unreleased]: https://github.com/ThericGames/combatmode/compare/5.5.0...HEAD
+[Unreleased]: https://github.com/ThericGames/combatmode/compare/5.5.1...HEAD
+[5.5.1]: https://github.com/ThericGames/combatmode/compare/5.5.0...5.5.1
 [5.5.0]: https://github.com/ThericGames/combatmode/compare/5.4.7...5.5.0
 [5.4.7]: https://github.com/ThericGames/combatmode/compare/5.4.6...5.4.7
 [5.4.6]: https://github.com/ThericGames/combatmode/compare/5.4.5...5.4.6
