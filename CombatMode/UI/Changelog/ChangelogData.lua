@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The **"i" buttons** explain each feature in more detail, and their tooltip now reads "Learn more about this feature".
 - The **Extra Frames** window picker has a new magnifying-glass button.
+- The **Diamond** crosshair preset is now the **Dot**. A Diamond you picked becomes the Dot.
 - **Minimum Zoom** and the crosshair's **Vertical Position** are now saved per character. Your current values carry over to each of your characters.
 
 ## [5.5.0] - 2026-11-11
