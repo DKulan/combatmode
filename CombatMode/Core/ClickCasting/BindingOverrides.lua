@@ -492,14 +492,18 @@ function CM.RefreshClickCastMacros()
     end
     pendingClickCastRefresh = false
     CM.ClearAddonButtonCaches()
+    -- Keep macros built via the Macro Composer in step with the active preline. First: a proxy
+    -- may run a bar macro's text (the other Support Mode page), read while the keys are rebuilt.
+    if CM.RebuildComposedMacros then
+      CM.RebuildComposedMacros()
+    end
+    if CM.ResetInlinedMacroTexts then
+      CM.ResetInlinedMacroTexts()
+    end
     -- Re-apply all bindings so macro slots get "click real button" and spell slots get our frame.
     -- This refreshes both keyboard bindings (via ApplyGroundCastKeyOverrides) and mouse button bindings (via OverrideDefaultButtons)
     CM.OverrideDefaultButtons()
     CM.ApplyGroundCastKeyOverrides()
-    -- Keep Run MACRO macros built via the Macro Composer in step with the active preline.
-    if CM.RebuildComposedMacros then
-      CM.RebuildComposedMacros()
-    end
   end)
 end
 
