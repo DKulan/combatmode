@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/2.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [5.5.1] - 2026-11-12
+## [5.5.1] - 2026-11-13
 
 ### Added
 
@@ -17,7 +17,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The **Extra Frames** window picker has a new magnifying-glass button.
 - The **Diamond** crosshair preset is now the **Dot**. A Diamond you picked becomes the Dot.
 - **Minimum Zoom** and the crosshair's **Vertical Position** are now saved per character. Your current values carry over to each of your characters.
-
 - The **Target Lock** marker now sends out a soft pulse every few seconds.
 
 ### Fixed
