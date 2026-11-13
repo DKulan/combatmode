@@ -48,7 +48,12 @@ local C_CVar = _G.C_CVar
 local C_Spell = _G.C_Spell
 local C_SpellBook = _G.C_SpellBook
 local GetActionInfo = _G.GetActionInfo
+local GetMacroBody = _G.GetMacroBody
+local GetMacroInfo = _G.GetMacroInfo
+local GetNumMacros = _G.GetNumMacros
 local IsInGroup = _G.IsInGroup
+-- The label of an action slot (a macro's name): C_ActionBar on current clients, a global before.
+local GetActionText = (C_ActionBar and C_ActionBar.GetActionText) or _G.GetActionText
 
 -- Lua stdlib
 local ipairs = _G.ipairs
@@ -549,6 +554,89 @@ local CLICKCAST_WORST_CAST_LINE_LEN = #(
 )
 -- Max editable preline so pre + newline + worst cast stays within SECURE_MACROTEXT_MAX.
 CM.TargetingMacroPrelineMaxLen = SECURE_MACROTEXT_MAX - CLICKCAST_WORST_CAST_LINE_LEN - 1
+
+-- A proxy cannot "/click" a bar button that holds a macro (see above: a silent no-op), so for a
+-- macro slot the proxy runs the macro's own text instead. This only matters for the page that is
+-- not showing when a key's texts are built (Support Mode builds one text per page): the shown
+-- slot, when it is a macro, is bound straight to the real button. Reported by players: after a
+-- Support Mode swap in combat, or one whose refresh was missed, click-cast keys on a slot holding
+-- a macro (a Reticle Targeting Macro on the main bar, say) did nothing until a reload.
+-- The text is the one the macro has when the texts are built; `inlinedMacroTexts` remembers it
+-- so a later macro edit can ask for a rebuild (CM.InlinedMacroTextChanged, UPDATE_MACROS).
+-- The slot's label is the macro's name on every client; GetActionInfo's id is not a macro index
+-- on current ones (Blizzard's ActionButton.lua treats it as a spell id). A name can be shared by
+-- a general and a character macro, and then it does not say which one the slot holds: such a
+-- slot keeps the /click (MacroNameIsUnique).
+local inlinedMacroTexts = {}
+local macroNameCounts -- name -> macros carrying it; built on first use, dropped on each rebuild
+
+local function MacroNameIsUnique(name)
+  if not (GetNumMacros and GetMacroInfo) then
+    return true
+  end
+  if not macroNameCounts then
+    macroNameCounts = {}
+    local globalCount, charCount = GetNumMacros()
+    local accountMax = _G.MAX_ACCOUNT_MACROS or 120
+    local ranges = { 1, globalCount or 0, accountMax + 1, accountMax + (charCount or 0) }
+    for r = 1, #ranges, 2 do
+      for index = ranges[r], ranges[r + 1] do
+        local macroName = GetMacroInfo(index)
+        if macroName then
+          macroNameCounts[macroName] = (macroNameCounts[macroName] or 0) + 1
+        end
+      end
+    end
+  end
+  return (macroNameCounts[name] or 0) <= 1
+end
+
+local function ReadMacroSlotText(slot)
+  local name = GetActionText(slot)
+  if type(name) ~= "string" or name == "" or not MacroNameIsUnique(name) then
+    return nil
+  end
+  local body = GetMacroBody(name)
+  if type(body) ~= "string" or body == "" or #body > SECURE_MACROTEXT_MAX then
+    return nil
+  end
+  return body, name
+end
+
+-- nil = no text to run (unnamed slot, macro gone, an API missing): the caller keeps its /click.
+local function MacroSlotText(slot)
+  if not slot or not GetActionText or not GetMacroBody then
+    return nil
+  end
+  local ok, body, name = pcall(ReadMacroSlotText, slot)
+  if not ok or not body then
+    return nil
+  end
+  inlinedMacroTexts[name] = body
+  return body
+end
+
+--- Forgets the remembered macro texts; BindingOverrides calls it before it rebuilds every key.
+function CM.ResetInlinedMacroTexts()
+  for name in pairs(inlinedMacroTexts) do
+    inlinedMacroTexts[name] = nil
+  end
+  macroNameCounts = nil
+end
+
+--- True when a macro whose text a proxy runs no longer has that text (edited, renamed, deleted).
+function CM.InlinedMacroTextChanged()
+  if not GetMacroBody then
+    return false
+  end
+  for name, body in pairs(inlinedMacroTexts) do
+    local ok, current = pcall(GetMacroBody, name)
+    if not ok or current ~= body then
+      return true
+    end
+  end
+  return false
+end
 
 -- Regular (Auto Target Lock OFF):
 -- Clear dead focus + dead hostile hard target. Focus branch gated on harm so a friendly
@@ -1112,7 +1200,8 @@ function CM.BuildClickCastMacroText(bindingValue, opts)
   -- suggestion is a non-combat or placeholder spell, e.g. right after loading).
   local isAssistedButton = false
   if atype == "macro" then
-    return castLine
+    -- A proxy only gets here for a page that is not showing: run the macro's text (MacroSlotText).
+    return MacroSlotText(slot) or castLine
   end
   if atype then
     local idNum = tonumber(id)

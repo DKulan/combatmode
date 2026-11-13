@@ -151,6 +151,7 @@ CM.Constants.BLIZZARD_EVENTS = {
     "HOUSE_EDITOR_MODE_CHANGED", -- Enter/exit housing edit mode; refresh so action bar overrides are skipped in editor
     "GROUP_ROSTER_UPDATE", -- Party composition changed
     "ACTIONBAR_SLOT_CHANGED", -- Action bar spell/item changed
+    "UPDATE_MACROS", -- A macro was edited: only acted on when a proxy runs that macro's text
     "UPDATE_VEHICLE_ACTIONBAR", -- Vehicle action bar updated
     "UPDATE_POSSESS_BAR",
     "PET_BAR_UPDATE",
