@@ -27,6 +27,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The **Diamond** crosshair preset is now the **Dot**. A Diamond you picked becomes the Dot.
 - **Minimum Zoom** and the crosshair's **Vertical Position** are now saved per character. Your current values carry over to each of your characters.
 
+### Fixed
+
+- The **Cycle Lock** keys in Support Mode now skip NPCs and pets and only move between players. The new **Cycle NPCs and Pets** option brings them back.
+- The Target Lock marker on an ally now uses the **Support** texture while Support Mode is on.
+
 ## [5.5.0] - 2026-11-11
 
 ### Added

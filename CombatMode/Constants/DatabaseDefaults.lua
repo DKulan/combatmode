@@ -220,6 +220,8 @@ return false
     supportModeNameplateMode = "friendly",
     -- The unit under the crosshair beats a hard target / Ally Cycle pick (false: the target first)
     supportModeCrosshairFirst = false,
+    -- Cycle Lock in the mode also walks NPCs and pets (false: nearby players only)
+    supportModeCycleNPCs = false,
     supportModeTintVignette = true, -- the Vignette takes the Support crosshair color while on
     supportModeActive = false, -- session flag: a reload while on returns to page 1
   },

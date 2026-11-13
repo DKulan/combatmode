@@ -439,6 +439,9 @@ L["A support-focused mode that, when active, switches your main action bar to a 
   "Ein unterstützungsorientierter Modus, der im aktiven Zustand deine Hauptaktionsleiste auf eine eigene Unterstützungsseite umschaltet und es hilfreichen Zaubern erlaubt, die freundliche Einheit unter deinem Fadenkreuz anzuvisieren."
 L["Support Mode Keybind"] = "Tastenbelegung für Unterstützungsmodus"
 L["Prioritize Crosshair Target"] = "Fadenkreuz-Ziel priorisieren"
+L["Cycle NPCs and Pets"] = "NPCs und Begleiter durchschalten"
+L["Cycle Lock normally moves only between nearby players in Support Mode. Turn this on to include nearby NPCs and pets too."] =
+  "Zielsperre wechseln springt im Unterstützungsmodus normalerweise nur zwischen Spielern in der Nähe. Aktiviere dies, um auch NPCs und Begleiter in der Nähe einzubeziehen."
 L["Prioritizes the ally under your crosshair over other friendly targets (e.g. Ally Cycle). Disable to prioritize your selected target instead."] =
   "Der Verbündete unter deinem Fadenkreuz erhält den Zauber, auch wenn ein anderes freundliches Ziel ausgewählt ist, etwa eine Auswahl per Verbündetenwechsel. Ausschalten, um zuerst auf das ausgewählte Ziel zu wirken."
 L["Tap to toggle Support Mode on or off."] =

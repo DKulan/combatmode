@@ -437,6 +437,9 @@ L["A support-focused mode that, when active, switches your main action bar to a 
   "Una modalità orientata al supporto che, quando è attiva, porta la barra delle azioni principale su una pagina di supporto dedicata e permette agli incantesimi benefici di bersagliare l'unità amica sotto il mirino."
 L["Support Mode Keybind"] = "Tasto della modalità supporto"
 L["Prioritize Crosshair Target"] = "Dai priorità al bersaglio del mirino"
+L["Cycle NPCs and Pets"] = "Alterna tra PNG e famigli"
+L["Cycle Lock normally moves only between nearby players in Support Mode. Turn this on to include nearby NPCs and pets too."] =
+  "Cicla blocco in modalità supporto passa normalmente solo tra i giocatori vicini. Attiva questa opzione per includere anche PNG e famigli vicini."
 L["Prioritizes the ally under your crosshair over other friendly targets (e.g. Ally Cycle). Disable to prioritize your selected target instead."] =
   "L'alleato sotto il mirino riceve l'incantesimo anche se hai selezionato un altro bersaglio amico, come una scelta del Ciclo alleati. Disattiva per lanciare prima sul bersaglio selezionato."
 L["Tap to toggle Support Mode on or off."] =

@@ -367,6 +367,9 @@ L["A support-focused mode that, when active, switches your main action bar to a 
   true
 L["Support Mode Keybind"] = true
 L["Prioritize Crosshair Target"] = true
+L["Cycle NPCs and Pets"] = true
+L["Cycle Lock normally moves only between nearby players in Support Mode. Turn this on to include nearby NPCs and pets too."] =
+  true
 L["Prioritizes the ally under your crosshair over other friendly targets (e.g. Ally Cycle). Disable to prioritize your selected target instead."] =
   true
 L["Tap to toggle Support Mode on or off."] = true

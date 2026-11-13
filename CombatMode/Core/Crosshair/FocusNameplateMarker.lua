@@ -123,6 +123,13 @@ local function GetFocusColor()
 end
 
 local function GetMarkerTexturePath()
+  -- Support Mode on an ally lock: the Support texture, like the reticle (unless turned off).
+  if GetFocusColorState() == "support" and CM.GetCrosshairSupportTexturePath then
+    local supportPath = CM.GetCrosshairSupportTexturePath()
+    if supportPath then
+      return supportPath
+    end
+  end
   -- The player's Active texture; Default's hit art when they hid Active (the marker is Target
   -- Lock feedback with its own toggle, so it is never left empty).
   local appearance = CM.DB and CM.DB.global and CM.DB.global.crosshairAppearance
