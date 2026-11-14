@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------
 --  UI/Options/Tabs/TabSupportMode.lua — OPTIONS TAB — Support Mode
 ---------------------------------------------------------------------------------------
---  What it does: Support Mode keybind (a toggle), Prioritize Crosshair Target, support bar page,
+--  What it does: Support Mode keybind (a toggle), Self-Cast keybind (a hold), Prioritize
+--  Crosshair Target, support bar page,
 --  Cycle NPCs and Pets, Vignette tint toggle and the nameplates dropdown. An unbound Support Mode key disables it.
 --  (The Support crosshair color and texture are on the Crosshair tab: Reaction Colors and
 --  Appearance.)
@@ -29,6 +30,7 @@ local tonumber = _G.tonumber
 local UI = CM.UI
 
 local BIND_NAME = "Combat Mode - Support Mode"
+local SELF_BIND_NAME = "Combat Mode - Support Mode Self Cast"
 
 -- char.supportModeNameplateMode (applied by CM.SyncSupportModeNameplates in CVarManager).
 local NAMEPLATE_VALUES = {
@@ -94,6 +96,21 @@ UI.Options.AddTab({
       disabled = ReticleTargetingOff,
       watermarkWhenDisabled = ReticleTargetingNotice,
     })
+    ctx:Keybind({
+      label = L["Self-Cast Keybind"],
+      desc = L["Hold while in Support Mode to cast the helpful spells on your click-cast buttons on yourself. Your target and Target Lock stay as they are."],
+      get = function()
+        return (GetBindingKey(SELF_BIND_NAME))
+      end,
+      set = function(key)
+        CM.TryApplyBindingChange(L["support mode self-cast keybinding"], function()
+          CM.AssignNamedKeybind(SELF_BIND_NAME, key)
+          Apply()
+        end)
+      end,
+      disabled = ReticleTargetingOff,
+      watermarkWhenDisabled = ReticleTargetingNotice,
+    })
     ctx:Toggle({
       label = L["Prioritize Crosshair Target"],
       desc = L["Prioritizes the ally under your crosshair over other friendly targets (e.g. Ally Cycle). Disable to prioritize your selected target instead."],
@@ -110,7 +127,7 @@ UI.Options.AddTab({
     })
     ctx:Toggle({
       label = L["Cycle NPCs and Pets"],
-      desc = L["Cycle Lock normally moves only between nearby players in Support Mode. Turn this on to include nearby NPCs and pets too."],
+      desc = L["Cycle Lock normally moves only between nearby players in Support Mode. Turn this on to include nearby NPCs and pets too. While this is off, Support Mode also hides the nameplates of NPCs and pets."],
       charSpecific = true,
       get = function()
         return CM.DbBool(CM.DB.char.supportModeCycleNPCs, false)
@@ -121,6 +138,10 @@ UI.Options.AddTab({
         -- The cycle buttons' Support Mode text is stored by this, not by the macro refresh.
         if CM.ApplyCycleFocusBindings then
           CM.ApplyCycleFocusBindings()
+        end
+        -- Pet, minion and NPC nameplates follow this option while the mode is on.
+        if CM.SyncSupportModeNameplates then
+          CM.SyncSupportModeNameplates()
         end
       end,
       disabled = ReticleTargetingOff,

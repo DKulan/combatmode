@@ -417,15 +417,20 @@ L["Distance between the Ally HUD and the crosshair."] = "友方 HUD 與準星之
 
 -- Support Mode: keybind label, notices and options tab (SupportMode.lua, TabSupportMode.lua)
 L["Support Mode"] = "輔助模式"
+L["Support Mode Self-Cast"] = "輔助模式自我施法"
 L["support mode keybinding"] = "輔助模式按鍵綁定"
+L["support mode self-cast keybinding"] = "輔助模式自我施法按鍵綁定"
 L["SUPPORT MODE"] = "輔助模式"
 L["A support-focused mode that, when active, switches your main action bar to a dedicated support page and allows helpful spells to target the friendly unit under your crosshair."] =
   "一種以支援為核心的模式：啟用後會將主動作列切換到專用的支援頁，並允許增益法術以準星下的友方單位為目標。"
 L["Support Mode Keybind"] = "輔助模式按鍵"
+L["Self-Cast Keybind"] = "自我施法按鍵"
+L["Hold while in Support Mode to cast the helpful spells on your click-cast buttons on yourself. Your target and Target Lock stay as they are."] =
+  "在輔助模式中按住此鍵，可將點擊施法按鍵上的有益法術施放給自己。你的目標和目標鎖定保持不變。"
 L["Prioritize Crosshair Target"] = "優先準星目標"
 L["Cycle NPCs and Pets"] = "輪替 NPC 和寵物"
-L["Cycle Lock normally moves only between nearby players in Support Mode. Turn this on to include nearby NPCs and pets too."] =
-  "在輔助模式下,循環鎖定通常只會在附近的玩家之間切換。開啟後也會包括附近的 NPC 和寵物。"
+L["Cycle Lock normally moves only between nearby players in Support Mode. Turn this on to include nearby NPCs and pets too. While this is off, Support Mode also hides the nameplates of NPCs and pets."] =
+  "在輔助模式下,循環鎖定通常只會在附近的玩家之間切換。開啟後也會包括附近的 NPC 和寵物。關閉時,輔助模式還會隱藏 NPC 和寵物的名條。"
 L["Prioritizes the ally under your crosshair over other friendly targets (e.g. Ally Cycle). Disable to prioritize your selected target instead."] =
   "即使已選取其他友方目標（例如透過友方循環選取），準星下的盟友也會優先獲得法術。關閉後將優先施放給已選取的目標。"
 L["Tap to toggle Support Mode on or off."] = "點按以開啟或關閉輔助模式。"
